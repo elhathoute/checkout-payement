@@ -3,3 +3,52 @@
 
 }
 
+
+.contact{
+    height: 58px;
+    border: 1px solid rgb(17, 17, 17);
+    border-radius: 3px;
+    /* background-color: black; */
+}
+#contact-label{
+    top: 2px;
+    color: rgb(174, 172, 172);
+}
+
+input{
+    outline: none;
+    border: 0;
+    width: 98%;
+}
+
+
+
+.text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    margin-bottom: 10px;
+}
+
+.font-normal {
+    font-family: Lato, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
+.account-span{
+    margin-left: 10px;
+}
+
+.text-color-888{
+    color: #888;
+}
+.text-xs {
+    font-size: .75rem;
+    line-height: 1rem;
+}
+
+#label-check{
+    outline : none
+}
+#input-check{
+    outline : none !important
+}
