@@ -484,8 +484,8 @@ button {
     border:1px solid black;
 }
 
-@media (min-width: 768px){
-   
+.mt-24px {
+    margin-top: 1.5rem;
 }
 
 
