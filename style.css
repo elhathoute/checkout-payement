@@ -346,7 +346,11 @@ button {
 /* #div-order{
     display: none;
 } */
-
+@media (min-width: 991px){
+#show-order-div{
+    display:none;
+}
+}
 @media (max-width: 991px){
     #les-deux-colonnes{
        display: flex;
@@ -355,6 +359,9 @@ button {
       #div-order{
         display: none;
       }
+      #show-order-div{
+        display:block;
+    }
 }
 .flex-1 {
     flex: 1 1 0%;
