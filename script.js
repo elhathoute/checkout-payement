@@ -11,6 +11,9 @@ let priceDom= document.getElementsByClassName("price-product");
 
 
 titleDom.innerHTML +=title;
+if(title==null){
+    titleDom.innerHTML=' ';
+}
 if(price!=null){
     for(let i=0;i<3;i++){
         priceDom[i].innerHTML ="<span>$</span>"+price;
@@ -27,3 +30,90 @@ if(price==''){
 }
 
 imgDom.setAttribute("src",imgelink);
+
+//get input to change our border in event focus
+let email = document.getElementById('email');
+let fname = document.getElementById('fname');
+let lname = document.getElementById('lname');
+let adress = document.getElementById('adress');
+let apartement = document.getElementById('apartement');
+let postal = document.getElementById('postal');
+let city = document.getElementById('city');
+//email
+        email.addEventListener('focus', function(){
+            document.getElementById('email-div').style.border = '2px solid rgb(129, 104, 66)';
+                });
+         email.addEventListener('blur', function(){
+            document.getElementById('email-div').style.border = '1px solid black';
+                 });
+//first-name
+        fname.addEventListener('focus', function(){
+                document.getElementById('fname-div').style.border = '2px solid rgb(0, 0, 97)';
+                    });
+                    fname.addEventListener('blur', function(){
+                document.getElementById('fname-div').style.border = '1px solid black';
+                    });
+//last-name
+lname.addEventListener('focus', function(){
+    document.getElementById('lname-div').style.border = '2px solid rgb(0, 0, 97)';
+        });
+        lname.addEventListener('blur', function(){
+    document.getElementById('lname-div').style.border = '1px solid black';
+        });
+
+//adress
+adress.addEventListener('focus', function(){
+    document.getElementById('adress-div').style.border = '2px solid rgb(0, 0, 97)';
+        });
+        adress.addEventListener('blur', function(){
+    document.getElementById('adress-div').style.border = '1px solid black';
+        });
+//appartement
+apartement.addEventListener('focus', function(){
+    document.getElementById('apartement-div').style.border = '2px solid rgb(0, 0, 97)';
+        });
+        apartement.addEventListener('blur', function(){
+    document.getElementById('apartement-div').style.border = '1px solid black';
+        });
+
+//postal
+postal.addEventListener('focus', function(){
+    document.getElementById('postal-div').style.border = '2px solid rgb(0, 0, 97)';
+        });
+        postal.addEventListener('blur', function(){
+    document.getElementById('postal-div').style.border = '1px solid black';
+        });
+
+//city
+city.addEventListener('focus', function(){
+    document.getElementById('city-div').style.border = '2px solid rgb(0, 0, 97)';
+        });
+        city.addEventListener('blur', function(){
+    document.getElementById('city-div').style.border = '1px solid black';
+        });
+
+        //btn continue-to-shipping
+
+        let continue_to_shipping = document.getElementById("continue-to-shipping");
+
+        // console.log(continue_to_shipping);
+        continue_to_shipping.addEventListener('click',function(){
+           //get inputs 
+          
+          let email_localStorage= email.value;
+          let fname_localStorage= fname.value;
+          let lname_localStorage= lname.value;
+          let adress_localStorage= adress.value;
+          let apartement_localStorage= apartement.value;
+          let postal_localStorage= postal.value;
+          let city_localStorage= city.value;
+          //store inputs  in localstorage
+          localStorage.setItem("email",email_localStorage);
+          localStorage.setItem("fname",fname_localStorage);
+          localStorage.setItem("lname",lname_localStorage);
+          localStorage.setItem("adress",adress_localStorage);
+          localStorage.setItem("apartement",apartement_localStorage);
+          localStorage.setItem("postal",postal_localStorage);
+          localStorage.setItem("city",city_localStorage);
+
+        })

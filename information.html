@@ -18,9 +18,9 @@
                 
   <h2 class=" text-lg font-normal">contact information</h2>
 
-<div class=" contact d-flex flex-column my-2">
+<div class=" contact d-flex flex-column my-2 " id="email-div">
   <label for="email" class="mx-1 text-xs" id="contact-label">Email</label>
-    <input type="text" name="email" class=" m-1 h-100 outline-none">
+    <input type="text" name="email" id="email" class=" m-1 h-100 outline-none">
 </div>
 <p class="text-color-888 ">For sending the order information</p>
 <input type="checkbox" class="form-check-input bg-dark" id="input-check" >
@@ -28,58 +28,69 @@
 <h2 class=" text-lg font-normal my-2">Shipping Address</h2>
 
 <div class="d-flex gap-2">
-  <div class=" contact d-flex flex-column my-2 w-50">
+  <div class=" contact d-flex flex-column my-2 w-50" id="fname-div">
     <label for="First Nam" class="mx-1 text-xs" id="contact-label">First Name</label>
-    <input type="text" name="Last_Name" class="  h-100 outline-none">
+    <input type="text" name="Last_Name" id="fname" class="  h-100 outline-none">
   </div>
-  <div class=" contact d-flex flex-column my-2 w-50">
+  <div class=" contact d-flex flex-column my-2 w-50" id="lname-div">
     <label for="Last Name" class="mx-1 text-xs" id="contact-label">Last Name</label>
-    <input type="text" name="Last_Name" class="  h-100 outline-none">
+    <input type="text" name="Last_Name" id="lname" class="  h-100 outline-none">
   </div>
 </div>
-<div class=" contact d-flex flex-column my-2 ">
+<div class="contact d-flex flex-column my-2 " id="adress-div">
   <label for="Adress" class="mx-1 text-xs" id="contact-label">Adress</label>
-  <input type="text" name="Adress" class="  h-100 outline-none">
+  <input type="text" name="Adress" id="adress" class="  h-100 outline-none">
 </div>
-<div class=" contact d-flex flex-column my-2 ">
+<div class=" contact d-flex flex-column my-2 "  id="apartement-div">
   <label for="apartment" class="mx-1 text-xs" id="contact-label">Apartement, suite, etc (optional)</label>
-  <input type="text" name="apartment" class="  h-100 outline-none">
+  <input type="text" name="apartment" id="apartement" class="  h-100 outline-none">
 </div>
 <div class="d-flex gap-2">
-  <div class=" contact d-flex flex-column my-2 w-50">
+  <div class=" contact d-flex flex-column my-2 w-50" id="postal-div">
     <label for="Postal code" class="mx-1 text-xs" id="contact-label">Postal code</label>
-    <input type="text" name="Last_Name" class="  h-100 outline-none">
+    <input type="text" name="Last_Name" id="postal" class="  h-100 outline-none">
   </div>
-  <div class=" contact d-flex flex-column my-2 w-50">
+  <div class=" contact d-flex flex-column my-2 w-50" id="city-div">
     <label for="Last Name" class="mx-1 text-xs" id="contact-label">City</label>
-    <input type="text" name="Last_Name" class="  h-100 outline-none">
+    <input type="text" name="Last_Name" id="city" class="  h-100 outline-none">
   </div>
 </div>
+<!-- btn continue and return -->
+<div class="mt-28px px-14px px-0 mb-3 d-flex flex-row-reverse align-items-center justify-content-between">
+  <div>
+    <div >
+  <button type="button" class="ckt-btn w-full w-100 p-3 h-56px rounded-4px text-base md:box-border md:min-w-228px md:px-10px contact_information" id="continue-to-shipping">Continue to shipping</button>
+</div>
+</div>
+  <div class=" mt-0 text-center"><button data-testid="form-aio-return-btn" type="button" class="ckt-return-text text-sm d-flex align-items-center w-full justify-content-center"><svg class="w-12px h-12px icon-angle-right" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgba(173, 141, 119, 1)"><path d="M225.365 512 708.096 29.27l90.539 90.538-482.731 482.645L225.365 512z"></path><path d="m315.904 421.504 482.73 482.688-90.538 90.539L225.366 512l90.538-90.496z"></path></svg>
+    <div class="mx-8px">Return</div>
+  </button></div></div>
+<!-- end buttons -->
+
 </div>
                     <div class="col border ">
                         
                 <div><div class="overflow-y-auto max-h-full md:max-h-500">
-                    <div class="d-flex align-items-center justify-content-between  pb-18px border-color-#D9D9D9 first:pt-18px last:border-b-0">
+                    <div class="d-flex align-items-center justify-content-between  pb-18px border-color-#D9D9D9 first:pt-18px last:border-b-0 border-bottom border-gray my-4">
                         <div class="relative pt-10px"><span class="absolute top-0 -right-10px min-w-20px h-20px px-6px text-xs leading-5 text-center rounded-full text-white bg-color-#999 font-bold">1</span>
                             <div class="w-64px h-64px border border-solid border-color-#F0F0F0 rounded overflow-hidden flex flex-wrap justify-center items-center">
                                 <img src="" alt="" class="w-auto h-auto max-w-full max-h-full" id="img-product">
                             </div></div>
+
                             <div class="flex flex-col justify-center flex-1 ml-16px mr-8px">
                                 <p class="text-color-#333 two-lines-ellipsis text-14 ckt-summary-order-title " id="title-product"> </p>
                                 <div class="mt-4px text-14 text-color-#888"></div></div>
                                 <span class="text-14px text-color-#333 font-bold ckt-summary-order-title price-product" >$00.00</span></div></div>
-                                <div class="pt-18px border-t border-color-#D9D9D9" data-testid="SummaryCoupon">
-                                    <div class="flex justify-between">
-                                    <div class="flex-1"><div class="relative inline-block w-full h-48px">
-                                        <label class="field-placeholder absolute px-3 transition-all pointer-events-none peer-focus:text-xs peer-focus:top-1.5 top-3.5 text-sm text-color-#757575 cursor-text">Gift card or coupon code</label>
-                                        <input type="text" name="coupon-pc" autocomplete="coupon" class="w-full h-full pl-12px pt-24px pb-1.5 text-sm text-color-#333 rounded-md outline-none transition-all appearance-none peer pr-12px ckt-input" value=""></div></div>
-                                        <button type="button" class="relative inline h-48px px-24px py-14px text-center text-sm rounded ckt-btn ml-12px cursor-not-allowed opacity-70" disabled=""><div class="">Apply</div><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 50 50" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24px h-24px opacity-0"><path fill="#CCCED9" fill-opacity="0.6" d="M43.935 25.145c0-10.318-8.364-18.683-18.683-18.683-10.318 0-18.683 8.365-18.683 18.683h4.068c0-8.071 6.543-14.615 14.615-14.615s14.615 6.543 14.615 14.615h4.068z"><animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform></path></svg></button></div></div><div class="py-6px border-b border-color-#D9D9D9 mt-18px border-t">
-                                            <div class="flex justify-between my-12px text-14px">
+
+                                
+                                       
+                                        <div class="py-6px border-b border-color-#D9D9D9 mt-18px border-t  border-bottom border-gray mb-4 pb-4">
+                                            <div class="d-flex justify-content-between align-items-center my-12px text-14px mb-3">
                                                 <span class="text-color-#888">Subtotal:</span>
                                                 <span data-testid="couponCodePrice" class="text-color-#333 ckt-summary-order-title price-product">$00.00</span></div>
-                                                <div class="flex justify-between my-12px text-14px"><span class="text-color-#888">Shipping:</span>
-                                                    <span data-testid="couponCodePrice" class="text-color-#333 ckt-summary-order-title">Calculate later</span></div><div></div></div>
-                                                    <div class="flex justify-between my-24px text-sm">
+                                                <div class="d-flex justify-content-between align-items-center my-12px text-14px"><span class="text-color-#888">Shipping:</span>
+                                                    <span data-testid="couponCodePrice" class="text-color-#333 ckt-summary-order-title">free</span></div><div></div></div>
+                                                    <div class="d-flex justify-content-between align-items-end my-24px text-sm">
                                                         <div class="flex items-end"><span class="font-semibold text-color-#333 text-base">Total:</span></div>
                                                         <div class="ckt-summary-order-title text-2xl"><span class="mr-2.5 text-xs text-color-#666 notranslate">USD</span>
                                                             <span data-testid="SummaryOrderTotal" class="font-semibold text-color-#212121 price-product">$00.00</span></div></div><div>

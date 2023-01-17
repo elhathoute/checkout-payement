@@ -164,3 +164,133 @@ input{
        margin-top: 7%;
     margin-bottom: 1rem;
 }
+
+*, :after, :before {
+    border: 0 solid;
+    box-sizing: border-box;
+}
+
+.text-color-\#888 {
+    --tw-text-opacity: 1;
+    color: rgba(136,136,136,var(--tw-text-opacity));
+}
+
+.text-color-\#333 {
+    --tw-text-opacity: 1;
+    color: rgba(51,51,51,var(--tw-text-opacity));
+}
+.text-sm {
+    font-size: 1.3rem;
+    line-height: 1.25rem;
+}
+.text-2xl {
+    font-size: 2rem;
+    line-height: 2rem;
+}
+.ckt-summary-order-title {
+    font-family: Lato, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
+.text-color-\#666 {
+    --tw-text-opacity: 1;
+    color: rgba(102,102,102,var(--tw-text-opacity));
+}
+.text-xs {
+    font-size: .75rem;
+    line-height: 1rem;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+.text-color-\#212121 {
+    --tw-text-opacity: 1;
+    color: rgba(33,33,33,var(--tw-text-opacity));
+}
+.font-semibold {
+    font-weight: 600;
+}
+.text-base {
+    font-size: 1.4rem;
+    line-height: 1.5rem;
+   
+}
+
+.mt-28px {
+    margin-top: 1.75rem;
+}
+
+*, :after, :before {
+    border: 0 solid;
+    box-sizing: border-box;
+}
+.text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+.rounded-4px {
+    border-radius: .25rem;
+}
+.w-full {
+    width: 100%;
+}
+.h-56px {
+    height: 56px;
+}
+.ckt-btn, .payment-btn {
+    font-family: Lato, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    background-color: rgba(173, 141, 119, 1);
+    color: rgba(255, 255, 255, 1);
+}
+button, select {
+    text-transform: none;
+}
+@media (min-width: 768px){
+    .md\:px-10px {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+@media (min-width: 768px){
+    .md\:min-w-228px {
+        min-width: 14.25rem;
+    }
+    
+}
+@media (min-width: 768px){
+    .md\:box-border {
+        box-sizing: border-box;
+    }
+}
+
+.text-sm {
+    font-size: .875rem;
+    line-height: 1.25rem;
+}
+
+.ckt-return-text {
+    color: rgba(173, 141, 119, 1) !important;
+}
+
+.w-12px {
+    width: .75rem;
+}
+
+.h-12px {
+    height: .75rem;
+}
+audio, canvas, embed, iframe, img, object, svg, video {
+    display: block;
+    vertical-align: middle;
+}
+.mx-8px {
+    margin-left: .5rem;
+    margin-right: .5rem;
+}
+button {
+    background-color: transparent;
+    background-image: none;
+}
