@@ -356,7 +356,126 @@ button {
         display: none;
       }
 }
+.flex-1 {
+    flex: 1 1 0%;
+}
 
+.h-48px {
+    height: 3rem;
+}
+.inline-block {
+    display: inline-block;
+}
+.relative {
+    position: relative;
+}
+.opacity-70 {
+    opacity: .7;
+}
+.text-sm {
+    font-size: .875rem;
+    line-height: 1.25rem;
+}
+.text-center {
+    text-align: center;
+}
+.py-14px {
+    padding-top: 14px;
+    padding-bottom: 14px;
+}
+.px-24px {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+.rounded {
+    border-radius: .25rem;
+}
+.cursor-not-allowed {
+    cursor: not-allowed;
+}
+.h-48px {
+    height: 3rem;
+}
+.inline {
+    display: inline;
+}
+.ml-12px {
+    margin-left: .75rem;
+}
+.relative {
+    position: relative;
+}
+.ckt-btn, .payment-btn {
+    font-family: Lato, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    background-color: rgba(173, 141, 119, 1);
+    color: rgba(255, 255, 255, 1);
+}
+
+.transition-all {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    transition-duration: .15s;
+}
+.text-color-\#757575 {
+    --tw-text-opacity: 1;
+    color: rgba(117,117,117,var(--tw-text-opacity));
+}
+.text-sm {
+    font-size: .875rem;
+    line-height: 1.25rem;
+}
+.px-3 {
+    padding-left: .75rem;
+    padding-right: .75rem;
+}
+.cursor-text {
+    cursor: text;
+}
+.top-3\.5 {
+    top: .875rem;
+}
+.absolute {
+    position: absolute;
+}
+.pointer-events-none {
+    pointer-events: none;
+}
+
+.transition-all {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    transition-duration: .15s;
+}
+.outline-none {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+.text-color-\#333 {
+    --tw-text-opacity: 1;
+    color: rgba(51,51,51,var(--tw-text-opacity));
+}
+.text-sm {
+    font-size: .875rem;
+    line-height: 1.25rem;
+}
+.pr-12px {
+    padding-right: .75rem;
+}
+.pb-1\.5 {
+    padding-bottom: .375rem;
+}
+.pt-24px {
+    padding-top: 1.5rem;
+}
+.pl-12px {
+    padding-left: .75rem;
+}
+.rounded-md {
+    border-radius: .375rem;
+    border:1px solid black;
+}
 
 @media (min-width: 768px){
    
