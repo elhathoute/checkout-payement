@@ -29,61 +29,62 @@
 
 
 
-<div class="col-lg-6 col-sm-12  ckt-payment flex flex-wrap justify-end row-start-2 h-full">
-                
-                
-  <h2 class=" text-lg font-normal">contact information</h2>
+  <div class="col-lg-6 col-sm-12  ckt-payment flex flex-wrap justify-end row-start-2 h-full">
+                          
+                          
+    <h2 class=" text-lg font-normal">contact information</h2>
 
-<div class=" contact d-flex flex-column my-2 " id="email-div">
-  <label for="email" class="mx-1 text-xs" id="contact-label">Email</label>
-    <input type="text" name="email" id="email" class=" m-1 h-100 outline-none">
-</div>
-<p class="text-color-888 ">For sending the order information</p>
-<input type="checkbox" class="form-check-input bg-dark" id="input-check" >
-<label class="form-check-label" id="label-check">Keep me up to date on news and exclusive offers.</label>
-<h2 class=" text-lg font-normal my-2">Shipping Address</h2>
+  <div class=" contact input-group" id="email-div">
+    <input type="text" name="email" id="email" class="  h-100 outline-none" placeholder=" ">
+    <label for="email" class="mx-1 text-xs" id="contact-label">Email</label>
+  </div>
+  <p class="text-color-888 ">For sending the order information</p>
+  <input type="checkbox" class="form-check-input bg-dark" id="input-check" >
+  <label class="form-check-label" id="label-check">Keep me up to date on news and exclusive offers.</label>
+  <h2 class=" text-lg font-normal my-2">Shipping Address</h2>
 
-<div class="d-flex gap-2">
-  <div class=" contact d-flex flex-column my-2 w-50" id="fname-div">
-    <label for="First Nam" class="mx-1 text-xs" id="contact-label">First Name</label>
-    <input type="text" name="Last_Name" id="fname" class="  h-100 outline-none">
+  <div class="d-flex gap-2">
+    <div class=" contact d-flex flex-column my-2 w-50 input-group" id="fname-div">
+      <input type="text" name="Last_Name" id="fname" class="  h-100 outline-none" placeholder=" ">
+      <label for="First Nam" class="mx-1 text-xs" id="contact-label">First Name</label>
+    </div>
+    <div class=" contact d-flex flex-column my-2 w-50  input-group" id="lname-div">
+      <input type="text" name="Last_Name" id="lname" class="  h-100 outline-none" placeholder=" ">
+      <label for="Last Name" class="mx-1 text-xs" id="contact-label">Last Name</label>
+    </div>
   </div>
-  <div class=" contact d-flex flex-column my-2 w-50" id="lname-div">
-    <label for="Last Name" class="mx-1 text-xs" id="contact-label">Last Name</label>
-    <input type="text" name="Last_Name" id="lname" class="  h-100 outline-none">
+  <div class="contact d-flex flex-column my-2  input-group" id="adress-div">
+    <input type="text" name="Adress" id="adress" class="  h-100 outline-none" placeholder=" ">
+    <label for="Adress" class="mx-1 text-xs" id="contact-label">Address</label>
   </div>
-</div>
-<div class="contact d-flex flex-column my-2 " id="adress-div">
-  <label for="Adress" class="mx-1 text-xs" id="contact-label">Adress</label>
-  <input type="text" name="Adress" id="adress" class="  h-100 outline-none">
-</div>
-<div class=" contact d-flex flex-column my-2 "  id="apartement-div">
-  <label for="apartment" class="mx-1 text-xs" id="contact-label">Apartement, suite, etc (optional)</label>
-  <input type="text" name="apartment" id="apartement" class="  h-100 outline-none">
-</div>
-<div class="d-flex gap-2">
-  <div class=" contact d-flex flex-column my-2 w-50" id="postal-div">
-    <label for="Postal code" class="mx-1 text-xs" id="contact-label">Postal code</label>
-    <input type="text" name="Last_Name" id="postal" class="  h-100 outline-none">
+  <div class=" contact d-flex flex-column my-2  input-group"  id="apartement-div">
+    <input type="text" name="apartment" id="apartement" class="  h-100 outline-none" placeholder=" ">
+    <label for="apartment" class="mx-1 text-xs" id="contact-label">Apartement, suite, etc (optional)</label>
   </div>
-  <div class=" contact d-flex flex-column my-2 w-50" id="city-div">
-    <label for="Last Name" class="mx-1 text-xs" id="contact-label">City</label>
-    <input type="text" name="Last_Name" id="city" class="  h-100 outline-none">
+  <div class="d-flex gap-2">
+    <div class=" contact d-flex flex-column my-2 w-50 input-group" id="postal-div">
+      <input type="text" name="Last_Name" id="postal" class="  h-100 outline-none" placeholder=" ">
+      <label for="Postal code" class="mx-1 text-xs" id="contact-label">Postal code</label>
+    </div>
+    <div class=" contact d-flex flex-column my-2 w-50 input-group" id="city-div">
+      <input type="text" name="Last_Name" id="city" class="  h-100 outline-none" placeholder=" ">
+      <label for="Last Name" class="mx-1 text-xs" id="contact-label">City</label>
+    </div>
   </div>
-</div>
-<!-- btn continue and return -->
-<div class="mt-28px px-14px px-0 mb-3 d-flex flex-row-reverse align-items-center justify-content-between">
-  <div>
-    <div >
-  <button type="button" class="ckt-btn w-full w-100 p-3 h-56px rounded-4px text-base md:box-border md:min-w-228px md:px-10px contact_information" id="continue-to-shipping">Continue to shipping</button>
-</div>
-</div>
-  <div class=" mt-0 text-center"><button data-testid="form-aio-return-btn" type="button" class="ckt-return-text text-sm d-flex align-items-center w-full justify-content-center"><svg class="w-12px h-12px icon-angle-right" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgba(173, 141, 119, 1)"><path d="M225.365 512 708.096 29.27l90.539 90.538-482.731 482.645L225.365 512z"></path><path d="m315.904 421.504 482.73 482.688-90.538 90.539L225.366 512l90.538-90.496z"></path></svg>
-    <div class="mx-8px">Return</div>
-  </button></div></div>
+  <!-- btn continue and return -->
+  <div class="mt-28px px-14px px-0 mb-3 d-flex flex-row-reverse align-items-center justify-content-between">
+    <div>
+      <div >
+    <button type="button" class="ckt-btn w-full w-100 p-3 h-56px rounded-4px text-base md:box-border md:min-w-228px md:px-10px contact_information" id="continue-to-shipping">Continue to shipping</button>
+  </div>
+  </div>
+    <div class=" mt-0 text-center"><button data-testid="form-aio-return-btn" type="button" class="ckt-return-text text-sm d-flex align-items-center w-full justify-content-center"><svg class="w-12px h-12px icon-angle-right" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgba(173, 141, 119, 1)"><path d="M225.365 512 708.096 29.27l90.539 90.538-482.731 482.645L225.365 512z"></path><path d="m315.904 421.504 482.73 482.688-90.538 90.539L225.366 512l90.538-90.496z"></path></svg>
+      <div class="mx-8px">Return</div>
+    </button></div></div>
 <!-- end buttons -->
 
 </div>
+
 
 
   <div class="col-lg-6 col-sm-12" id="div-order">
@@ -113,9 +114,12 @@
                                                   <div class="pt-18px border-b p-4 border-color-#D9D9D9" data-testid="SummaryCoupon">
                                                     <div class="d-flex justify-content-between">
                                                       <div class="flex-1">
-                                                        <div class="relative inline-block w-full h-48px">
-                                                          <label class="field-placeholder absolute px-3 transition-all pointer-events-none peer-focus:text-xs peer-focus:top-1.5 top-3.5 text-sm text-color-#757575 cursor-text">Gift card or coupon code</label>
-                                                          <input type="text" name="coupon-pc" autocomplete="coupon" class="w-full h-full pl-12px pt-24px pb-1.5 text-sm text-color-#333 rounded-md outline-none transition-all appearance-none peer pr-12px ckt-input" value=""></div></div>
+                                                        
+                                                        <div class=" contact input-group" id="coupon-div">
+                                                          <input type="text" name="coupon" id="coupon" class="  h-100 outline-none" placeholder=" " onfocus="">
+                                                          <label for="coupon" class="mx-1 text-xs" id="contact-label">Gift card or coupon code</label>
+                                                        </div>
+                                                        </div>
                                                   <button type="button" class="relative inline h-48px px-24px py-14px text-center text-sm rounded ckt-btn ml-12px cursor-not-allowed opacity-70" disabled=""><div class="">Apply</div></button></div></div>
 
 
