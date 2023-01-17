@@ -294,3 +294,72 @@ button {
     background-color: transparent;
     background-image: none;
 }
+
+
+.px-14px {
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+.border-b {
+    border-bottom-width: 1px;
+}
+.border-t {
+    border-top-width: 1px;
+}
+.w-20px {
+    width: 1.25rem;
+}
+
+.h-20px {
+    height: 1.25rem;
+}
+.text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+.inline-block {
+    display: inline-block;
+}
+.mr-4px {
+    margin-right: .25rem;
+}
+.ml-8px {
+    margin-left: .5rem;
+}
+.ckt-summary, .ckt-focus-link, .ckt-navigate-click {
+    color: rgba(173, 141, 119, 1);
+}
+.w-16px {
+    width: 1rem;
+}
+.h-16px {
+    height: 1rem;
+}
+.mt-4px {
+    margin-top: .25rem;
+}
+/* #les-deux-colonnes{
+    display: flex;
+    flex-direction: row-reverse;
+  } */
+/* #div-order{
+    display: none;
+} */
+
+@media (max-width: 991px){
+    #les-deux-colonnes{
+       display: flex;
+       flex-direction: column-reverse;
+      }
+      #div-order{
+        display: none;
+      }
+}
+
+
+@media (min-width: 768px){
+   
+}
+
+
