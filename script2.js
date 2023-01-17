@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
     $("#show-order").click(function(){
         let title_show_order=$("#title-show-order");
         if(title_show_order.html()=='Show order summary'){
@@ -10,11 +11,11 @@ $(document).ready(function(){
 
         let icon_up_down = $("#down-path").attr('d');
         if(icon_up_down=='M832 352H192l320 320 320-320z'){
-            console.log('down');
+            
             $("#down-path").attr("d","M192 672h640L512 352 192 672z");
         } 
         if(icon_up_down=='M192 672h640L512 352 192 672z'){
-            console.log('up');
+           
             $("#down-path").attr("d","M832 352H192l320 320 320-320z");
         }
            
@@ -23,4 +24,32 @@ $(document).ready(function(){
       $("#div-order").toggle(50,"swing");
 
     });
+    
   });
+
+  const mediaQuery = window.matchMedia("(min-width: 991px)");
+
+ 
+mediaQuery.addEventListener("change", (e) => {
+    var div_order = document.getElementById("div-order");
+    var styles = window.getComputedStyle(div_order);
+    var display = styles.getPropertyValue('display');
+    if(display=='none'){
+        document.getElementById("div-order").style.display='block';
+    }
+});
+
+ //get inputs in localstorage
+ let PaymentAddressContact =document.getElementById('PaymentAddressContact');
+PaymentAddressContact.innerHTML=localStorage.getItem("email");
+
+let PaymentAddressShipToContent =document.getElementById('PaymentAddressShipToContent');
+PaymentAddressShipToContent.innerHTML=localStorage.getItem("fname")+' '+localStorage.getItem("lname")+' '+'number phone';
+
+
+let PaymentAddressInfo =document.getElementById('PaymentAddressInfo');
+PaymentAddressInfo.innerHTML=localStorage.getItem("adress")+' '+localStorage.getItem("postal")+' '+'khsni country';
+
+
+let PaymentCountry =document.getElementById('PaymentCountry');
+PaymentCountry.innerHTML='khsni country';
