@@ -124,24 +124,4 @@ city.addEventListener('focus', function(){
           localStorage.setItem("city",city_localStorage);
 
         })
-        //show order
-
-        // let show_order=document.getElementById("show-order");
-
-        // //get div of order
-        //  let div_order =document.getElementById("div-order");
-        // show_order.addEventListener('click',function () {
-
-        //     div_order.classList.remove('invisible');
-        // })
-
-      
-        // function myFunction() {
-        //     var order = document.getElementById('div-order');
-        //     if (order.style.display === 'none') {
-        //         order.style.display = 'block';
-        //     } else {
-        //         order.style.display = 'none';
-        //        }
-           
-        //     }
+   

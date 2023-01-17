@@ -1,4 +1,4 @@
-*, :after, :before {
+*, :after, :before {s
     border: 0 solid;
     box-sizing: border-box;
 }
@@ -366,26 +366,25 @@ button {
 .mt-4px {
     margin-top: .25rem;
 }
-/* #les-deux-colonnes{
-    display: flex;
-    flex-direction: row-reverse;
-  } */
-/* #div-order{
-    display: none;
-} */
+ /* #div-order{
+    display: block;
+  }  */
 @media (min-width: 991px){
 #show-order-div{
     display:none;
+    
 }
+/* #div-order{
+    display: block;
+  } */
+
 }
 @media (max-width: 991px){
     #les-deux-colonnes{
        display: flex;
        flex-direction: column-reverse;
       }
-      #div-order{
-        display: none;
-      }
+   
       #show-order-div{
         display:block;
     }
