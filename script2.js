@@ -53,3 +53,12 @@ PaymentAddressInfo.innerHTML=localStorage.getItem("adress")+' '+localStorage.get
 
 let PaymentCountry =document.getElementById('PaymentCountry');
 PaymentCountry.innerHTML='khsni country';
+
+
+//coupon
+coupon.addEventListener('focus', function(){
+    document.getElementById('coupon-div').style.border = '2px solid rgb(129, 104, 66)';
+        });
+coupon.addEventListener('blur', function(){
+    document.getElementById('coupon-div').style.border = '1px solid rgb(174, 172, 172)';
+        });
