@@ -163,3 +163,14 @@ city.addEventListener('focus', function(){
         //        }
            
         //     }
+
+
+        function checkEmpty(){
+            var input = document.getElementById("label");
+            if (input.value === "") {
+                input.classList.add("big");
+            }else {
+                input.classList.remove("big");
+            }
+        }
+        
