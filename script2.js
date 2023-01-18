@@ -74,6 +74,6 @@ coupon.addEventListener('blur', function(e){
         let errorMsg = "<p class='error-text danger-color'>empty field</p>"
         e.target.nextElementSibling.classList.add('danger-color');
         document.getElementById('coupon-div').classList.add('empty-field')
-        e.target.parentNode.insertAdjacentHTML("beforeend",errorMsg)
+        if(!e.target.nextElementSibling.nextElementSibling) e.target.parentNode.insertAdjacentHTML("beforeend",errorMsg)
     }
         });

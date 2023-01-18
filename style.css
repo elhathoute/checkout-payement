@@ -22,6 +22,18 @@
 .input-group label {
     top: 13px;
     width: 100%;
+    font-size: 1.2rem;
+    transition: font-size 0.5s;
+    transition: top 0.5s;
+}
+.input-group:focus-within label, [type="text"]:not(:placeholder-shown) + label  {
+    font-size: .85rem;
+    top: 2px;
+}
+
+.input-group label {
+    top: 13px;
+    width: 100%;
     font-size: 1rem;
     transition: font-size 0.5s;
     transition: top 0.5s;
@@ -48,7 +60,7 @@ input{
     position: relative;
     /* justify-content: space-around; */
     height: 50px;
-    padding: 0;
+    padding: 2px;
 }
 .text-lg {
     font-size: 1.125rem;

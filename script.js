@@ -124,4 +124,61 @@ city.addEventListener('focus', function(){
           localStorage.setItem("city",city_localStorage);
 
         })
+        //show order
+
+        // let show_order=document.getElementById("show-order");
+
+        // //get div of order
+        //  let div_order =document.getElementById("div-order");
+        // show_order.addEventListener('click',function () {
+
+        //     div_order.classList.remove('invisible');
+        // })
+
+        $(document).ready(function(){
+            $("#show-order").click(function(){
+                let title_show_order=$("#title-show-order");
+                if(title_show_order.html()=='Show order summary'){
+                    title_show_order.html('Hide order summary');
+                } 
+                else{
+                    title_show_order.html('Show order summary');
+                }
+
+                let icon_up_down = $("#down-path").attr('d');
+                if(icon_up_down=='M832 352H192l320 320 320-320z'){
+                    console.log('down');
+                    $("#down-path").attr("d","M192 672h640L512 352 192 672z");
+                } 
+                if(icon_up_down=='M192 672h640L512 352 192 672z'){
+                    console.log('up');
+                    $("#down-path").attr("d","M832 352H192l320 320 320-320z");
+                }
+                   
+                
+                
+              $("#div-order").toggle(50,"swing");
+
+            });
+          });
+        // function myFunction() {
+        //     var order = document.getElementById('div-order');
+        //     if (order.style.display === 'none') {
+        //         order.style.display = 'block';
+        //     } else {
+        //         order.style.display = 'none';
+        //        }
+           
+        //     }
+
+
+        function checkEmpty(){
+            var input = document.getElementById("label");
+            if (input.value === "") {
+                input.classList.add("big");
+            }else {
+                input.classList.remove("big");
+            }
+        }
+        
    
