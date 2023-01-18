@@ -87,11 +87,7 @@ PaymentCountry.innerHTML='khsni country';
 
 //coupon
 coupon.addEventListener('focus', function(e){
-    let result='';
-    let input = e.target.value;
-    result+=input
-    // if(result=='') console.log('empty input')
-    // else console.log('filled input')
+  
     document.getElementById('coupon-div').style.border = '2px solid rgb(129, 104, 66)';
         });
 coupon.addEventListener('blur', function(e){

@@ -856,6 +856,14 @@ img {
     border-style: solid;
 }
 
+input:not[type="submit"] {
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    padding: 5px;
+  }
+  input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px white inset !important;
+  }
 
 
 .empty-field{
@@ -868,7 +876,7 @@ img {
 }
 
 .error-text {
-    font-size: 1.125rem;
+    font-size: 1rem;
     line-height: 1.75rem;
     margin-bottom: 10px;
 }
