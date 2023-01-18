@@ -32,46 +32,64 @@
   <div class="col-lg-6 col-sm-12  ckt-payment flex flex-wrap justify-end row-start-2 h-full">
                           
                           
-    <h2 class=" text-lg font-normal">contact information</h2>
+    <h2 class=" text-lg font-normal">Contact Information</h2>
 
   <div class=" contact input-group" id="email-div">
     <input type="text" name="email" id="email" class="  h-100 outline-none" placeholder=" ">
     <label for="email" class="mx-1 text-xs" id="contact-label">Email</label>
   </div>
-  <div id="error-container">
-    
+  <div id="error-container-email">
+
   </div>
   <p class="text-color-888 ">For sending the order information</p>
   <input type="checkbox" class="form-check-input bg-dark" id="input-check" >
   <label class="form-check-label" id="label-check">Keep me up to date on news and exclusive offers.</label>
   <h2 class=" text-lg font-normal my-2">Shipping Address</h2>
 
-  <div class="d-flex gap-2">
-    <div class=" contact d-flex flex-column my-2 w-50 input-group" id="fname-div">
+  <div class="d-flex gap-2" id="names-container">
+    <div class=" contact  my-2 w-50 input-group" id="fname-div">
       <input type="text" name="Last_Name" id="fname" class="  h-100 outline-none" placeholder=" ">
       <label for="First Nam" class="mx-1 text-xs" id="contact-label">First Name</label>
+      <div class="d-block" id="error-container-fname">
+  
+      </div>
     </div>
-    <div class=" contact d-flex flex-column my-2 w-50  input-group" id="lname-div">
+    <div class=" contact my-2 w-50  input-group" id="lname-div">
       <input type="text" name="Last_Name" id="lname" class="  h-100 outline-none" placeholder=" ">
       <label for="Last Name" class="mx-1 text-xs" id="contact-label">Last Name</label>
+      <div class="d-block" id="error-container-lname">
+  
+      </div>
     </div>
   </div>
-  <div class="contact d-flex flex-column my-2  input-group" id="adress-div">
+  <div class="contact my-2  input-group" id="adress-div">
     <input type="text" name="Adress" id="adress" class="  h-100 outline-none" placeholder=" ">
     <label for="Adress" class="mx-1 text-xs" id="contact-label">Address</label>
+    <div class="d-block" id="error-container-adress">
+  
+    </div>
   </div>
-  <div class=" contact d-flex flex-column my-2  input-group"  id="apartement-div">
+  <div class=" contact my-2  input-group"  id="apartement-div">
     <input type="text" name="apartment" id="apartement" class="  h-100 outline-none" placeholder=" ">
     <label for="apartment" class="mx-1 text-xs" id="contact-label">Apartement, suite, etc (optional)</label>
+    <div class="d-block" id="error-container-apartement">
+  
+    </div>
   </div>
   <div class="d-flex gap-2">
-    <div class=" contact d-flex flex-column my-2 w-50 input-group" id="postal-div">
+    <div class=" contact my-2 w-50 input-group" id="postal-div">
       <input type="text" name="Last_Name" id="postal" class="  h-100 outline-none" placeholder=" ">
       <label for="Postal code" class="mx-1 text-xs" id="contact-label">Postal code</label>
+      <div class="d-block" id="error-container-postal">
+  
+      </div>
     </div>
-    <div class=" contact d-flex flex-column my-2 w-50 input-group" id="city-div">
+    <div class=" contact my-2 w-50 input-group" id="city-div">
       <input type="text" name="Last_Name" id="city" class="  h-100 outline-none" placeholder=" ">
       <label for="Last Name" class="mx-1 text-xs" id="contact-label">City</label>
+      <div class="d-block" id="error-container-city">
+  
+      </div>
     </div>
   </div>
   <!-- btn continue and return -->
