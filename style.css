@@ -606,7 +606,7 @@ button {
     color: #333;
     margin-bottom: 12px;
 }
-ol, ul {
+ol, ul ,li{
     list-style: none;
 }
 .text-sm {
@@ -1136,4 +1136,19 @@ img, video {
 #div-order{
     background: #FAFAFA url(//img.staticdj.com/) no-repeat center center;
     background-size: cover;
+}
+
+.breadcrumb-item>a{
+  
+    text-decoration: none;
+    }
+
+.breadcrumb-item>a.non-active-breadcrumb{
+color: rgba(173, 141, 119, 1);
+
+}
+.active-breadcrumb {
+    --tw-text-opacity: 1;
+    color: rgba(33,33,33,var(--tw-text-opacity));
+    font-weight: 600;
 }
