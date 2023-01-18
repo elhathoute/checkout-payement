@@ -13,7 +13,7 @@ localStorage.setItem("price",price);
 let titleDom= document.querySelector("#title-product");
 let imgDom= document.querySelector("#img-product");
 let priceDom= document.getElementsByClassName("price-product");
-
+const regions = ["Tanger-Tetouan-Al Hoceima", "Oriental", "Fes-Meknes", "Rabat-Sale-Kenitra", "Beni Mellal-Khenifra", "Casablanca-Settat", "Marrakech-Safi", "Draa-Tafilalet", "Souss-Massa", "Guelmim-Oued Noun", "Laayoune-Sakia El Hamra", "Dakhla-Oued Ed-Dahab"]
 
 
 titleDom.innerHTML +=localStorage.getItem("title");
