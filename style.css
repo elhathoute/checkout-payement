@@ -6,8 +6,9 @@
 
 .contact{
     height: 58px;
-    border: 1px solid rgb(17, 17, 17);
+    border: 1px solid rgb(174, 172, 172);
     border-radius: 3px;
+    
     /* background-color: black; */
 }
 #contact-label{
@@ -30,25 +31,37 @@
     top: 2px;
 }
 
+.input-group label {
+    top: 13px;
+    width: 100%;
+    font-size: 1rem;
+    transition: font-size 0.5s;
+    transition: top 0.5s;
+}
+.input-group:focus-within label, [type="text"]:not(:placeholder-shown) + label  {
+    font-size: .70rem;
+    top: 2px;
+}
+
+
+
 input{
     outline: none;
     border: 0;
     width: 100%;
-    padding: 0;
+    padding: 4px ;
     margin: 0;
     height: 90%;
     
 }
-
 .input-group{
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
     position: relative;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     height: 50px;
-    padding: 0;
+    padding: 2px;
 }
-
 .text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
@@ -323,7 +336,7 @@ button {
 
 
 .px-14px {
-    padding-left: 14px;
+    /* padding-left: 14px; */
     padding-right: 14px;
 }
 
@@ -365,22 +378,28 @@ button {
 .mt-4px {
     margin-top: .25rem;
 }
-/* #les-deux-colonnes{
-    display: flex;
-    flex-direction: row-reverse;
-  } */
+ /* #div-order{
+    display: block;
+  }  */
+@media (min-width: 991px){
+#show-order-div{
+    display:none;
+    
+}
 /* #div-order{
-    display: none;
-} */
+    display: block;
+  } */
 
+}
 @media (max-width: 991px){
     #les-deux-colonnes{
        display: flex;
        flex-direction: column-reverse;
       }
-      #div-order{
-        display: none;
-      }
+   
+      #show-order-div{
+        display:block;
+    }
 }
 .flex-1 {
     flex: 1 1 0%;
@@ -503,8 +522,155 @@ button {
     border:1px solid black;
 }
 
-@media (min-width: 768px){
-   
+.mt-24px {
+    margin-top: 1.5rem;
 }
 
 
+.px-12px {
+    padding-left: .75rem;
+    padding-right: .75rem;
+}
+.border {
+    border-width: 1px;
+}
+.rounded-lg {
+    border-radius: .5rem;
+}
+.py-3 {
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+}
+.text-color-\#888 {
+    --tw-text-opacity: 1;
+    color: rgba(136,136,136,var(--tw-text-opacity));
+}.underline {
+    text-decoration: underline;
+}
+.text-sm {
+    font-size: .875rem;
+    line-height: 1.25rem;
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+.ckt-return-text {
+    color: rgba(173, 141, 119, 1) !important;
+}
+.text-color-\#333 {
+    --tw-text-opacity: 1;
+    color: rgba(51,51,51,var(--tw-text-opacity));
+}
+.leading-5 {
+    line-height: 1.25rem;
+}
+.break-all {
+    word-break: break-all;
+}
+.mb-4 {
+    margin-bottom: 1rem;
+}
+.mt-2 {
+    margin-top: .5rem;
+}.break-words {
+    overflow-wrap: break-word;
+}
+.mb-3 {
+    margin-bottom: .75rem;
+}
+.mt-28px {
+    margin-top: 1.75rem;
+}
+
+.relative {
+    position: relative;
+}
+.ckt-title {
+    font-family: Lato, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    height: 20px;
+    line-height: 20px;
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 12px;
+}
+ol, ul {
+    list-style: none;
+}
+.text-sm {
+    font-size: .875rem;
+    line-height: 1.25rem;
+}
+.px-12px {
+    padding-left: .75rem;
+    padding-right: .75rem;
+}
+.py-14px {
+    padding-top: 14px;
+    padding-bottom: 14px;
+}
+.border {
+    border-width: 1px;
+}
+.rounded-md {
+    border-radius: .375rem;
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+.w-full {
+    width: 100%;
+}
+.mb-10px {
+    margin-bottom: 10px;
+}
+.ckt-select-delivery {
+    border: 1px solid rgba(173, 141, 119, 1) !important;
+    box-shadow: 0 0 0 1px rgb(173 141 119) !important;
+}
+.w-18px {
+    width: 1.125rem;
+}
+.h-18px {
+    height: 1.125rem;
+}
+.mt-1px {
+    margin-top: .0625rem;
+}
+audio, canvas, embed, iframe, img, object, svg, video {
+    display: block;
+    vertical-align: middle;
+}
+.px-8px {
+    padding-left: .5rem;
+    padding-right: .5rem;
+}
+.truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.flex-1 {
+    flex: 1 1 0%;
+}
+
+ol, ul {
+    padding-left: 0px;
+}
+
+
+.empty-field{
+    border : 2px solid red !important;
+    
+}
+
+.danger-color{
+    color: red !important;
+}
+
+.error-text {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    margin-bottom: 10px;
+}

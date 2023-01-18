@@ -30,9 +30,9 @@ if(price==''){
 }
 
 imgDom.setAttribute("src",imgelink);
-
 //get input to change our border in event focus
 let email = document.getElementById('email');
+let coupon = document.getElementById('coupon')
 let fname = document.getElementById('fname');
 let lname = document.getElementById('lname');
 let adress = document.getElementById('adress');
@@ -44,8 +44,15 @@ let city = document.getElementById('city');
             document.getElementById('email-div').style.border = '2px solid rgb(129, 104, 66)';
                 });
          email.addEventListener('blur', function(){
-            document.getElementById('email-div').style.border = '1px solid black';
+            document.getElementById('email-div').style.border = '1px solid rgb(174, 172, 172)';
                  });
+//coupon
+coupon.addEventListener('focus', function(){
+    document.getElementById('coupon-div').style.border = '2px solid rgb(129, 104, 66)';
+        });
+coupon.addEventListener('blur', function(){
+    document.getElementById('coupon-div').style.border = '1px solid rgb(174, 172, 172)';
+        });
 //first-name
         fname.addEventListener('focus', function(){
                 document.getElementById('fname-div').style.border = '2px solid rgb(0, 0, 97)';
@@ -174,3 +181,4 @@ city.addEventListener('focus', function(){
             }
         }
         
+   

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>shipping</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container mt-5">
+            <div class="row" >
+
+              <div class="col-12" id="show-order-div">
+                <div  data-testid="summary" class="d-flex align-items-center justify-content-between h-56px px-14px border-t border-b border-color-#D9D9D9">
+                  <div class="d-flex align-items-center" id="show-order"><svg class="w-20px h-20px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="rgba(173, 141, 119, 1)"><path d="M287.768 810.667c52.907 0 96.232 48.006 96.232 106.666S340.7 1024 287.768 1024C234.838 1024 192 975.994 192 917.333c0-58.66 42.837-106.666 95.768-106.666zm512 0c52.907 0 96.232 48.006 96.232 106.666S852.7 1024 799.768 1024C746.838 1024 704 975.994 704 917.333c0-58.66 42.837-106.666 95.768-106.666zM162.206 0l46.666 102.4 1.95 4.267h700.709l2.291-4.267H1024L808.667 510.464c-16.871 31.744-49.615 52.736-86.82 52.736H352.232l-44.642 83.456-1.487 6.144c0 7.168 5.949 12.8 12.41 12.8H893V768H297.667c-54.565 0-99.23-46.08-99.23-102.4 0-17.92 4.461-34.816 12.41-49.152l66.974-125.44L99.231 102.4H0V0h162.23zm691.98 213.333H259.902l107.227 233.643 6.437 13.824h348.282l132.34-247.467z"></path></svg>
+                    <span class="inline-block ml-8px mr-4px text-base ckt-summary" id="title-show-order">Show order summary</span>
+                    <svg class="w-16px h-16px mt-4px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgba(173, 141, 119, 1)"><path d="M832 352H192l320 320 320-320z" id="down-path"></path></svg>
+                  
+                  </div>
+                    <span class="text-base font-medium text-color-#333 ckt-summary-order-title price-product">$00.00</span></div>
+              </div>
+            </div>
+<div class="row" id="les-deux-colonnes">
+
+
+
+<div class="col-lg-6 col-sm-12  ckt-payment flex flex-wrap justify-end row-start-2 h-full ">
+            <!-- info -->      
+    <div class="mt-24px px-14px px-0">
+        <div class="px-12px mx-0 text-sm border ckt-box rounded-lg">
+              
+                <div class="py-3">
+                    <div class="d-flex justify-content-between text-color-#888">Contact<span class="underline cursor-pointer ckt-return-text text-sm" data-testid="navToContactPage">Change</span>
+                    </div>
+                    <div id="PaymentAddressContact" data-testid="PaymentAddressContact" class="text-color-#333 leading-5 mb-4 mt-2 break-all">   
+                    </div>
+                    <div data-testid="PaymentAddressShipTo" class="d-flex justify-content-between text-color-#888">Ship to</div>
+                    <div id="PaymentAddressShipToContent" data-testid="PaymentAddressShipToContent" class="text-color-#333 mt-1 leading-5 mb-3 text-sm break-words"></div>
+                    <div id="PaymentAddressInfo" data-testid="PaymentAddressInfo" class="text-color-#333 leading-5 mt-2 mb-3 text-sm break-words ">  </div>
+                    <div id="PaymentCountry" class="text-color-#333 leading-5 mt-2 text-sm break-words"></div>
+                </div>
+              
+        </div>
+    </div>
+    <!-- delivry free -->
+    <div id="delivery" class="relative w-full mt-28px px-14px px-0">
+        <div class="ckt-title">Shipping &amp; Delivery</div>
+        <ul class="w-full text-color-#333"><li class="w-full px-12px py-14px border mb-10px rounded-md cursor-pointer text-sm ckt-select-delivery" data-testid="DeliveryItem"><div class="d-flex d-flex-wrap align-item-center justify-content-between py-7px"><svg class="w-18px h-18px mt-1px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="rgba(173, 141, 119, 1)"><path d="M512 0c282.766 0 512 229.234 512 512s-229.234 512-512 512S0 794.766 0 512 229.234 0 512 0zm0 369.778a142.222 142.222 0 1 0 0 284.444 142.222 142.222 0 0 0 0-284.444z"></path></svg>
+            <div class="px-8px flex-1 truncate text-sm">Standard Shipping</div><div>free</div></div></li>
+        </ul>
+    </div>
+<!-- special instruction -->
+<div class="mt-28px px-14px md:px-0"><label><h4 class="ckt-title">Special Instruction(optional)</h4></label><textarea id="special-instruction" class="w-full p-12px text-sm border border-solid border-gray-200 rounded-md resize-none ckt-textarea appearance-none outline-none placeholder-color-#757575" rows="1" placeholder="Special Instruction" name="note" maxlength="200"></textarea></div>
+<!-- paiement method -->
+<div class="checkout-payment mt-28px px-14px px-0 ">
+  <div class="checkout-payment-lines">
+     <div class="checkout__title-wrap p-0 pb-12px">
+       <h4 class="checkout__title-text w-full">Payment Method</h4>
+       <p class="checkout__title-tip mt-4px text-color-#888">All transactions are secure and encrypted.</p>
+     </div>
+       <!-- div of cards -->
+       <div class="relative mt-3"><div id="paymentList"><payment-list><!----><div id="payment-list-container"><div class="_paymentMethodItem_6fzfd_28" data-channel="asiabilldirect" data-name="asiabilldirect"><div style="border-color:rgba(173, 141, 119, 1);box-shadow:0 0 0 1px rgba(173, 141, 119, 1);" class="_paymentMethodItemGrid_6fzfd_33 _selectedChannel_6fzfd_182" data-channel="asiabilldirect" data-name="asiabilldirect"><!--?lit$738055032$--><div class="_checkedIcon_6fzfd_1"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="rgba(173, 141, 119, 1)"><path d="M512 0c282.766 0 512 229.234 512 512s-229.234 512-512 512S0 794.766 0 512 229.234 0 512 0zm0 369.778a142.222 142.222 0 1 0 0 284.444 142.222 142.222 0 0 0 0-284.444z"></path></svg></div> <!--?lit$738055032$--><creditcard-template class="_paymentLineContainer_6fzfd_58"><!----><div class="_paymentMethodName_6fzfd_6"><div style="display:flex;align-items:center"><div style="margin-right:10px;display:flex"><!--?lit$738055032$--><!--?lit$738055032$--><svg viewBox="0 0 16 16" focusable="false" data-icon="card" width="28px" height="28px" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M2.29 9.61H5.7V8.7H2.3v.91z"></path><path d="M2.29 2.3A2.29 2.29 0 000 4.59v6.85a2.29 2.29 0 002.29 2.29H13.7A2.29 2.29 0 0016 11.44V4.6a2.29 2.29 0 00-2.29-2.29H2.3zm11.42.91H2.3C1.53 3.21.9 3.83.9 4.6v.4H15.1v-.4c0-.76-.62-1.38-1.38-1.38zM.91 11.44V5.9H15.1v5.54c0 .76-.62 1.37-1.38 1.37H2.3A1.37 1.37 0 01.9 11.44z" fill-rule="evenodd" clip-rule="evenodd"></path></svg><!--?--></div><!--?lit$738055032$--><!--?lit$738055032$--><!--?lit$738055032$--><!--?lit$738055032$--><span class="_paymentMethodText_6fzfd_169"><!--?lit$738055032$-->Credit &amp; Debit Card</span><!--?--><!--?--><!--?--></div><div class="_paymentMethodCreditImgList_6fzfd_155"><!--?lit$738055032$--><support-cards-template><!----><!--?lit$738055032$--><!----><img src="//img.staticdj.com/oss/operation/3cc7bc0c09f7f0fb19581a21abd4cd53.svg"><!----><!----><img src="//img.staticdj.com/oss/operation/b823bc7dd65f1a58d949dfb47916e4b2.svg"><!----><!----><img src="//img.staticdj.com/oss/operation/f54de18275833f3b1575993b227f121f.svg"><!----><!--?lit$738055032$--><img id="asiabilldirect-dynamic-logo" src="//img.staticdj.com/oss/operation/b068c5902e07857d5251e11f8198ad80.svg"><!--?--></support-cards-template> <!--?lit$738055032$--></div></div><div class="_creditCardFormContainer_6fzfd_182"><!--?lit$738055032$--> <!--?lit$738055032$--><creditcardform-template class="_paymentLineContainer_6fzfd_58"><!----><form id="creditForm" name="creditForm" onsubmit="return!1" class="_showValid_ehezr_152 _paymentCreditForm_ehezr_135"><!--?lit$738055032$--> <!--?lit$738055032$--><div class="_paymentCreditForm_ehezr_135"><div class="_formRow_ehezr_101"><div class="_formGroup_ehezr_1"><input required="" pattern="^[\d\s]{6,24}$" minlength="6" maxlength="24" type="text" name="card_number" id="credit_card_number" class="_formControl_ehezr_1 valid-content"> <label class="_placeholder_ehezr_1"><span><!--?lit$738055032$-->Card Number</span></label> <label class="_invalidLabel_ehezr_148 _valueMissing_ehezr_180"><!--?lit$738055032$-->Please enter a card number</label> <label class="_invalidLabel_ehezr_148 _patternMismatch_ehezr_152"><!--?lit$738055032$-->Your credit card number is incomplete</label> <label class="_invalidLabel_ehezr_148 _binCheckTips_ehezr_236"><!--?lit$738055032$-->Please ensure that you have entered a supported card.</label> <label class="_invalidLabel_ehezr_148 _luhnCheckTips_ehezr_237"><!--?lit$738055032$-->Please ensure that your card is entered correctly.</label> <img id="credit_card_icon" class="_paymentCardIcon_ehezr_8" src="//img.staticdj.com/oss/operation/ea8ee37a46bea7d2180006ec4bc78100_24x.png"></div></div><div class="_formRow_ehezr_101"><div class="_formGroup_ehezr_1"><input required="" type="text" name="card_date" id="credit_holder_date" class="_formControl_ehezr_1 valid-date"> <label for="card_date" class="_placeholder_ehezr_1"><span><!--?lit$738055032$-->Expiration Date (MM / YY)</span></label> <label for="card_date" class="_invalidLabel_ehezr_148 _invalidCreditDate_ehezr_208"><!--?lit$738055032$-->Please enter valid date</label></div><div class="_formGroup_ehezr_1"><input required="" pattern="^[\d]{3}$" minlength="3" maxlength="3" type="text" name="card_code" id="credit_card_code" class="_formControl_ehezr_1"> <label class="_placeholder_ehezr_1"><span><!--?lit$738055032$-->Security Code (CVV)</span></label> <label class="_invalidLabel_ehezr_148 _valueMissing_ehezr_180"><!--?lit$738055032$-->Please enter your card code</label> <label class="_invalidLabel_ehezr_148 _patternMismatch_ehezr_152"><!--?lit$738055032$-->Please enter a valid card code</label></div></div><div class="_formRow_ehezr_101"><!--?lit$738055032$--><div class="_formGroup_ehezr_1"><input required="" id="card_first_name" pattern="^.{0,50}$" type="text" name="card_first_name" class="_formControl_ehezr_1 valid-characters"> <label class="_placeholder_ehezr_1"><span><!--?lit$738055032$-->Cardholder First Name</span></label> <label class="_invalidLabel_ehezr_148 _valueMissing_ehezr_180"><!--?lit$738055032$-->Please enter your name</label> <label class="_invalidLabel_ehezr_148 _patternMismatch_ehezr_152"><!--?lit$738055032$-->name too long</label> <label class="_invalidLabel_ehezr_148 _invalidCharacters_ehezr_194"><!--?lit$738055032$-->Contains invalid characters</label></div> <!--?lit$738055032$--><div class="_formGroup_ehezr_1"><input required="" id="card_last_name" pattern="^.{0,50}$" type="text" name="card_last_name" class="_formControl_ehezr_1 valid-characters"> <label class="_placeholder_ehezr_1"><span><!--?lit$738055032$-->Cardholder Last Name</span></label> <label class="_invalidLabel_ehezr_148 _valueMissing_ehezr_180"><!--?lit$738055032$-->Please enter your name</label> <label class="_invalidLabel_ehezr_148 _patternMismatch_ehezr_152"><!--?lit$738055032$-->name too long</label> <label class="_invalidLabel_ehezr_148 _invalidCharacters_ehezr_194"><!--?lit$738055032$-->Contains invalid characters</label></div></div></div></form></creditcardform-template> <!--?lit$738055032$--> <!--?lit$738055032$--><div class="_merchantDesc_6fzfd_189"><!--?lit$738055032$--></div></div></creditcard-template></div></div><!--?--><!----><!----><!--?lit$738055032$--><!--?--><!----><!--?--><!--?--><banklist-template><!----><!--?lit$738055032$--><!--?--></banklist-template><stripe-banklist-template><!----><div id="stripe-banklist-slot"></div></stripe-banklist-template></div></payment-list></div></div>
+
+  </div>
+</div>
+<!-- btn continue and return -->
+<div class="mt-28px px-14px px-0 mb-3 d-flex flex-row-reverse align-items-center justify-content-between">
+  <div>
+    <div >
+  <button type="button" class="ckt-btn w-full w-100 p-3 h-56px rounded-4px text-base md:box-border md:min-w-228px md:px-10px contact_information" id="continue-to-shipping">Continue to shipping</button>
+</div>
+</div>
+  <div class=" mt-0 text-center"><button data-testid="form-aio-return-btn" type="button" class="ckt-return-text text-sm d-flex align-items-center w-full justify-content-center"><svg class="w-12px h-12px icon-angle-right" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgba(173, 141, 119, 1)"><path d="M225.365 512 708.096 29.27l90.539 90.538-482.731 482.645L225.365 512z"></path><path d="m315.904 421.504 482.73 482.688-90.538 90.539L225.366 512l90.538-90.496z"></path></svg>
+    <div class="mx-8px">Return</div>
+  </button></div></div>
+<!-- end buttons -->
+
+</div>
+
+
+  <div class="col-lg-6 col-sm-12" id="div-order">
+                        
+                <div><div class="overflow-y-auto max-h-full md:max-h-500">
+                    <div class="d-flex align-items-center justify-content-between  pb-18px border-color-#D9D9D9 first:pt-18px last:border-b-0 border-bottom border-gray my-4">
+                        <div class="relative pt-10px"><span class="absolute top-0 -right-10px min-w-20px h-20px px-6px text-xs leading-5 text-center rounded-full text-white bg-color-#999 font-bold">1</span>
+                            <div class="w-64px h-64px border border-solid border-color-#F0F0F0 rounded overflow-hidden flex flex-wrap justify-center items-center">
+                                <img src="" alt="" class="w-auto h-auto max-w-full max-h-full" id="img-product">
+                            </div></div>
+
+                            <div class="d-flex flex-col justify-content-center flex-1 ml-16px mr-8px">
+                                <p class="text-color-#333 two-lines-ellipsis text-14 ckt-summary-order-title " id="title-product"> </p>
+                                <div class="mt-4px text-14 text-color-#888"></div></div>
+                                <span class="text-14px text-color-#333 font-bold ckt-summary-order-title price-product" >$00.00</span></div></div>
+
+                                
+                                       
+                                        <div class="py-6px border-b border-color-#D9D9D9 mt-18px   border-bottom border-gray  pb-4">
+                                            <div class="d-flex justify-content-between align-items-center my-12px text-14px mb-3">
+                                                <span class="text-color-#888">Subtotal:</span>
+                                                <span data-testid="couponCodePrice" class="text-color-#333 ckt-summary-order-title price-product">$00.00</span></div>
+                                                <div class="d-flex justify-content-between align-items-center my-12px text-14px"><span class="text-color-#888">Shipping:</span>
+                                                    <span data-testid="couponCodePrice" class="text-color-#333 ckt-summary-order-title">Calculate later</span></div><div></div>
+                                                  </div>
+
+                                                  <div class="pt-18px border-b p-4 border-color-#D9D9D9" data-testid="SummaryCoupon">
+                                                    <div class="d-flex justify-content-between">
+                                                      <div class="flex-1">
+                                                        <div class=" contact input-group" id="coupon-div">
+                                                          <input type="text" name="coupon" id="coupon" class="  h-100 outline-none" placeholder=" " onfocus="">
+                                                          <label for="coupon" class="mx-1 text-xs" id="contact-label">Gift card or coupon code</label>
+                                                        </div>
+                                                        </div>
+                                                  <button type="button" class="relative inline h-48px px-24px py-14px text-center text-sm rounded ckt-btn ml-12px cursor-not-allowed opacity-70" disabled=""><div class="">Apply</div></button></div></div>
+
+
+
+
+
+                                                    <div class="d-flex justify-content-between align-items-end my-24px text-sm pt-4">
+                                                        <div class="flex items-end"><span class="font-semibold text-color-#333 text-base ">Total:</span></div>
+                                                        <div class="ckt-summary-order-title text-2xl"><span class="mr-2.5 text-xs text-color-#666 notranslate">USD</span>
+                                                            <span  class="font-semibold text-color-#212121 ckt-summary-order-title price-product">$00.00</span></div></div><div>
+                                                                <table class="checkout__prices-table" style="margin-top: 0px; margin-bottom: 0px;">
+                                                                    <tfoot style="border-top-width: 0px;"><tr style="display: none;"><td>
+                                                                       </td></tr></tfoot></table></div></div>
+                    </div>
+
+
+                  </div>
+
+
+     
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="script2.js" async defer></script>
+    </body>
+</html>
