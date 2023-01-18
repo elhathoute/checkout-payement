@@ -44,8 +44,10 @@
                     <div id="PaymentAddressInfo" data-testid="PaymentAddressInfo" class="text-color-#333 leading-5 mt-2 mb-3 text-sm break-words ">  </div>
                     <div id="PaymentCountry" class="text-color-#333 leading-5 mt-2 text-sm break-words"></div>
                 </div>
-              
+               <!-- method -->
+        <div class="py-4 border-t border-dashed border-color-#c8c8c8"><div class="flex justify-between text-color-#888">Method<span class="underline cursor-pointer	ckt-return-text" data-testid="navToShippingPage"></span></div><div class="text-color-#333 leading-5 truncate mt-2">Standard Shipping</div></div>
         </div>
+       
     </div>
     <!-- delivry free -->
     <div id="delivery" class="relative w-full mt-28px px-14px px-0">
@@ -68,15 +70,22 @@
 
   </div>
 </div>
+<!-- billing Adress -->
+<div id="billing" class="w-full mt-28px px-14px px-0 mb-4 mb-30px">
+  <h4 class="checkout__title-text w-full">Billing Address</h4>
+  <div class="sub-title font-text-14px text-color-#757575 mt-4px">Select the address that matches your card or payment method.</div>
+  <div class="relative mt-12px">
+    <div class="relative">
+      <div class="absolute z-50 top-16px px-12px w-full flex flex-wrap justify-end pointer-events-none"><svg class=" w-16px h-16px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#999"><path d="M832 352H192l320 320 320-320z"></path></svg></div><select class="billing-select w-full h-48px relative appearance-none ckt-select rounded-md px-12px text-sm outline-none transition-all"><option value="1">Same as shipping address</option><option value="0">New billing address</option></select></div></div></div>
 <!-- btn continue and return -->
-<div class="mt-28px px-14px px-0 mb-3 d-flex flex-row-reverse align-items-center justify-content-between">
+<div class="mt-28px px-14px px-0 mb-3 d-flex flex-row-reverse align-items-center justify-content-between" id="buttons-bottom">
   <div>
     <div >
-  <button type="button" class="ckt-btn w-full w-100 p-3 h-56px rounded-4px text-base md:box-border md:min-w-228px md:px-10px contact_information" id="continue-to-shipping">Continue to shipping</button>
+  <button type="button" class="ckt-btn w-full w-100 p-3 h-56px display-block rounded-4px text-base md:box-border md:min-w-228px md:px-10px contact_information" id="continue-to-shipping">Continue to shipping</button>
 </div>
 </div>
   <div class=" mt-0 text-center"><button data-testid="form-aio-return-btn" type="button" class="ckt-return-text text-sm d-flex align-items-center w-full justify-content-center"><svg class="w-12px h-12px icon-angle-right" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgba(173, 141, 119, 1)"><path d="M225.365 512 708.096 29.27l90.539 90.538-482.731 482.645L225.365 512z"></path><path d="m315.904 421.504 482.73 482.688-90.538 90.539L225.366 512l90.538-90.496z"></path></svg>
-    <div class="mx-8px">Return</div>
+    <div class="mx-8px display-block">Return</div>
   </button></div></div>
 <!-- end buttons -->
 

@@ -374,9 +374,7 @@ button {
     display:none;
     
 }
-/* #div-order{
-    display: block;
-  } */
+
 
 }
 @media (max-width: 991px){
@@ -388,6 +386,14 @@ button {
       #show-order-div{
         display:block;
     }
+
+    .mb-30px {
+        margin-bottom: 1.875rem;
+    }
+
+      
+
+  
 }
 .flex-1 {
     flex: 1 1 0%;
@@ -646,7 +652,7 @@ audio, canvas, embed, iframe, img, object, svg, video {
 ol, ul {
     padding-left: 0px;
 }
-<<<<<<< HEAD
+
 .p-12px {
     padding: .75rem;
 }
@@ -840,18 +846,6 @@ img {
 
 
 
-
-
-
-
-
-
-
-
-
-=======
-
-
 .empty-field{
     border : 2px solid red !important;
     
@@ -866,4 +860,17 @@ img {
     line-height: 1.75rem;
     margin-bottom: 10px;
 }
->>>>>>> 09f50adb0f45d94d66cd0673f7b671e96c3e2921
+.py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.border-dashed {
+    border-style: dashed;
+    color: #cfcbcb;
+}
+.border-t {
+    border-top-width: 1px;
+}
+.mb-30px {
+    margin-bottom: 1.875rem;
+}
