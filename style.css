@@ -43,10 +43,10 @@ input{
     
 }
 .input-group{
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
     position: relative;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     height: 50px;
     padding: 0;
 }
@@ -645,4 +645,20 @@ audio, canvas, embed, iframe, img, object, svg, video {
 
 ol, ul {
     padding-left: 0px;
+}
+
+
+.empty-field{
+    border : 2px solid red !important;
+    
+}
+
+.danger-color{
+    color: red !important;
+}
+
+.error-text {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    margin-bottom: 10px;
 }
