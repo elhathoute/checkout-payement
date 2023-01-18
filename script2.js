@@ -24,6 +24,18 @@ $(document).ready(function(){
       $("#div-order").toggle(50,"swing");
 
     });
+
+    // billing-select
+    let billing_select=$("#billing-select");
+    billing_select.change(function(){
+        // alert($(this).val())
+        if($(this).val()==0){
+            $("#billing-adress-infos").removeClass("d-none");
+        }else{
+            $("#billing-adress-infos").addClass("d-none");
+
+        }
+    });
     
   });
 
