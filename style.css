@@ -1101,3 +1101,13 @@ button, input, optgroup, select, textarea {
 .\!af-hidden {
     display: none!important;
 }
+.w-auto {
+    width: auto;
+}
+.h-full {
+    height: 100%;
+}
+img, video {
+    height: auto;
+    max-width: 100%;
+}
