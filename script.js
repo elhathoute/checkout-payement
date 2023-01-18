@@ -4,19 +4,25 @@ let imgelink=paraOfUrl.get('imagelink');
 let title=paraOfUrl.get('title');
 let price=paraOfUrl.get('price');
 
+// set img title price in localstorage
+localStorage.setItem("imgelink",imgelink);
+localStorage.setItem("title",title);
+localStorage.setItem("price",price);
+
+
 let titleDom= document.querySelector("#title-product");
 let imgDom= document.querySelector("#img-product");
 let priceDom= document.getElementsByClassName("price-product");
 
 
 
-titleDom.innerHTML +=title;
+titleDom.innerHTML +=localStorage.getItem("title");
 if(title==null){
     titleDom.innerHTML=' ';
 }
 if(price!=null){
     for(let i=0;i<priceDom.length;i++){
-        priceDom[i].innerHTML ="<span>$</span>"+price;
+        priceDom[i].innerHTML ="<span>$</span>"+localStorage.getItem("price");
     
     }
 }
@@ -29,7 +35,7 @@ if(price==''){
 
 }
 
-imgDom.setAttribute("src",imgelink);
+imgDom.setAttribute("src",localStorage.getItem("imgelink"));
 //get input to change our border in event focus
 let email = document.getElementById('email');
 let coupon = document.getElementById('coupon')

@@ -1109,3 +1109,22 @@ button, input, optgroup, select, textarea {
 .\!af-hidden {
     display: none!important;
 }
+.w-auto {
+    width: auto;
+}
+.h-full {
+    height: 100%;
+}
+img, video {
+    height: auto;
+    max-width: 100%;
+}
+.af-col-start-1 {
+    grid-column-start: 1;
+}
+.af-col-span-12 {
+    grid-column: span 12/span 12;
+}.my-28px {
+    margin-top: 1.75rem;
+    margin-bottom: 1.75rem;
+}

@@ -38,6 +38,24 @@ $(document).ready(function(){
     });
     
   });
+//   localstorage
+
+let titleDom= document.querySelector("#title-product");
+let imgDom= document.querySelector("#img-product");
+let priceDom= document.getElementsByClassName("price-product");
+
+
+
+titleDom.innerHTML +=localStorage.getItem("title");
+
+
+    for(let i=0;i<priceDom.length;i++){
+        priceDom[i].innerHTML ="<span>$</span>"+localStorage.getItem("price");
+    
+    }
+
+
+imgDom.setAttribute("src",localStorage.getItem("imgelink"));
 
   const mediaQuery = window.matchMedia("(min-width: 991px)");
 
