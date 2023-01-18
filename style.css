@@ -1120,3 +1120,7 @@ img, video {
     margin-top: 1.75rem;
     margin-bottom: 1.75rem;
 }
+#div-order,#bg-order-complet{
+    background: #FAFAFA url(//img.staticdj.com/) no-repeat center center;
+    background-size: cover;
+}
