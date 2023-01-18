@@ -56,9 +56,24 @@ PaymentCountry.innerHTML='khsni country';
 
 
 //coupon
-coupon.addEventListener('focus', function(){
+coupon.addEventListener('focus', function(e){
+    let result='';
+    let input = e.target.value;
+    result+=input
+    // if(result=='') console.log('empty input')
+    // else console.log('filled input')
     document.getElementById('coupon-div').style.border = '2px solid rgb(129, 104, 66)';
         });
-coupon.addEventListener('blur', function(){
-    document.getElementById('coupon-div').style.border = '1px solid rgb(174, 172, 172)';
+coupon.addEventListener('blur', function(e){
+    if(e.target.value!="")  {
+        e.target.nextElementSibling.classList.remove('danger-color');
+        document.getElementById('coupon-div').classList.remove('empty-field')
+        document.querySelector('.error-text').remove();
+    }
+    else {
+        let errorMsg = "<p class='error-text danger-color'>empty field</p>"
+        e.target.nextElementSibling.classList.add('danger-color');
+        document.getElementById('coupon-div').classList.add('empty-field')
+        e.target.parentNode.insertAdjacentHTML("beforeend",errorMsg)
+    }
         });
