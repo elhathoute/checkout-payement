@@ -324,7 +324,7 @@ button {
 
 
 .px-14px {
-    padding-left: 14px;
+    /* padding-left: 14px; */
     padding-right: 14px;
 }
 
@@ -646,3 +646,205 @@ audio, canvas, embed, iframe, img, object, svg, video {
 ol, ul {
     padding-left: 0px;
 }
+.p-12px {
+    padding: .75rem;
+}
+.border-gray-200 {
+    --tw-border-opacity: 1;
+    border-color: rgba(229,231,235,var(--tw-border-opacity));
+}
+.border-solid {
+    border-style: solid;
+}
+.border {
+    border-width: 1px;
+}
+.rounded-md {
+    border-radius: .375rem;
+}
+.resize-none {
+    resize: none;
+}
+.checkout__title-text {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+    color: #333;
+}
+.mt-4px {
+    margin-top: .25rem;
+}
+.checkout__title-tip {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1;
+    color: #757575;
+    margin-bottom: 0;
+}
+._paymentMethodItem_6fzfd_28 {
+    margin-bottom: 20px;
+}
+._paymentMethodItem_6fzfd_28, ._paymentMethodItemGrid_6fzfd_33 {
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    min-height: 48px;
+    box-sizing: border-box;
+    user-select: none;
+}
+._paymentMethodItemGrid_6fzfd_33 {
+    position: relative;
+    padding: 0 12px;
+    border: 1px solid #dddddd;
+    border-radius: 6px;
+}
+._paymentMethodItem_6fzfd_28, ._paymentMethodItemGrid_6fzfd_33 {
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    min-height: 48px;
+    box-sizing: border-box;
+    user-select: none;
+}
+._checkedIcon_6fzfd_1, ._uncheckedIcon_6fzfd_2 {
+    position: absolute;
+    top: 14px;
+    left: 12px;
+}
+audio, canvas, embed, iframe, img, object, svg, video {
+    display: block;
+    vertical-align: middle;
+}
+._paymentLineContainer_6fzfd_58 {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    width: 100%;
+}
+._paymentMethodName_6fzfd_6 {
+    padding-left: 28px;
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 1 0%;
+    align-items: center;
+    justify-content: space-between;
+}
+._paymentMethodName_6fzfd_6 span {
+    font-size: .9375rem;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    line-height: 36px;
+}
+._paymentMethodCreditImgList_6fzfd_155 {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+._paymentMethodName_6fzfd_6 img {
+    height: 1.5rem;
+    margin-top: .3125rem;
+    margin-right: .3125rem;
+    margin-bottom: .3125rem;
+    display: inline-flex;
+}
+._selectedChannel_6fzfd_182 ._creditCardFormContainer_6fzfd_182 {
+    display: block;
+}._paymentLineContainer_6fzfd_58 {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    width: 100%;
+}._paymentCreditForm_ehezr_135 {
+    display: block;
+    width: 100%;
+}._formRow_ehezr_101 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -5px;
+    margin-left: -5px;
+    flex-basis: 100%;
+    flex-wrap: nowrap;
+}._formRow_ehezr_101 ._formGroup_ehezr_1 {
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+._formGroup_ehezr_1 {
+    position: relative;
+    flex-grow: 1;
+    margin-bottom: 10px;
+    margin-top: 4px;
+}._formGroup_ehezr_1 input {
+    height: 46px;
+    border-radius: 6px;
+    width: 100%;
+    padding: 12px 30px 0 10px;
+    display: block;
+    border: 1px solid #ddd;
+    box-shadow: none;
+    box-sizing: border-box;
+    padding-top: 12px!important;
+}
+button, input, optgroup, select, textarea {
+    color: inherit;
+    line-height: inherit;
+    padding: 0;
+}
+._formGroup_ehezr_1 ._formControl_ehezr_1~._placeholder_ehezr_1 {
+    width: 100%;
+    display: inline-block;
+    position: absolute;
+    top: 24px;
+    left: 8px;
+    transform: translateY(-50%);
+    padding: 0 2px;
+    font-weight: 400;
+    font-size: 14px;
+    color: #737373;
+    pointer-events: none;
+    cursor: text;
+    transition: all .2s ease-in-out;
+    line-height: 1;
+    left: 13px;
+}
+._formGroup_ehezr_1 ._formControl_ehezr_1~._placeholder_ehezr_1>span {
+    height: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: calc(100% - 20px);
+    display: inline-block;
+}
+label._invalidLabel_ehezr_148 {
+    display: none;
+}
+._paymentCardIcon_ehezr_8 {
+    width: 22px;
+    height: 16px;
+    position: absolute;
+    right: 10px;
+    top: 14px;
+}
+img, video {
+    height: auto;
+    max-width: 100%;
+}
+audio, canvas, embed, iframe, img, object, svg, video {
+    display: block;
+    vertical-align: middle;
+}
+img {
+    border-style: solid;
+}
+
+
+
+
+
+
+
+
+
+
+
+
