@@ -39,13 +39,25 @@ let adress = document.getElementById('adress');
 let apartement = document.getElementById('apartement');
 let postal = document.getElementById('postal');
 let city = document.getElementById('city');
+let errorContainer = document.getElementById('error-container')
 //email
         email.addEventListener('focus', function(){
             document.getElementById('email-div').style.border = '2px solid rgb(129, 104, 66)';
                 });
-         email.addEventListener('blur', function(){
-            document.getElementById('email-div').style.border = '1px solid rgb(174, 172, 172)';
-                 });
+         email.addEventListener('blur', function(e){
+            if(e.target.value!="")  {
+                alert('empty')
+                e.target.nextElementSibling.classList.remove('danger-color');
+                document.getElementById('email-div').classList.remove('empty-field')
+                document.querySelector('.error-text').remove();
+            }
+            else {
+                let errorMsg = "<p class='error-text danger-color'>empty field</p>"
+                e.target.nextElementSibling.classList.add('danger-color');
+                document.getElementById('email-div').classList.add('empty-field')
+                 errorContainer.insertAdjacentHTML("beforeend",errorMsg)
+            }
+                });
 //coupon
 coupon.addEventListener('focus', function(){
     document.getElementById('coupon-div').style.border = '2px solid rgb(129, 104, 66)';
