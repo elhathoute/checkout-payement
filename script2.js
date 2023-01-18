@@ -2,11 +2,11 @@ $(document).ready(function(){
 
     $("#show-order").click(function(){
         let title_show_order=$("#title-show-order");
-        if(title_show_order.html()=='Show order summary'){
-            title_show_order.html('Hide order summary');
+        if(title_show_order.html()=='Hide order summary'){
+            title_show_order.html('Show order summary');
         } 
         else{
-            title_show_order.html('Show order summary');
+            title_show_order.html('Hide order summary');
         }
 
         let icon_up_down = $("#down-path").attr('d');
