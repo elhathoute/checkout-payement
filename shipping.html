@@ -56,27 +56,31 @@
                     <div id="PaymentCountry" class="text-color-#333 leading-5 mt-2 text-sm break-words"></div>
                 </div>
                <!-- method -->
-        <div class="py-4 border-t border-dashed border-color-#c8c8c8"><div class="flex justify-between text-color-#888">Method<span class="underline cursor-pointer	ckt-return-text" data-testid="navToShippingPage"></span></div><div class="text-color-#333 leading-5 truncate mt-2">Standard Shipping</div></div>
+        <div class="py-4 border-t border-dashed border-color-#c8c8c8 d-none method-shipping"><div class="flex justify-between text-color-#888">Method<span class="underline cursor-pointer	ckt-return-text" data-testid="navToShippingPage"></span></div><div class="text-color-#333 leading-5 truncate mt-2">Standard Shipping</div></div>
         </div>
        
     </div>
     <!-- delivry free -->
-    <div id="delivery" class="relative w-full mt-28px px-14px px-0">
+    <div id="delivery" class="relative w-full mt-28px px-14px px-0 hide-if-click-continue  d-block">
         <div class="ckt-title">Shipping &amp; Delivery</div>
         <ul class="w-full text-color-#333"><li class="w-full px-12px py-14px border mb-10px rounded-md cursor-pointer text-sm ckt-select-delivery" data-testid="DeliveryItem"><div class="d-flex d-flex-wrap align-item-center justify-content-between py-7px"><svg class="w-18px h-18px mt-1px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="rgba(173, 141, 119, 1)"><path d="M512 0c282.766 0 512 229.234 512 512s-229.234 512-512 512S0 794.766 0 512 229.234 0 512 0zm0 369.778a142.222 142.222 0 1 0 0 284.444 142.222 142.222 0 0 0 0-284.444z"></path></svg>
             <div class="px-8px flex-1 truncate text-sm">Standard Shipping</div><div>free</div></div></li>
         </ul>
     </div>
 <!-- special instruction -->
-<div class="mt-28px px-14px md:px-0"><label><h4 class="ckt-title">Special Instruction(optional)</h4></label><textarea id="special-instruction" class="w-full p-12px text-sm border border-solid border-gray-200 rounded-md resize-none ckt-textarea appearance-none outline-none placeholder-color-#757575" rows="1" placeholder="Special Instruction" name="note" maxlength="200"></textarea>
+<div class="mt-28px px-14px md:px-0 hide-if-click-continue  d-block"><label><h4 class="ckt-title">Special Instruction(optional)</h4></label><textarea id="special-instruction" class="w-full p-12px text-sm border border-solid border-gray-200 rounded-md resize-none ckt-textarea appearance-none outline-none placeholder-color-#757575" rows="1" placeholder="Special Instruction" name="note" maxlength="200"></textarea>
 </div>
 <!-- coupon -->
-<div class="my-28px mt-28px px-14px md:hidden"><h4 class="ckt-title">Coupon</h4><div class="d-flex justify-content-between"><div class="flex-1"><div class="relative inline-block w-full h-48px"><label class="field-placeholder absolute px-3 transition-all pointer-events-none peer-focus:text-xs peer-focus:top-1.5 top-3.5 text-sm text-color-#757575 cursor-text">Gift card or coupon code</label><input type="text" name="coupon-mobile" autocomplete="coupon" class="w-full h-full pl-12px pt-24px pb-1.5 text-sm text-color-#333 rounded-md outline-none transition-all appearance-none peer pr-12px ckt-input" value=""></div></div><button type="button" class="relative inline h-48px px-24px py-14px text-center text-sm rounded ckt-btn ml-12px cursor-not-allowed opacity-70" disabled=""><div class="">Apply</div></button></div>
+<div class="my-28px mt-28px px-14px md:hidden hide-if-click-continue d-block"><h4 class="ckt-title">Coupon</h4><div class="d-flex justify-content-between"><div class="flex-1"><div class="relative inline-block w-full h-48px"><label class="field-placeholder absolute px-3 transition-all pointer-events-none peer-focus:text-xs peer-focus:top-1.5 top-3.5 text-sm text-color-#757575 cursor-text">Gift card or coupon code</label><input type="text" name="coupon-mobile" autocomplete="coupon" class="w-full h-full pl-12px pt-24px pb-1.5 text-sm text-color-#333 rounded-md outline-none transition-all appearance-none peer pr-12px ckt-input" value=""></div></div><button type="button" class="relative inline h-48px px-24px py-14px text-center text-sm rounded ckt-btn ml-12px cursor-not-allowed opacity-70" disabled=""><div class="">Apply</div></button></div>
 </div>
 <div class="w-full-md:p-0">
 
 
 <!-- paiement method -->
+
+<div class="hide-payemenyt-method d-none">
+
+
 <div class="checkout-payment mt-28px px-14px px-0 ">
   <div class="checkout-payment-lines">
      <div class="checkout__title-wrap p-0 pb-12px">
@@ -103,14 +107,16 @@
   
   
   </div>
+</div>
 <!-- btn continue and return -->
 <div class="mt-28px px-14px px-0 mb-3 d-flex flex-row-reverse align-items-center justify-content-between" id="buttons-bottom">
-  <div>
+  <div class="btn-to-shipping">
     <div >
   <button type="button" class="ckt-btn w-full w-100 p-3 h-56px display-block rounded-4px text-base md:box-border md:min-w-228px md:px-10px contact_information" id="continue-to-shipping">Continue to shipping</button>
 </div>
 </div>
-  <div class=" mt-0 text-center"><button data-testid="form-aio-return-btn" type="button" class="ckt-return-text text-sm d-flex align-items-center w-full justify-content-center"><svg class="w-12px h-12px icon-angle-right" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgba(173, 141, 119, 1)"><path d="M225.365 512 708.096 29.27l90.539 90.538-482.731 482.645L225.365 512z"></path><path d="m315.904 421.504 482.73 482.688-90.538 90.539L225.366 512l90.538-90.496z"></path></svg>
+  <div class=" mt-0 text-center btn-to-return">
+    <button data-testid="form-aio-return-btn" type="button" class="ckt-return-text text-sm d-flex align-items-center w-full justify-content-center"><svg class="w-12px h-12px icon-angle-right" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgba(173, 141, 119, 1)"><path d="M225.365 512 708.096 29.27l90.539 90.538-482.731 482.645L225.365 512z"></path><path d="m315.904 421.504 482.73 482.688-90.538 90.539L225.366 512l90.538-90.496z"></path></svg>
     <div class="mx-8px display-block">Return</div>
   </button></div>
 </div>

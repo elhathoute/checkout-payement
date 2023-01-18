@@ -36,6 +36,24 @@ $(document).ready(function(){
 
         }
     });
+
+
+    let btnContinurToshipping=$(".btn-to-shipping");
+    let btnToReturn=$(".btn-to-return");
+    // let hide_if_click_continue=$('.hide-if-click-continue');
+    btnContinurToshipping.click(function(){
+         $('.method-shipping').removeClass('d-none');
+         $('.hide-if-click-continue').addClass('d-none');
+         $('.hide-payemenyt-method').removeClass('d-none');
+    });
+    btnToReturn.click(function(){
+        $('.method-shipping').addClass('d-none');
+        $('.hide-if-click-continue').removeClass('d-none');
+        $('.hide-payemenyt-method').addClass('d-none');
+
+       
+
+   });
     
   });
 //   localstorage
