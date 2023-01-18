@@ -386,7 +386,10 @@ button {
     display:none;
     
 }
-
+#bg-order-complet{
+    background: #FAFAFA url(//img.staticdj.com/) no-repeat center center;
+    background-size: cover;
+}
 
 }
 @media (max-width: 991px){
@@ -402,7 +405,9 @@ button {
     .mb-30px {
         margin-bottom: 1.875rem;
     }
-
+    #bg-order-complet{
+        background-color: white;
+    }
       
 
   
@@ -1128,7 +1133,7 @@ img, video {
     margin-top: 1.75rem;
     margin-bottom: 1.75rem;
 }
-#div-order,#bg-order-complet{
+#div-order{
     background: #FAFAFA url(//img.staticdj.com/) no-repeat center center;
     background-size: cover;
 }

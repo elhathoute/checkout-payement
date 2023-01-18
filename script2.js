@@ -46,11 +46,20 @@ $(document).ready(function(){
          $('.hide-if-click-continue').addClass('d-none');
          $('.hide-payemenyt-method').removeClass('d-none');
     });
+    let btnReturn=0;
     btnToReturn.click(function(){
-        $('.method-shipping').addClass('d-none');
-        $('.hide-if-click-continue').removeClass('d-none');
-        $('.hide-payemenyt-method').addClass('d-none');
-
+      
+        btnReturn++;
+        if(btnReturn==1){
+            $('.method-shipping').addClass('d-none');
+            $('.hide-if-click-continue').removeClass('d-none');
+            $('.hide-payemenyt-method').addClass('d-none');
+        }
+       if(btnReturn==2){
+        location.href = "information.html";
+       }
+      
+   
        
 
    });
