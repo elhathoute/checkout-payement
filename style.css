@@ -160,8 +160,8 @@ input,select{
     text-align: center;
 }
 .px-6px {
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: 3px;
+    padding-right: 3px;
 }
 .bg-color-\#999 {
     --tw-bg-opacity: 1;
@@ -598,6 +598,7 @@ button {
 }
 .leading-5 {
     line-height: 1.25rem;
+    margin-left: 50px;
 }
 .break-all {
     word-break: break-all;
