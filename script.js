@@ -188,11 +188,18 @@ city.addEventListener('focus', function(){
         //btn continue-to-shipping
 
         let continue_to_shipping = document.getElementById("continue-to-shipping");
+        let bread_crumbs_informations=document.getElementById('informations');
+        let bread_crumbs_shipping=document.getElementById('shipping');
+        let bread_crumbs_payement=document.getElementById('payement');
+      
+        continue_to_shipping.classList.add('disabled');
 
-        // console.log(continue_to_shipping);
         continue_to_shipping.addEventListener('click',function(){
-           //get inputs 
-          
+           
+           bread_crumbs_informations.className=' non-active-breadcrumb';
+           bread_crumbs_shipping.className='active-breadcrumb';
+       
+          //get inputs 
           let email_localStorage= email.value;
           let fname_localStorage= fname.value;
           let lname_localStorage= lname.value;
@@ -208,6 +215,10 @@ city.addEventListener('focus', function(){
           localStorage.setItem("apartement",apartement_localStorage);
           localStorage.setItem("postal",postal_localStorage);
           localStorage.setItem("city",city_localStorage);
+        //   document.getElementById('shipping').remove('.non-active-breadcrumb');
+        
+         
+        //   document.getElementById('shipping').classList.add('.active-breadcrumb');
 
         })
         //show order
