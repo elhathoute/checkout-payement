@@ -41,6 +41,7 @@ let email = document.getElementById('email');
 let coupon = document.getElementById('coupon')
 let fname = document.getElementById('fname');
 let lname = document.getElementById('lname');
+let phone = document.getElementById('phone');
 let adress = document.getElementById('adress');
 let apartement = document.getElementById('apartement');
 let postal = document.getElementById('postal');
@@ -52,7 +53,9 @@ let errorContainerApartement = document.getElementById('error-container-aparteme
 let errorContainerAdress = document.getElementById('error-container-adress')
 let errorContainerPostal = document.getElementById('error-container-postal')
 let errorContainerCity = document.getElementById('error-container-city')
+let errorContainerPhone = document.getElementById('error-container-phone')
 //email
+var emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
         email.addEventListener('focus', function(){
             document.getElementById('email-div').style.border = '2px solid rgb(129, 104, 66)';
                 });
@@ -61,13 +64,24 @@ let errorContainerCity = document.getElementById('error-container-city')
                 e.target.nextElementSibling.classList.remove('danger-color');
                 document.getElementById('email-div').classList.remove('empty-field')
                 document.querySelector('.error-text').remove();
+                if(!emailRegex.test(e.target.value))  {
+                    let errorMsg = "<p class='error-text danger-color' id='email-error-email'>Invalid email address. Please enter a valid email address in the format example@domain.com</p>"
+                    e.target.nextElementSibling.classList.add('danger-color');
+                    document.getElementById('email-div').classList.add('empty-field','mb-2','fs-5')
+                if(!document.getElementById('email-error-email')) errorContainerEmail.insertAdjacentHTML("beforeend",errorMsg)
+
+                }
             }
-            else {
-                let errorMsg = "<p class='error-text danger-color' id='email-error'>Email required</p>"
+            else{
+                let errorMsg = "<p class='error-text danger-color' id='email-error-phone'>email required</p>"
                 e.target.nextElementSibling.classList.add('danger-color');
-                document.getElementById('email-div').classList.add('empty-field')
-                if(!document.getElementById('email-error')) errorContainerEmail.insertAdjacentHTML("beforeend",errorMsg)
-            }
+                document.getElementById('email-div').classList.add('empty-field','mb-4')
+                if(!document.getElementById('email-error-email')) errorContainerEmail.insertAdjacentHTML("beforeend",errorMsg)
+                else{
+                    errorContainerEmail.innerHTML=''
+                    errorContainerEmail.insertAdjacentHTML("beforeend",errorMsg)
+                }
+            }   
                 });
 //coupon
 coupon.addEventListener('focus', function(){
@@ -150,20 +164,33 @@ apartement.addEventListener('focus', function(){
                 });
 
 //postal
+var zipRegex = /^\d{5}(-\d{4})?$/;
 postal.addEventListener('focus', function(){
     document.getElementById('postal-div').style.border = '2px solid rgb(0, 0, 97)';
         });
         postal.addEventListener('blur', function(e){
             if(e.target.value!="")  {
                 e.target.nextElementSibling.classList.remove('danger-color');
-                document.getElementById('postal-div').classList.remove('empty-field')
-                document.querySelector('.error-text').remove();
+                document.getElementById('postal-div').classList.remove('empty-field','mb-5','mb-4')
+                if(document.querySelector('#email-error-postal'))  document.querySelector('#email-error-postal').remove();
+                if(!zipRegex.test(e.target.value))  {
+                    let errorMsg = "<p class='error-text danger-color' id='email-error-postal'>Please enter a valid US zip code in the format 12345 or 12345-1234</p>"
+                    e.target.nextElementSibling.classList.add('danger-color');
+                    document.getElementById('postal-div').classList.add('empty-field','mb-5','fs-5')
+                if(!document.getElementById('email-error-postal')) errorContainerPostal.insertAdjacentHTML("beforeend",errorMsg)
+
+                }
             }
             else {
-                let errorMsg = "<p class='error-text danger-color' id='email-error-postal'>Postal code required</p>"
+                let errorMsg = "<p class='error-text danger-color' id='email-error-postal'>Zip code required</p>"
+                document.getElementById('postal-div').classList.remove('empty-field','mb-5','mb-4')
                 e.target.nextElementSibling.classList.add('danger-color');
                 document.getElementById('postal-div').classList.add('empty-field','mb-4')
                 if(!document.getElementById('email-error-postal')) errorContainerPostal.insertAdjacentHTML("beforeend",errorMsg)
+                else{
+                    errorContainerPostal.innerHTML=''
+                    errorContainerPostal.insertAdjacentHTML("beforeend",errorMsg)
+                }
             }
                 });
 
@@ -178,11 +205,43 @@ city.addEventListener('focus', function(){
                 document.querySelector('.error-text').remove();
             }
             else {
-                let errorMsg = "<p class='error-text danger-color' id='email-error-city'>City required</p>"
+                let errorMsg = "<p class='error-text danger-color' id='email-error-city'>City / town required</p>"
                 e.target.nextElementSibling.classList.add('danger-color');
                 document.getElementById('city-div').classList.add('empty-field','mb-4')
                 if(!document.getElementById('email-error-city')) errorContainerCity.insertAdjacentHTML("beforeend",errorMsg)
             }
+                });
+
+//phone
+var phoneRegex = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+phone.addEventListener('focus', function(){
+    
+    document.getElementById('phone-div').style.border = '2px solid rgb(0, 0, 97)';
+        });
+        phone.addEventListener('blur', function(e){
+            if(e.target.value!=""  )  {
+                e.target.nextElementSibling.classList.remove('danger-color');
+                document.getElementById('phone-div').classList.remove('empty-field')
+                if(document.querySelector('#email-error-phone'))document.querySelector('#email-error-phone').remove();
+                
+                if(!phoneRegex.test(e.target.value))  {
+                    let errorMsg = "<p class='error-text danger-color' id='email-error-phone'>Invalid phone number. Please enter a valid US phone number in the format (555) 555-5555</p>"
+                    e.target.nextElementSibling.classList.add('danger-color');
+                    document.getElementById('phone-div').classList.add('empty-field','mb-5','fs-5')
+                if(!document.getElementById('email-error-phone')) errorContainerPhone.insertAdjacentHTML("beforeend",errorMsg)
+
+                }
+            }
+            else {
+                let errorMsg = "<p class='error-text danger-color' id='email-error-phone'>Phone required</p>"
+                e.target.nextElementSibling.classList.add('danger-color');
+                document.getElementById('phone-div').classList.add('empty-field','mb-4')
+                if(!document.getElementById('email-error-phone')) errorContainerPhone.insertAdjacentHTML("beforeend",errorMsg)
+                else{
+                    errorContainerPhone.innerHTML=''
+                    errorContainerPhone.insertAdjacentHTML("beforeend",errorMsg)
+                }
+            }   
                 });
 
         //btn continue-to-shipping
