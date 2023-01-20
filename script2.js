@@ -1,5 +1,5 @@
-
 $(document).ready(function(){
+  
 
 
 
@@ -40,11 +40,16 @@ $(document).ready(function(){
         }
     });
 
-
-    let btnContinurToshipping=$(".btn-to-shipping");
+// btn continue
+    let btnContinueToshipping=$(".btn-to-shipping");
     let btnToReturn=$(".btn-to-return");
-    // let hide_if_click_continue=$('.hide-if-click-continue');
-    btnContinurToshipping.click(function(){
+
+   
+     
+     
+ 
+   
+    btnContinueToshipping.click(function(){
          $('.method-shipping').removeClass('d-none');
          $('.hide-if-click-continue').addClass('d-none');
          $('.hide-payemenyt-method').removeClass('d-none');
@@ -54,6 +59,7 @@ $(document).ready(function(){
          $('#payement').addClass('active-breadcrumb');
       
     });
+    // btn return
     let btnReturn=0;
     btnToReturn.click(function(){
       
@@ -73,13 +79,17 @@ $(document).ready(function(){
        if(btnReturn==2){
         location.href = "information.html";
        }
-      
-   
-       
-
+ 
    });
+   
     
   });
+
+
+
+
+
+
 //   localstorage
 
 let titleDom= document.querySelector("#title-product");

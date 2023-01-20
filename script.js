@@ -246,7 +246,7 @@ phone.addEventListener('focus', function(){
 
         //btn continue-to-shipping
 
-        let continue_to_shipping = document.getElementById("continue-to-shipping");
+        var continue_to_shipping = document.getElementById("continue-to-shipping");
         let bread_crumbs_informations=document.getElementById('informations');
         let bread_crumbs_shipping=document.getElementById('shipping');
         let bread_crumbs_payement=document.getElementById('payement');
@@ -277,21 +277,41 @@ phone.addEventListener('focus', function(){
         //   document.getElementById('shipping').remove('.non-active-breadcrumb');
         
          
-        //   document.getElementById('shipping').classList.add('.active-breadcrumb');
+       
 
         })
-        //show order
-
-        // let show_order=document.getElementById("show-order");
-
-        // //get div of order
-        //  let div_order =document.getElementById("div-order");
-        // show_order.addEventListener('click',function () {
-
-        //     div_order.classList.remove('invisible');
-        // })
+       
 
         $(document).ready(function(){
+             //   verification of inputs
+        $('.inputs-informations').keyup(function () {
+            var EmailRegex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            if(
+             (($('#email').val()!='') &&(EmailRegex.test($('#email').val())==true))&&
+             $('#fname').val()!=''&&
+             $('#lname').val()!=''&&
+             $('#adress').val()!=''&&
+            $('#apartement').val()!=''&&
+             $('#apartement').val()!=''&&
+             $('#postal').val()!=''&&
+             $('#city').val()!=''&&
+            $('#region-select').val()!=''
+            ){
+                $('#continue-to-shipping').prop('disabled',false);
+
+                $('#continue-to-shipping').css('background-color','green');
+            }
+            else 
+            {
+                $('#continue-to-shipping').prop('disabled',true);
+
+           
+                $('#continue-to-shipping').css('background-color','red');  
+            }
+
+        });
+   
+
             $("#show-order").click(function(){
                 let title_show_order=$("#title-show-order");
                 if(title_show_order.html()=='Show order summary'){
@@ -317,16 +337,7 @@ phone.addEventListener('focus', function(){
 
             });
           });
-        // function myFunction() {
-        //     var order = document.getElementById('div-order');
-        //     if (order.style.display === 'none') {
-        //         order.style.display = 'block';
-        //     } else {
-        //         order.style.display = 'none';
-        //        }
-           
-        //     }
-
+     
 
         function checkEmpty(){
             var input = document.getElementById("label");
