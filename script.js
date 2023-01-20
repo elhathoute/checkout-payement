@@ -192,7 +192,7 @@ city.addEventListener('focus', function(){
         let bread_crumbs_shipping=document.getElementById('shipping');
         let bread_crumbs_payement=document.getElementById('payement');
       
-        continue_to_shipping.classList.add('disabled');
+        // continue_to_shipping.classList.add('disabled');
 
         continue_to_shipping.addEventListener('click',function(){
            

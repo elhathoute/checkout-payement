@@ -48,6 +48,11 @@ $(document).ready(function(){
          $('.method-shipping').removeClass('d-none');
          $('.hide-if-click-continue').addClass('d-none');
          $('.hide-payemenyt-method').removeClass('d-none');
+         $('#payement').removeClass('non-active-breadcrumb');
+         $('#shipping').removeClass('active-breadcrumb');
+         $('#shipping').addClass('non-active-breadcrumb');
+         $('#payement').addClass('active-breadcrumb');
+      
     });
     let btnReturn=0;
     btnToReturn.click(function(){
@@ -57,6 +62,13 @@ $(document).ready(function(){
             $('.method-shipping').addClass('d-none');
             $('.hide-if-click-continue').removeClass('d-none');
             $('.hide-payemenyt-method').addClass('d-none');
+
+            $('#payement').removeClass('active-breadcrumb');
+            $('#payement').addClass('non-active-breadcrumb');
+
+            $('#shipping').removeClass('non-active-breadcrumb');
+            $('#shipping').addClass('active-breadcrumb');
+
         }
        if(btnReturn==2){
         location.href = "information.html";
