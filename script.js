@@ -73,7 +73,7 @@ var emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
                 }
             }
             else{
-                let errorMsg = "<p class='error-text danger-color' id='email-error-phone'>email required</p>"
+                let errorMsg = "<p class='error-text danger-color' id='email-error-email'>email required</p>"
                 e.target.nextElementSibling.classList.add('danger-color');
                 document.getElementById('email-div').classList.add('empty-field','mb-4')
                 if(!document.getElementById('email-error-email')) errorContainerEmail.insertAdjacentHTML("beforeend",errorMsg)
