@@ -183,7 +183,7 @@ mediaQuery.addEventListener("change", (e) => {
 PaymentAddressContact.innerHTML=localStorage.getItem("email");
 
 let PaymentAddressShipToContent =document.getElementById('PaymentAddressShipToContent');
-PaymentAddressShipToContent.innerHTML=localStorage.getItem("fname")+' '+localStorage.getItem("lname")+','+localStorage.getItem("adress")+' '+localStorage.getItem("postal")+','+'United States';
+PaymentAddressShipToContent.innerHTML=localStorage.getItem("adress")+' ,'+localStorage.getItem("postal")+','+'zip code'+','+'United States';
 
 
 // let PaymentAddressInfo =document.getElementById('PaymentAddressInfo');
