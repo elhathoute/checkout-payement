@@ -112,7 +112,7 @@ $("#title-show-order").html('Hide order summary');
                         e.target.classList.remove('empty-field')
                         if(document.getElementById('email-error-credit-card'))document.getElementById('email-error-credit-card').remove();
                         if(!cardRegex.test(e.target.value))  {
-                            let errorMsg = "<p class='error-text danger-color' id='email-error-credit-card'>Invalid credit card number. Please enter a valid credit card number that starts with 4 or 5 and is at least 16 digits long </p>"
+                            let errorMsg = "<p class='error-text danger-color' id='email-error-credit-card'>Invalid credit card number. </p>"
                             e.target.nextElementSibling.classList.add('danger-color');
                             e.target.classList.add('empty-field')
                             if(!document.getElementById('email-error-credit-card')) document.querySelector('.credit-card-error').insertAdjacentHTML("beforeend",errorMsg)

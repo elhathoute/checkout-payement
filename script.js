@@ -76,17 +76,17 @@ var emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
                 document.getElementById('email-div').classList.remove('empty-field')
                 document.querySelector('.error-text').remove();
                 if(!emailRegex.test(e.target.value))  {
-                    let errorMsg = "<p class='error-text danger-color' id='email-error-email'>Invalid email address. Please enter a valid email address in the format example@domain.com</p>"
+                    let errorMsg = "<span class='error-text danger-color' id='email-error-email'>Invalid email address. Please enter a valid email address in the format example@domain.com</span>"
                     e.target.nextElementSibling.classList.add('danger-color');
-                    document.getElementById('email-div').classList.add('empty-field','mb-2','fs-5')
+                    document.getElementById('email-div').classList.add('empty-field','fs-5')
                 if(!document.getElementById('email-error-email')) errorContainerEmail.insertAdjacentHTML("beforeend",errorMsg)
 
                 }
             }
             else{
-                let errorMsg = "<p class='error-text danger-color' id='email-error-email'>email required</p>"
+                let errorMsg = "<span class='error-text danger-color' id='email-error-email'>email required</span>"
                 e.target.nextElementSibling.classList.add('danger-color');
-                document.getElementById('email-div').classList.add('empty-field','mb-4')
+                document.getElementById('email-div').classList.add('empty-field')
                 if(!document.getElementById('email-error-email')) errorContainerEmail.insertAdjacentHTML("beforeend",errorMsg)
                 else{
                     errorContainerEmail.innerHTML=''
@@ -112,7 +112,7 @@ coupon.addEventListener('blur', function(){
                             document.querySelector('.error-text').remove();
                         }
                         else {
-                            let errorMsg = "<p class='error-text danger-color' id='email-error-fname'>First name required</p>"
+                            let errorMsg = "<span class='error-text danger-color' id='email-error-fname'>First name required</span>"
                             e.target.nextElementSibling.classList.add('danger-color');
                             document.getElementById('fname-div').classList.add('empty-field')
                             document.getElementById('names-container').classList.add('mb-4')
@@ -146,7 +146,7 @@ adress.addEventListener('focus', function(){
             if(e.target.value!="")  {
                 e.target.nextElementSibling.classList.remove('danger-color');
                 document.getElementById('adress-div').classList.remove('empty-field')
-                document.querySelector('.error-text').remove();
+                document.querySelector('#email-error-adress').remove();
             }
             else {
                 let errorMsg = "<p class='error-text danger-color' id='email-error-adress'>Address required</p>"
@@ -157,22 +157,22 @@ adress.addEventListener('focus', function(){
             }
                 });
 //appartement
-apartement.addEventListener('focus', function(){
-    document.getElementById('apartement-div').style.border = '2px solid rgb(0, 0, 97)';
-        });
-        apartement.addEventListener('blur', function(e){
-            if(e.target.value!="")  {
-                e.target.nextElementSibling.classList.remove('danger-color');
-                document.getElementById('apartement-div').classList.remove('empty-field')
-                document.querySelector('.error-text').remove();
-            }
-            else {
-                let errorMsg = "<p class='error-text danger-color' id='email-error-apartement'>Appartment, suite, ... required</p>"
-                e.target.nextElementSibling.classList.add('danger-color');
-                document.getElementById('apartement-div').classList.add('empty-field','mb-4')
-                if(!document.getElementById('email-error-apartement')) errorContainerApartement.insertAdjacentHTML("beforeend",errorMsg)
-            }
-                });
+// apartement.addEventListener('focus', function(){
+//     document.getElementById('apartement-div').style.border = '2px solid rgb(0, 0, 97)';
+//         });
+//         apartement.addEventListener('blur', function(e){
+//             if(e.target.value!="")  {
+//                 e.target.nextElementSibling.classList.remove('danger-color');
+//                 document.getElementById('apartement-div').classList.remove('empty-field')
+//                 document.querySelector('.error-text').remove();
+//             }
+//             else {
+//                 let errorMsg = "<p class='error-text danger-color' id='email-error-apartement'>Appartment, suite, ... required</p>"
+//                 e.target.nextElementSibling.classList.add('danger-color');
+//                 document.getElementById('apartement-div').classList.add('empty-field','mb-4')
+//                 if(!document.getElementById('email-error-apartement')) errorContainerApartement.insertAdjacentHTML("beforeend",errorMsg)
+//             }
+//                 });
 
 //postal
 var zipRegex = /^\d{5}(-\d{4})?$/;
@@ -182,21 +182,21 @@ postal.addEventListener('focus', function(){
         postal.addEventListener('blur', function(e){
             if(e.target.value!="")  {
                 e.target.nextElementSibling.classList.remove('danger-color');
-                document.getElementById('postal-div').classList.remove('empty-field','mb-5','mb-4')
+                document.getElementById('postal-div').classList.remove('empty-field','mb-3')
                 if(document.querySelector('#email-error-postal'))  document.querySelector('#email-error-postal').remove();
                 if(!zipRegex.test(e.target.value))  {
-                    let errorMsg = "<p class='error-text danger-color' id='email-error-postal'>Please enter a valid US zip code in the format 12345 or 12345-1234</p>"
+                    let errorMsg = "<span class='error-text danger-color' id='email-error-postal'>Invalid Zip code</span>"
                     e.target.nextElementSibling.classList.add('danger-color');
-                    document.getElementById('postal-div').classList.add('empty-field','mb-5','fs-5')
+                    document.getElementById('postal-div').classList.add('empty-field','mb-3','fs-5')
                 if(!document.getElementById('email-error-postal')) errorContainerPostal.insertAdjacentHTML("beforeend",errorMsg)
 
                 }
             }
             else {
-                let errorMsg = "<p class='error-text danger-color' id='email-error-postal'>Zip code required</p>"
-                document.getElementById('postal-div').classList.remove('empty-field','mb-5','mb-4')
+                let errorMsg = "<span class='error-text danger-color' id='email-error-postal'>Zip code required</span>"
+                document.getElementById('postal-div').classList.remove('empty-field','mb-3')
                 e.target.nextElementSibling.classList.add('danger-color');
-                document.getElementById('postal-div').classList.add('empty-field','mb-4')
+                document.getElementById('postal-div').classList.add('empty-field','mb-3')
                 if(!document.getElementById('email-error-postal')) errorContainerPostal.insertAdjacentHTML("beforeend",errorMsg)
                 else{
                     errorContainerPostal.innerHTML=''
@@ -236,7 +236,7 @@ phone.addEventListener('focus', function(){
                 if(document.querySelector('#email-error-phone'))document.querySelector('#email-error-phone').remove();
                 
                 if(!phoneRegex.test(e.target.value))  {
-                    let errorMsg = "<p class='error-text danger-color' id='email-error-phone'>Invalid phone number. Please enter a valid US phone number in the format (555) 555-5555</p>"
+                    let errorMsg = "<p class='error-text danger-color' id='email-error-phone'>Invalid phone number.</p>"
                     e.target.nextElementSibling.classList.add('danger-color');
                     document.getElementById('phone-div').classList.add('empty-field','mb-5','fs-5')
                 if(!document.getElementById('email-error-phone')) errorContainerPhone.insertAdjacentHTML("beforeend",errorMsg)
@@ -244,7 +244,7 @@ phone.addEventListener('focus', function(){
                 }
             }
             else {
-                let errorMsg = "<p class='error-text danger-color' id='email-error-phone'>Phone required</p>"
+                let errorMsg = "<p class='error-text danger-color' id='email-error-phone'>Phone number required</p>"
                 e.target.nextElementSibling.classList.add('danger-color');
                 document.getElementById('phone-div').classList.add('empty-field','mb-4')
                 if(!document.getElementById('email-error-phone')) errorContainerPhone.insertAdjacentHTML("beforeend",errorMsg)
