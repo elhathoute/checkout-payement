@@ -33,13 +33,17 @@ $(document).ready(function(){
 
 
 // fin input group
-
+$("#title-show-order").html('Hide order summary');
     $("#show-order").click(function(){
         let title_show_order=$("#title-show-order");
-        if(title_show_order.html()=='Hide order summary'){
+        console.log(title_show_order.html());
+
+        if(title_show_order.html()==='Hide order summary'){
+            title_show_order.html('');
             title_show_order.html('Show order summary');
         } 
-        else{
+        else {
+            title_show_order.html('');
             title_show_order.html('Hide order summary');
         }
 
