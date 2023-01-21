@@ -855,7 +855,7 @@ button, input, optgroup, select, textarea {
     width: 100%;
     display: inline-block;
     position: absolute;
-    top: 24px;
+    top: 18px;
     left: 8px;
     transform: translateY(-50%);
     padding: 0 2px;
