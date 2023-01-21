@@ -205,24 +205,4 @@ coupon.addEventListener('blur', function(e){
     }
         });
 
-    //credit card number
-    // let creditCardContainer = document.getElementById('credit-card-div')
-    // var cardRegex = /^(?:(4[0-9]{12}(?:[0-9]{3})?)|(5[1-5][0-9]{14})|(6(?:011|5[0-9][0-9])[0-9]{12})|(3[47][0-9]{13})|(3(?:0[0-5]|[68][0-9])[0-9]{11})|((?:2131|1800|35\d{3})\d{11}))$/;
-    // creditCardContainer.addEventListener('blur', function(e){
-    //     document.getElementById('fname-div').style.border = '2px solid rgb(0, 0, 97)';
-    //         });
-    //         fname.addEventListener('blur', function(e){
-    //             alert('worked')
-    //             if(e.target.value!="")  {
-    //                 e.target.nextElementSibling.classList.remove('danger-color');
-    //                 document.getElementById('fname-div').classList.remove('empty-field')
-    //                 document.querySelector('.error-text').remove();
-    //             }
-    //             else {
-    //                 let errorMsg = "<p class='error-text danger-color' id='email-error-fname'>First name required</p>"
-    //                 e.target.nextElementSibling.classList.add('danger-color');
-    //                 document.getElementById('fname-div').classList.add('empty-field')
-    //                 document.getElementById('names-container').classList.add('mb-4')
-    //                 if(!document.getElementById('email-error-fname')) errorContainerFname.insertAdjacentHTML("beforeend",errorMsg)
-    //             }
-    //                 });
+  
