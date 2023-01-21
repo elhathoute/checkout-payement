@@ -165,7 +165,7 @@ $(document).ready(function(){
 
         }
        if(btnReturn>1){
-        location.href = "information.html";
+        location.href = "index.html";
        }
  
    });
