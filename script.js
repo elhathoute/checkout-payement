@@ -56,6 +56,9 @@ adress.value=localStorage.getItem("adress");
 let apartement = document.getElementById('apartement');
 let postal = document.getElementById('postal');
 let city = document.getElementById('city');
+let region_select = document.getElementById('region-select');
+
+
 let errorContainerEmail = document.getElementById('error-container-email')
 let errorContainerFname = document.getElementById('error-container-fname')
 let errorContainerLname = document.getElementById('error-container-lname')
@@ -156,23 +159,7 @@ adress.addEventListener('focus', function(){
                 if(!document.getElementById('email-error-adress')) errorContainerAdress.insertAdjacentHTML("beforeend",errorMsg)
             }
                 });
-//appartement
-// apartement.addEventListener('focus', function(){
-//     document.getElementById('apartement-div').style.border = '2px solid rgb(0, 0, 97)';
-//         });
-//         apartement.addEventListener('blur', function(e){
-//             if(e.target.value!="")  {
-//                 e.target.nextElementSibling.classList.remove('danger-color');
-//                 document.getElementById('apartement-div').classList.remove('empty-field')
-//                 document.querySelector('.error-text').remove();
-//             }
-//             else {
-//                 let errorMsg = "<p class='error-text danger-color' id='email-error-apartement'>Appartment, suite, ... required</p>"
-//                 e.target.nextElementSibling.classList.add('danger-color');
-//                 document.getElementById('apartement-div').classList.add('empty-field','mb-4')
-//                 if(!document.getElementById('email-error-apartement')) errorContainerApartement.insertAdjacentHTML("beforeend",errorMsg)
-//             }
-//                 });
+
 
 //postal
 var zipRegex = /^\d{5}(-\d{4})?$/;
@@ -277,6 +264,8 @@ phone.addEventListener('focus', function(){
           let apartement_localStorage= apartement.value;
           let postal_localStorage= postal.value;
           let city_localStorage= city.value;
+          let phone_localStorage= phone.value;
+          let region_select_localStorage=region_select.value;
           //store inputs  in localstorage
           localStorage.setItem("email",email_localStorage);
           localStorage.setItem("fname",fname_localStorage);
@@ -285,16 +274,22 @@ phone.addEventListener('focus', function(){
           localStorage.setItem("apartement",apartement_localStorage);
           localStorage.setItem("postal",postal_localStorage);
           localStorage.setItem("city",city_localStorage);
+          localStorage.setItem("phone",phone_localStorage);
+          localStorage.setItem("region",region_select_localStorage);
         //   document.getElementById('shipping').remove('.non-active-breadcrumb');
         
          
        
 
         })
-       
+        
 
         $(document).ready(function(){
-        
+        (localStorage.getItem('price')>0)?$('#price').val(localStorage.getItem('price')):$('#price').val('0');
+        (localStorage.getItem('postal')!='')? $('#postal').val(localStorage.getItem('postal')):$('#postal').val('');
+        (localStorage.getItem('city')!='')? $('#city').val(localStorage.getItem('city')):$('#city').val('');
+        (localStorage.getItem('phone')!='')? $('#phone').val(localStorage.getItem('phone')):$('#phone').val('');
+
     
         $('.inputs-informations').keyup(function () {
             var EmailRegex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;

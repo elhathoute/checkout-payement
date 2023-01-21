@@ -36,7 +36,7 @@ $(document).ready(function(){
 $("#title-show-order").html('Hide order summary');
     $("#show-order").click(function(){
         let title_show_order=$("#title-show-order");
-        console.log(title_show_order.html());
+        
 
         if(title_show_order.html()==='Hide order summary'){
             title_show_order.html('');
@@ -218,7 +218,7 @@ mediaQuery.addEventListener("change", (e) => {
 PaymentAddressContact.innerHTML=localStorage.getItem("email");
 
 let PaymentAddressShipToContent =document.getElementById('PaymentAddressShipToContent');
-PaymentAddressShipToContent.innerHTML=localStorage.getItem("adress")+' ,'+localStorage.getItem("postal")+','+'zip code'+','+'United States';
+PaymentAddressShipToContent.innerHTML=localStorage.getItem("adress")+' ,'+localStorage.getItem("postal")+','+localStorage.getItem("region")+','+'United States';
 
 
 // let PaymentAddressInfo =document.getElementById('PaymentAddressInfo');
