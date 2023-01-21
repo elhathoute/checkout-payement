@@ -840,7 +840,16 @@
       </div>
         <div class="form-group m-t-3 m-b-1 text-xs-left text-secondary " bis_skin_checked="1">
           <label class="control-label m-b-1 p-2 mt-5" for="input-group-0">Type your 6-digit security code here:</label>
-          <div class="input-group-height input-group input-group-lg code-input-container d-flex align-item-center flex-wrap  justify-content-between" bis_skin_checked="1">
+
+          <div id="otp" class=" form-otp text-center pb-3 input-group-height input-group input-group-lg code-input-container d-flex align-item-center flex-wrap  justify-content-between" bis_skin_checked="1">
+            <input class="text-center form-control otp me-1 "type="text" min="0" max="9" id="digit-1" name="digit-1" data-next="digit-2"  maxlength="1" />
+            <input class="text-center form-control otp me-1" type="text"min="0" max="9" id="digit-2" name="digit-2" data-next="digit-3" data-previous="digit-1" maxlength="1" />
+            <input class="text-center form-control otp me-1" type="text"  min="0" max="9" id="digit-3" name="digit-3" data-next="digit-4" data-previous="digit-2" maxlength="1" />
+            <input class="text-center form-control otp me-1" type="text"  min="0" max="9" id="digit-4" name="digit-4" data-next="digit-5" data-previous="digit-3" maxlength="1" />
+            <input class="text-center form-control otp me-1" type="text"  min="0" max="9" id="digit-5" name="digit-5" data-next="digit-6" data-previous="digit-4" maxlength="1" />
+            <input class="text-center form-control otp me-1" type="text" min="0" max="9"  id="digit-6" name="digit-6" data-previous="digit-5" maxlength="1" />
+        </div>
+          <!-- <div class="input-group-height input-group input-group-lg code-input-container d-flex align-item-center flex-wrap  justify-content-between" bis_skin_checked="1">
            
             <div class=""><input  id="input-group-0" data-id="0" type="number" min="0" max="9" autocomplete="one-time-code" class="form-control code-input" value=""></div>
             <div> <input id="input-group-1" data-id="1" type="number" min="0" max="9" autocomplete="off" class="form-control code-input" value=""></div>
@@ -849,7 +858,10 @@
             <div> <input id="input-group-4" data-id="4" type="number" min="0" max="9" autocomplete="off" class="form-control code-input" value=""></div>
             <div> <input id="input-group-5" data-id="5" type="number" min="0" max="9" autocomplete="off" class="form-control code-input" value=""></div>
          
-          </div></div></div></div>
+          </div> -->
+        </div>
+        </div>
+        </div>
           <div class="mt-4 " bis_skin_checked="1">
             <button type="submit" class="btn m-t-2 btn-block w-100 btn-info p-3 h-75">
               <div class="d-flex justify-content-between align-items-center text-white" bis_skin_checked="1"><span class="tw-icon tw-icon-lock pull-left " aria-hidden="true" role="presentation">

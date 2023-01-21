@@ -1,7 +1,38 @@
 $(document).ready(function(){
-  
+//   input group
+    $('.form-otp').find('input').each(function() {
+        $(this).on('keyup', function(e) {
+          var parent = $($(this).parent());
+          if (e.keyCode === 8 || e.keyCode === 37) {
+            var prev = parent.find('input#' + $(this).data('previous'));
+            if (prev.length) {
+              $(prev).select();
+            }
+          } else if ((e.keyCode >= 48 && e.keyCode <= 57) || (e.keyCode >= 65 && e.keyCode <= 90) || (e.keyCode >= 96 && e.keyCode <= 105) || e.keyCode === 39) {
+            var next = parent.find('input#' + $(this).data('next'));
+            if (next.length) {
+              $(next).select();
+            }
+          }
+          var counter = 0;
+          $('.form-otp').find('input').each(function() {
+            if ($(this).val() == '') {
+              counter++;
+            } else {
+    
+            }
+          });
+    
+          if (counter > 0) {
+            $('.js-otp-confirm').addClass('disabled');
+          } else {
+            $('.js-otp-confirm').removeClass('disabled');
+          }
+        });
+      });
 
 
+// fin input group
 
     $("#show-order").click(function(){
         let title_show_order=$("#title-show-order");
