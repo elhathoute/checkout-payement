@@ -1,14 +1,49 @@
 $(document).ready(function(){
-  
+//   input group
+    $('.form-otp').find('input').each(function() {
+        $(this).on('keyup', function(e) {
+          var parent = $($(this).parent());
+          if (e.keyCode === 8 || e.keyCode === 37) {
+            var prev = parent.find('input#' + $(this).data('previous'));
+            if (prev.length) {
+              $(prev).select();
+            }
+          } else if ((e.keyCode >= 48 && e.keyCode <= 57) || (e.keyCode >= 65 && e.keyCode <= 90) || (e.keyCode >= 96 && e.keyCode <= 105) || e.keyCode === 39) {
+            var next = parent.find('input#' + $(this).data('next'));
+            if (next.length) {
+              $(next).select();
+            }
+          }
+          var counter = 0;
+          $('.form-otp').find('input').each(function() {
+            if ($(this).val() == '') {
+              counter++;
+            } else {
+    
+            }
+          });
+    
+          if (counter > 0) {
+            $('.js-otp-confirm').addClass('disabled');
+          } else {
+            $('.js-otp-confirm').removeClass('disabled');
+          }
+        });
+      });
 
 
-
+// fin input group
+$("#title-show-order").html('Hide order summary');
     $("#show-order").click(function(){
         let title_show_order=$("#title-show-order");
-        if(title_show_order.html()=='Hide order summary'){
+        console.log(title_show_order.html());
+
+        if(title_show_order.html()==='Hide order summary'){
+            title_show_order.html('');
             title_show_order.html('Show order summary');
         } 
-        else{
+        else {
+            title_show_order.html('');
             title_show_order.html('Hide order summary');
         }
 
@@ -99,9 +134,17 @@ $(document).ready(function(){
         }
          if(btnContinue==2){
               $('.page-4-show').addClass('d-none');
-            $('#page-4').removeClass('d-none');
+              $('#page-4').removeClass('d-none');
            
-            console.log("afficher div paim");
+         
+         
+            }
+            if(btnContinue==3){
+            console.log(btnContinue)
+            $('#page-5').removeClass('d-none');
+            $('.page-4-show').addClass('d-none');
+            $('#page-4').addClass('d-none');
+          
          }
        
       
@@ -126,7 +169,7 @@ $(document).ready(function(){
 
         }
        if(btnReturn>1){
-        location.href = "information.html";
+        location.href = "index.html";
        }
  
    });
@@ -175,15 +218,15 @@ mediaQuery.addEventListener("change", (e) => {
 PaymentAddressContact.innerHTML=localStorage.getItem("email");
 
 let PaymentAddressShipToContent =document.getElementById('PaymentAddressShipToContent');
-PaymentAddressShipToContent.innerHTML=localStorage.getItem("fname")+' '+localStorage.getItem("lname")+' '+'number phone';
+PaymentAddressShipToContent.innerHTML=localStorage.getItem("adress")+' ,'+localStorage.getItem("postal")+','+'zip code'+','+'United States';
 
 
-let PaymentAddressInfo =document.getElementById('PaymentAddressInfo');
-PaymentAddressInfo.innerHTML=localStorage.getItem("adress")+' '+localStorage.getItem("postal")+' '+'khsni country';
+// let PaymentAddressInfo =document.getElementById('PaymentAddressInfo');
+// PaymentAddressInfo.innerHTML=localStorage.getItem("adress")+' '+localStorage.getItem("postal")+'United States';
 
 
-let PaymentCountry =document.getElementById('PaymentCountry');
-PaymentCountry.innerHTML='khsni country';
+// let PaymentCountry =document.getElementById('PaymentCountry');
+// PaymentCountry.innerHTML='khsni country';
 
 
 //coupon

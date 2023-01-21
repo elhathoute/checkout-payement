@@ -1221,4 +1221,45 @@ color: rgba(173, 141, 119, 1);
     color: rgba(33,33,33,var(--tw-text-opacity));
     font-weight: 600;
 }
+._2C5rr {
+    display: flex;
+    align-items: baseline;
+    padding-top: 1.1rem;
+    /* padding-bottom: 1.1rem; */
+}
+._3rOgv {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+}
+[dir=ltr] ._1DgZ7 {
+    padding-right: 1.4rem;
+}
+[dir=ltr] ._2C5rr {
+    margin-right: 1.7rem;
+}
 
+[dir=ltr] ._2C5rr {
+    margin-left: 1.7rem;
+}
+._1DgZ7 {
+    min-width: 7em;
+    padding-inline-end: 1.4rem;
+}
+@media (max-width: 700px){
+    ._3rOgv {
+        flex-wrap: wrap;
+    }
+    ._1DgZ7 {
+        padding-bottom:0.5rem;
+    }
+}
+.Niptx {
+    flex-grow: 1;
+    padding-inline-end:1.4rem;
+    width: 100%;
+    word-break: break-word;
+}
+.input-group-height{
+    height: 100px;
+}

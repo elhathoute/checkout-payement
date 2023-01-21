@@ -38,11 +38,21 @@ if(price==''){
 imgDom.setAttribute("src",localStorage.getItem("imgelink"));
 //get input to change our border in event focus
 let email = document.getElementById('email');
+email.value=localStorage.getItem("email");
+
 let coupon = document.getElementById('coupon')
 let fname = document.getElementById('fname');
+fname.value=localStorage.getItem("fname");
+
 let lname = document.getElementById('lname');
+lname.value=localStorage.getItem("lname");
+
 let phone = document.getElementById('phone');
+phone.value=localStorage.getItem("phone");
+
 let adress = document.getElementById('adress');
+adress.value=localStorage.getItem("adress");
+
 let apartement = document.getElementById('apartement');
 let postal = document.getElementById('postal');
 let city = document.getElementById('city');
@@ -55,6 +65,7 @@ let errorContainerPostal = document.getElementById('error-container-postal')
 let errorContainerCity = document.getElementById('error-container-city')
 let errorContainerPhone = document.getElementById('error-container-phone')
 //email
+
 var emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
         email.addEventListener('focus', function(){
             document.getElementById('email-div').style.border = '2px solid rgb(129, 104, 66)';
@@ -283,7 +294,8 @@ phone.addEventListener('focus', function(){
        
 
         $(document).ready(function(){
-             //   verification of inputs
+        
+    
         $('.inputs-informations').keyup(function () {
             var EmailRegex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
             if(
