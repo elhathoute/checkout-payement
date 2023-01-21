@@ -291,8 +291,6 @@ phone.addEventListener('focus', function(){
              $('#fname').val()!=''&&
              $('#lname').val()!=''&&
              $('#adress').val()!=''&&
-            $('#apartement').val()!=''&&
-             $('#apartement').val()!=''&&
              $('#postal').val()!=''&&
              $('#city').val()!=''&&
             $('#region-select').val()!=''
