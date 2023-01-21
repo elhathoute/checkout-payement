@@ -48,22 +48,37 @@ $(document).ready(function(){
      
      
  
-   
+  var btnContinue=0;
     btnContinueToshipping.click(function(){
+        btnContinue++;
+        console.log('continue = '+btnContinue);
+        if(btnContinue==1){
          $('.method-shipping').removeClass('d-none');
+
          $('.hide-if-click-continue').addClass('d-none');
          $('.hide-payemenyt-method').removeClass('d-none');
+
          $('#payement').removeClass('non-active-breadcrumb');
          $('#shipping').removeClass('active-breadcrumb');
          $('#shipping').addClass('non-active-breadcrumb');
          $('#payement').addClass('active-breadcrumb');
+        }
+         if(btnContinue==2){
+              $('.page-4-show').addClass('d-none');
+            $('#page-4').removeClass('d-none');
+           
+            console.log("afficher div paim");
+         }
+       
       
     });
     // btn return
-    let btnReturn=0;
+    var btnReturn=0;
     btnToReturn.click(function(){
       
         btnReturn++;
+       
+        console.log('return = '+btnReturn);
         if(btnReturn==1){
             $('.method-shipping').addClass('d-none');
             $('.hide-if-click-continue').removeClass('d-none');
@@ -76,7 +91,7 @@ $(document).ready(function(){
             $('#shipping').addClass('active-breadcrumb');
 
         }
-       if(btnReturn==2){
+       if(btnReturn>1){
         location.href = "information.html";
        }
  
