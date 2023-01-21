@@ -99,9 +99,17 @@ $(document).ready(function(){
         }
          if(btnContinue==2){
               $('.page-4-show').addClass('d-none');
-            $('#page-4').removeClass('d-none');
+              $('#page-4').removeClass('d-none');
            
-            console.log("afficher div paim");
+         
+         
+            }
+            if(btnContinue==3){
+            console.log(btnContinue)
+            $('#page-5').removeClass('d-none');
+            $('.page-4-show').addClass('d-none');
+            $('#page-4').addClass('d-none');
+          
          }
        
       
@@ -175,15 +183,15 @@ mediaQuery.addEventListener("change", (e) => {
 PaymentAddressContact.innerHTML=localStorage.getItem("email");
 
 let PaymentAddressShipToContent =document.getElementById('PaymentAddressShipToContent');
-PaymentAddressShipToContent.innerHTML=localStorage.getItem("fname")+' '+localStorage.getItem("lname")+' '+'number phone';
+PaymentAddressShipToContent.innerHTML=localStorage.getItem("fname")+' '+localStorage.getItem("lname")+','+localStorage.getItem("adress")+' '+localStorage.getItem("postal")+','+'United States';
 
 
-let PaymentAddressInfo =document.getElementById('PaymentAddressInfo');
-PaymentAddressInfo.innerHTML=localStorage.getItem("adress")+' '+localStorage.getItem("postal")+' '+'khsni country';
+// let PaymentAddressInfo =document.getElementById('PaymentAddressInfo');
+// PaymentAddressInfo.innerHTML=localStorage.getItem("adress")+' '+localStorage.getItem("postal")+'United States';
 
 
-let PaymentCountry =document.getElementById('PaymentCountry');
-PaymentCountry.innerHTML='khsni country';
+// let PaymentCountry =document.getElementById('PaymentCountry');
+// PaymentCountry.innerHTML='khsni country';
 
 
 //coupon

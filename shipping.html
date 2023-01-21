@@ -1,210 +1,794 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>shipping</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <div class="container mt-5">
-           <!-- logos -->
-           <div class="row" >
-         
-            <div class="col-6 logo mb-3" id="logos">
-              <div id="logo" class="w-75 logoBox d-flex flex-wrap text align-items-center mx-0 w-full h-full md:w-full justify-content-start"><a class="align-middle cursor-pointer h-44px" href="/"><img class="w-auto h-full w-50" src="//img.staticdj.com/b5403df974d073d715f9df952987db49.jpg" alt=""></a></div>
-              </div>
-             
-              
-            </div>
-            <!-- breadcrumbs -->
-            <div class="row" >
-         
-              <div class="col-md-6 col-sm-12 " >
-            <nav class="mt-3" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-              <ol class="breadcrumb  list-unstyled d-flex align-item-startjustify-content-center">
-                <li class="breadcrumb-item"><a class="non-active-breadcrumb informations" id="" href="#">Informations</a></li>
-                <li class="breadcrumb-item "><a class="active-breadcrumb" id="shipping"  href="#">Shipping</a></li>
-                <li class="breadcrumb-item " ><a class="non-active-breadcrumb" id="payement" href="#">Payment</a></li>
-              </ol>
-              </nav>
-              </div>
-             
-            </div>
-            <!-- show order -->
-            <div class="row" >
-              <div class="col-12" id="show-order-div">
-                <div  data-testid="summary" class="d-flex align-items-center justify-content-between h-56px px-14px border-t border-b border-color-#D9D9D9">
-                  <div class="d-flex align-items-center" id="show-order"><svg class="w-20px h-20px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="rgba(173, 141, 119, 1)"><path d="M287.768 810.667c52.907 0 96.232 48.006 96.232 106.666S340.7 1024 287.768 1024C234.838 1024 192 975.994 192 917.333c0-58.66 42.837-106.666 95.768-106.666zm512 0c52.907 0 96.232 48.006 96.232 106.666S852.7 1024 799.768 1024C746.838 1024 704 975.994 704 917.333c0-58.66 42.837-106.666 95.768-106.666zM162.206 0l46.666 102.4 1.95 4.267h700.709l2.291-4.267H1024L808.667 510.464c-16.871 31.744-49.615 52.736-86.82 52.736H352.232l-44.642 83.456-1.487 6.144c0 7.168 5.949 12.8 12.41 12.8H893V768H297.667c-54.565 0-99.23-46.08-99.23-102.4 0-17.92 4.461-34.816 12.41-49.152l66.974-125.44L99.231 102.4H0V0h162.23zm691.98 213.333H259.902l107.227 233.643 6.437 13.824h348.282l132.34-247.467z"></path></svg>
-                    <span class="inline-block ml-8px mr-4px text-base ckt-summary" id="title-show-order">Hide order summary</span>
-                    <svg class="w-16px h-16px mt-4px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgba(173, 141, 119, 1)"><path d="M832 352H192l320 320 320-320z" id="down-path"></path></svg>
-                  
-                  </div>
-                    <span class="text-base font-medium text-color-#333 ckt-summary-order-title price-product">$00.00</span></div>
-              </div>
-            </div>
-<div class="row" id="les-deux-colonnes">
 
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>shipping</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+    integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
 
+<body>
+  <div class="container mt-5">
+    <!-- logos -->
+    <div class="row">
 
-<div class="col-lg-6 col-sm-12  ckt-payment flex flex-wrap justify-end row-start-2 h-full ">
-            <!-- info -->      
-    <div class="mt-24px px-14px px-0">
-        <div class="px-12px mx-0 text-sm border ckt-box rounded-lg">
-              
-                <div class="py-3">
-                    <div class="d-flex justify-content-between text-color-#888">Contact <a href="information.html"><span class="underline cursor-pointer ckt-return-text text-sm" data-testid="navToContactPage">Change</span></a>
-                    </div>
-                    <div id="PaymentAddressContact" data-testid="PaymentAddressContact" class="text-color-#333 leading-5 mb-4 mt-2 break-all">   
-                    </div>
-                    <div data-testid="PaymentAddressShipTo" class="d-flex justify-content-between text-color-#888">Ship to</div>
-                    <div id="PaymentAddressShipToContent" data-testid="PaymentAddressShipToContent" class="text-color-#333 mt-1 leading-5 mb-3 text-sm break-words"></div>
-                    <div id="PaymentAddressInfo" data-testid="PaymentAddressInfo" class="text-color-#333 leading-5 mt-2 mb-3 text-sm break-words ">  </div>
-                    <div id="PaymentCountry" class="text-color-#333 leading-5 mt-2 text-sm break-words"></div>
-                </div>
-               <!-- method -->
-        <div class="py-4 border-t border-dashed border-color-#c8c8c8 d-none method-shipping"><div class="flex justify-between text-color-#888">Method<span class="underline cursor-pointer	ckt-return-text" data-testid="navToShippingPage"></span></div><div class="text-color-#333 leading-5 truncate mt-2">Standard Shipping</div></div>
+      <div class="col-6 logo mb-3" id="logos">
+        <div id="logo"
+          class="w-75 logoBox d-flex flex-wrap text align-items-center mx-0 w-full h-full md:w-full justify-content-start">
+          <a class="align-middle cursor-pointer h-44px" href="/"><img class="w-auto h-full w-50"
+              src="//img.staticdj.com/b5403df974d073d715f9df952987db49.jpg" alt=""></a>
         </div>
-       
+      </div>
+
+
     </div>
-    <!-- delivry free -->
-    <div id="delivery" class="relative w-full mt-28px px-14px px-0 hide-if-click-continue  d-block">
-        <div class="ckt-title">Shipping &amp; Delivery</div>
-        <ul class="w-full text-color-#333"><li class="w-full px-12px py-14px border mb-10px rounded-md cursor-pointer text-sm ckt-select-delivery" data-testid="DeliveryItem"><div class="d-flex d-flex-wrap align-item-center justify-content-between py-7px"><svg class="w-18px h-18px mt-1px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="rgba(173, 141, 119, 1)"><path d="M512 0c282.766 0 512 229.234 512 512s-229.234 512-512 512S0 794.766 0 512 229.234 0 512 0zm0 369.778a142.222 142.222 0 1 0 0 284.444 142.222 142.222 0 0 0 0-284.444z"></path></svg>
-            <div class="px-8px flex-1 truncate text-sm">Standard Shipping</div><div>free</div></div></li>
-        </ul>
+    <!-- breadcrumbs -->
+    <div class="row">
+
+      <div class="col-md-6 col-sm-12 ">
+        <nav class="mt-3" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+          <ol class="breadcrumb  list-unstyled d-flex align-item-startjustify-content-center">
+            <li class="breadcrumb-item"><a class="non-active-breadcrumb informations" id="" href="#">Informations</a>
+            </li>
+            <li class="breadcrumb-item "><a class="active-breadcrumb" id="shipping" href="#">Shipping</a></li>
+            <li class="breadcrumb-item "><a class="non-active-breadcrumb" id="payement" href="#">Payment</a></li>
+          </ol>
+        </nav>
+      </div>
+
     </div>
-<!-- special instruction -->
-<div class="mt-28px px-14px md:px-0 hide-if-click-continue  d-block"><label><h4 class="ckt-title">Special Instruction(optional)</h4></label><textarea id="special-instruction" class="w-full p-12px text-sm border border-solid border-gray-200 rounded-md resize-none ckt-textarea appearance-none outline-none placeholder-color-#757575" rows="1" placeholder="Special Instruction" name="note" maxlength="200"></textarea>
-</div>
-<!-- coupon -->
-<div class="my-28px mt-28px px-14px md:hidden hide-if-click-continue d-block"><h4 class="ckt-title">Coupon</h4><div class="d-flex justify-content-between"><div class="flex-1"><div class="relative inline-block w-full h-48px"><label class="field-placeholder absolute px-3 transition-all pointer-events-none peer-focus:text-xs peer-focus:top-1.5 top-3.5 text-sm text-color-#757575 cursor-text">Gift card or coupon code</label><input type="text" name="coupon-mobile" autocomplete="coupon" class="w-full h-full pl-12px pt-24px pb-1.5 text-sm text-color-#333 rounded-md outline-none transition-all appearance-none peer pr-12px ckt-input" value=""></div></div><button type="button" class="relative inline h-48px px-24px py-14px text-center text-sm rounded ckt-btn ml-12px cursor-not-allowed opacity-70"=""><div class="">Apply</div></button></div>
-</div>
-<div class="w-full-md:p-0">
+    <!-- show order -->
+    <div class="row">
+      <div class="col-12" id="show-order-div">
+        <div data-testid="summary"
+          class="d-flex align-items-center justify-content-between h-56px px-14px border-t border-b border-color-#D9D9D9">
+          <div class="d-flex align-items-center" id="show-order"><svg class="w-20px h-20px" viewBox="0 0 1024 1024"
+              xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="rgba(173, 141, 119, 1)">
+              <path
+                d="M287.768 810.667c52.907 0 96.232 48.006 96.232 106.666S340.7 1024 287.768 1024C234.838 1024 192 975.994 192 917.333c0-58.66 42.837-106.666 95.768-106.666zm512 0c52.907 0 96.232 48.006 96.232 106.666S852.7 1024 799.768 1024C746.838 1024 704 975.994 704 917.333c0-58.66 42.837-106.666 95.768-106.666zM162.206 0l46.666 102.4 1.95 4.267h700.709l2.291-4.267H1024L808.667 510.464c-16.871 31.744-49.615 52.736-86.82 52.736H352.232l-44.642 83.456-1.487 6.144c0 7.168 5.949 12.8 12.41 12.8H893V768H297.667c-54.565 0-99.23-46.08-99.23-102.4 0-17.92 4.461-34.816 12.41-49.152l66.974-125.44L99.231 102.4H0V0h162.23zm691.98 213.333H259.902l107.227 233.643 6.437 13.824h348.282l132.34-247.467z">
+              </path>
+            </svg>
+            <span class="inline-block ml-8px mr-4px text-base ckt-summary" id="title-show-order">Hide order
+              summary</span>
+            <svg class="w-16px h-16px mt-4px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="16"
+              height="16" fill="rgba(173, 141, 119, 1)">
+              <path d="M832 352H192l320 320 320-320z" id="down-path"></path>
+            </svg>
 
-
-<!-- paiement method -->
-
-<div class="hide-payemenyt-method d-none">
-
-
-<div class="checkout-payment mt-28px px-14px px-0 page-4-show ">
-  <div class="checkout-payment-lines">
-     <div class="checkout__title-wrap p-0 pb-12px">
-       <h4 class="checkout__title-text w-full">Payment Method</h4>
-       <p class="checkout__title-tip mt-4px text-color-#888">All transactions are secure and encrypted.</p>
-     </div>
-       <!-- div of cards -->
-       <div class="relative mt-3">
-        <div id="paymentList">
-          <payment-list><!----><div id="payment-list-container">
-            <div class="_paymentMethodItem_6fzfd_28" data-channel="asiabilldirect" data-name="asiabilldirect"><div style="border-color:rgba(173, 141, 119, 1);box-shadow:0 0 0 1px rgba(173, 141, 119, 1);" class="_paymentMethodItemGrid_6fzfd_33 _selectedChannel_6fzfd_182" data-channel="asiabilldirect" data-name="asiabilldirect"><!--?lit$738055032$-->
-              <div class="_checkedIcon_6fzfd_1">
-                <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="rgba(173, 141, 119, 1)"><path d="M512 0c282.766 0 512 229.234 512 512s-229.234 512-512 512S0 794.766 0 512 229.234 0 512 0zm0 369.778a142.222 142.222 0 1 0 0 284.444 142.222 142.222 0 0 0 0-284.444z"></path></svg></div> <!--?lit$738055032$-->
-                <creditcard-template class="_paymentLineContainer_6fzfd_58"><!---->
-                  <div class="_paymentMethodName_6fzfd_6">
-                    <div style="display:flex;align-items:center">
-                      <div style="margin-right:10px;display:flex"><!--?lit$738055032$--><!--?lit$738055032$-->
-                        <svg viewBox="0 0 16 16" focusable="false" data-icon="card" width="28px" height="28px" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M2.29 9.61H5.7V8.7H2.3v.91z"></path><path d="M2.29 2.3A2.29 2.29 0 000 4.59v6.85a2.29 2.29 0 002.29 2.29H13.7A2.29 2.29 0 0016 11.44V4.6a2.29 2.29 0 00-2.29-2.29H2.3zm11.42.91H2.3C1.53 3.21.9 3.83.9 4.6v.4H15.1v-.4c0-.76-.62-1.38-1.38-1.38zM.91 11.44V5.9H15.1v5.54c0 .76-.62 1.37-1.38 1.37H2.3A1.37 1.37 0 01.9 11.44z" fill-rule="evenodd" clip-rule="evenodd">
-
-                        </path></svg><!--?--></div>
-                        <!--?lit$738055032$--><!--?lit$738055032$--><!--?lit$738055032$--><!--?lit$738055032$-->
-                        <span class="_paymentMethodText_6fzfd_169"><!--?lit$738055032$-->Credit &amp; Debit Card</span><!--?--><!--?--><!--?--></div><div class="_paymentMethodCreditImgList_6fzfd_155"><!--?lit$738055032$--><support-cards-template><!----><!--?lit$738055032$--><!----><img src="//img.staticdj.com/oss/operation/3cc7bc0c09f7f0fb19581a21abd4cd53.svg"><!----><!----><img src="//img.staticdj.com/oss/operation/b823bc7dd65f1a58d949dfb47916e4b2.svg"><!----><!----><img src="//img.staticdj.com/oss/operation/f54de18275833f3b1575993b227f121f.svg"><!----><!--?lit$738055032$--><img id="asiabilldirect-dynamic-logo" src="//img.staticdj.com/oss/operation/b068c5902e07857d5251e11f8198ad80.svg"><!--?--></support-cards-template> <!--?lit$738055032$--></div></div><div class="_creditCardFormContainer_6fzfd_182"><!--?lit$738055032$--> <!--?lit$738055032$--><creditcardform-template class="_paymentLineContainer_6fzfd_58"><!----><form id="creditForm" name="creditForm" onsubmit="return!1" class="_showValid_ehezr_152 _paymentCreditForm_ehezr_135"><!--?lit$738055032$--> <!--?lit$738055032$--><div class="_paymentCreditForm_ehezr_135"><div class="_formRow_ehezr_101">
-                          <div class="_formGroup_ehezr_1 " id="credit-card-div">
-                            <input required="" id="credit-card" pattern="^[\d\s]{6,24}$" minlength="6" maxlength="24" type="text" name="card_number" id="credit_card_number" class="_formControl_ehezr_1 valid-content">
-                             <label class="_placeholder_ehezr_1" >
-                              <span><!--?lit$738055032$-->Card Number</span>
-                            </label> 
-                            <label class="_invalidLabel_ehezr_148 _valueMissing_ehezr_180"><!--?lit$738055032$-->Please enter a card number
-                            </label> 
-                            <label class="_invalidLabel_ehezr_148 _patternMismatch_ehezr_152"><!--?lit$738055032$-->Your credit card number is incomplete</label> 
-                            <label class="_invalidLabel_ehezr_148 _binCheckTips_ehezr_236"><!--?lit$738055032$-->Please ensure that you have entered a supported card.</label>
-                             <label class="_invalidLabel_ehezr_148 _luhnCheckTips_ehezr_237"><!--?lit$738055032$-->Please ensure that your card is entered correctly.</label> 
-                             <img id="credit_card_icon" class="_paymentCardIcon_ehezr_8" src="//img.staticdj.com/oss/operation/ea8ee37a46bea7d2180006ec4bc78100_24x.png">
-                             <div class="credit-card-error"></div>
-                            </div>
-                            </div>
-                            
-                            <div class="_formRow_ehezr_101"><div class="_formGroup_ehezr_1"><input required="" type="text" name="card_date" id="credit_holder_date" class="_formControl_ehezr_1 valid-date">
-                               <label for="card_date" class="_placeholder_ehezr_1">
-                                <span><!--?lit$738055032$-->Expiration Date (MM / YY)</span></label> 
-                                <label for="card_date" class="_invalidLabel_ehezr_148 _invalidCreditDate_ehezr_208"><!--?lit$738055032$-->Please enter valid date</label>
-                              </div><div class="_formGroup_ehezr_1"><input required="" pattern="^[\d]{3}$" minlength="3" maxlength="3" type="text" name="card_code" id="credit_card_code" class="_formControl_ehezr_1"> <label class="_placeholder_ehezr_1"><span><!--?lit$738055032$-->Security Code (CVV)</span></label> <label class="_invalidLabel_ehezr_148 _valueMissing_ehezr_180"><!--?lit$738055032$-->Please enter your card code</label> <label class="_invalidLabel_ehezr_148 _patternMismatch_ehezr_152"><!--?lit$738055032$-->Please enter a valid card code</label></div></div><div class="_formRow_ehezr_101"><!--?lit$738055032$--><div class="_formGroup_ehezr_1"><input required="" id="card_first_name" pattern="^.{0,50}$" type="text" name="card_first_name" class="_formControl_ehezr_1 valid-characters"> <label class="_placeholder_ehezr_1"><span><!--?lit$738055032$-->Cardholder First Name</span></label> <label class="_invalidLabel_ehezr_148 _valueMissing_ehezr_180"><!--?lit$738055032$-->Please enter your name</label> <label class="_invalidLabel_ehezr_148 _patternMismatch_ehezr_152"><!--?lit$738055032$-->name too long</label> <label class="_invalidLabel_ehezr_148 _invalidCharacters_ehezr_194"><!--?lit$738055032$-->Contains invalid characters</label></div> <!--?lit$738055032$--><div class="_formGroup_ehezr_1"><input required="" id="card_last_name" pattern="^.{0,50}$" type="text" name="card_last_name" class="_formControl_ehezr_1 valid-characters"> <label class="_placeholder_ehezr_1"><span><!--?lit$738055032$-->Cardholder Last Name</span></label> <label class="_invalidLabel_ehezr_148 _valueMissing_ehezr_180"><!--?lit$738055032$-->Please enter your name</label> <label class="_invalidLabel_ehezr_148 _patternMismatch_ehezr_152"><!--?lit$738055032$-->name too long</label> <label class="_invalidLabel_ehezr_148 _invalidCharacters_ehezr_194"><!--?lit$738055032$-->Contains invalid characters</label></div></div></div></form></creditcardform-template> <!--?lit$738055032$--> <!--?lit$738055032$--><div class="_merchantDesc_6fzfd_189"><!--?lit$738055032$--></div></div></creditcard-template></div></div><!--?--><!----><!----><!--?lit$738055032$--><!--?--><!----><!--?--><!--?--><banklist-template><!----><!--?lit$738055032$--><!--?--></banklist-template><stripe-banklist-template><!----><div id="stripe-banklist-slot"></div></stripe-banklist-template></div></payment-list></div></div>
-  </div>
-</div>
-<!-- billing Adress -->
-<div id="billing" class="w-full mt-28px px-14px px-0 mb-4 mb-30px page-4-show">
-  <h4 class="checkout__title-text w-full">Billing Address</h4>
-  <div class="sub-title font-text-14px text-color-#757575 mt-4px">Select the address that matches your card or payment method.</div>
-        <div class="relative mt-12px mb-3">
-          <div class="relative">
-            <select id="billing-select" class="billing-select w-full h-48px relative appearance-none ckt-select rounded-md px-12px text-sm outline-none transition-all">
-             
-              <option  value="1">Same as shipping address</option>
-              <option  value="0">New billing address</option>
-             
-            </select>
-          
           </div>
+          <span class="text-base font-medium text-color-#333 ckt-summary-order-title price-product">$00.00</span>
+        </div>
+      </div>
+    </div>
+    <div class="row" id="les-deux-colonnes">
+
+
+
+      <div class="col-lg-6 col-sm-12  ckt-payment flex flex-wrap justify-end row-start-2 h-full ">
+        <!-- info -->
+        <div class="mt-24px px-14px px-0">
+          <div class="px-12px mx-0 text-sm border ckt-box rounded-lg">
+
+            <div class="py-3 _2jarM prLAT" role="table">
+
+              <div role="row" class="_2C5rr">
+                <div class="_3rOgv ">
+                  <div role="cell" class="_1DgZ7"><span class="_19gi7yt0 _19gi7ytg _1fragem1t _19gi7yt8 text-color-#888"">Contact</span></div>
+                <div role=" cell" class="Niptx"><bdo class="_19gi7yt0 _19gi7ytg _1fragem1t" id="PaymentAddressContact"
+                        dir="ltr"></bdo>
+                  </div>
+                </div>
+                <div role="cell">
+                  <a href="information.html"><span class="underline cursor-pointer ckt-return-text text-sm"
+                      data-testid="navToContactPage">Change</span>
+                  </a>
+                </div>
+              </div>
+              <hr class="divider">
+              <div role="row" class="_2C5rr">
+                <div class="_3rOgv ">
+                  <div role="cell" class="_1DgZ7"><span class="_19gi7yt0 _19gi7ytg _1fragem1t _19gi7yt8 text-color-#888"">Ship to</span></div>
+              <div role=" cell" class="Niptx"><bdo class="_19gi7yt0 _19gi7ytg _1fragem1t"
+                        id="PaymentAddressShipToContent" dir="ltr"></bdo>
+                  </div>
+                </div>
+                <div role="cell">
+                  <a href="information.html"><span class="underline cursor-pointer ckt-return-text text-sm"
+                      data-testid="navToContactPage">Change</span>
+                  </a>
+                </div>
+              </div>
+              <hr class="divider">
+              <div role="row" class="_2C5rr  d-none method-shipping">
+                <div class="_3rOgv ">
+                  <div role="cell" class="_1DgZ7"><span class="_19gi7yt0 _19gi7ytg _1fragem1t _19gi7yt8 text-color-#888"">Method</span></div>
+            <div role=" cell" class="Niptx"><bdo class="_19gi7yt0 _19gi7ytg _1fragem1t"
+                        id="PaymentAddressShipToContent" dir="ltr">Standard Shipping</bdo>
+                  </div>
+                </div>
+                <div role="cell">
+                  <span class="cursor-pointer ckt-return-text text-sm" data-testid="navToContactPage">Free</span>
+
+                </div>
+              </div>
+
+
+            </div>
+
           </div>
 
-          <!-- info gmail+..... -->
-          <div id="billing-adress-infos" class="d-none mt-10px pt-10px md:mt-20px md:pt-20px border-t border-dashed border-color-#888"><div class="af-address-form af-min-w-min af-color-#333"><div class="af-grid af-grid-cols-12 af-gap-3 af-mb-3 af-w-full"><div class="af-col-span-12 af-col-start-1 md:af-col-span-6"><div class="af-relative"><input id="firstName" name="firstName" type="text" required="" aria-required="true" class="af-w-full af-border af-rounded-md af-h-12 af-p-3 af-text-sm af-outline-none af-transition-all af-pt-5 af-pb-1 af-appearance-none af-peer focus:af-border-focus focus:af-shadow-focus ckt-input" autocomplete="billing given-name" autocorrect="off" value="ABDELAZIZ"><input id="firstName-autofill" type="text" autocomplete="billing given-name" style="width: 0px;"><label for="firstName" class="af-field-placeholder af-pl-3 af-absolute af-transition-all af-pointer-events-none peer-focus:af-text-xs peer-focus:af-top-1.5 af-top-1.5 af-text-xs af-text-color-#757575">First Name </label><label for="required" class="af-invalid-label af-inline-block af-mt-1 af-text-sm ckt-input-tip-err af-hidden">Please enter your First Name</label><label for="max" class="af-invalid-label af-inline-block af-mt-1 af-text-sm ckt-input-tip-err af-hidden">is too long (maximum is 50 characters)</label><label for="invalidCharacters" class="af-invalid-label af-inline-block af-mt-1 af-text-sm ckt-input-tip-err af-hidden">Contains invalid characters</label></div></div><div class="af-col-span-12 af-col-start-1 md:af-col-span-6"><div class="af-relative"><input id="lastName" name="lastName" type="text" required="" aria-required="true" class="af-w-full af-border af-rounded-md af-h-12 af-p-3 af-text-sm af-outline-none af-transition-all af-pt-5 af-pb-1 af-appearance-none af-peer focus:af-border-focus focus:af-shadow-focus ckt-input" autocomplete="billing family-name" autocorrect="off" value="ELHATHOUT"><input id="lastName-autofill" type="text" autocomplete="billing family-name" style="width: 0px;"><label for="lastName" class="af-field-placeholder af-pl-3 af-absolute af-transition-all af-pointer-events-none peer-focus:af-text-xs peer-focus:af-top-1.5 af-top-1.5 af-text-xs af-text-color-#757575">Last Name </label><label for="required" class="af-invalid-label af-inline-block af-mt-1 af-text-sm ckt-input-tip-err af-hidden">Please enter your Last Name</label><label for="max" class="af-invalid-label af-inline-block af-mt-1 af-text-sm ckt-input-tip-err af-hidden">is too long (maximum is 50 characters)</label><label for="invalidCharacters" class="af-invalid-label af-inline-block af-mt-1 af-text-sm ckt-input-tip-err af-hidden">Contains invalid characters</label></div></div></div><div class="af-grid af-grid-cols-12 af-gap-3 af-mb-3 af-w-full"><div class="af-col-span-12 af-col-start-1 md:af-col-span-12"><div class="af-relative"><input id="address" name="address" type="text" required="" aria-required="true" class="af-w-full af-border af-rounded-md af-h-12 af-p-3 af-text-sm af-outline-none af-transition-all af-pt-5 af-pb-1 af-appearance-none af-peer focus:af-border-focus focus:af-shadow-focus ckt-input" autocomplete="billing address-line1" autocorrect="off" value="DR ZAOUIAT SIDI BOUTAIEB ESBIAAT YOUSSOUFIA"><input id="address-autofill" type="text" autocomplete="billing address-line1" style="width: 0px;"><label for="address" class="af-field-placeholder af-pl-3 af-absolute af-transition-all af-pointer-events-none peer-focus:af-text-xs peer-focus:af-top-1.5 af-top-1.5 af-text-xs af-text-color-#757575">Address </label><label for="required" class="af-invalid-label af-inline-block af-mt-1 af-text-sm ckt-input-tip-err af-hidden">Please enter your Address</label><label for="max" class="af-invalid-label af-inline-block af-mt-1 af-text-sm ckt-input-tip-err af-hidden">is too long (maximum is 255 characters)</label></div></div></div><div class="af-grid af-grid-cols-12 af-gap-3 af-mb-3 af-w-full"><div class="af-col-span-12 af-col-start-1 md:af-col-span-12"><div class="af-relative"><input id="address1" name="address1" type="text" aria-required="false" class="af-w-full af-border af-rounded-md af-h-12 af-p-3 af-text-sm af-outline-none af-transition-all af-pt-5 af-pb-1 af-appearance-none af-peer focus:af-border-focus focus:af-shadow-focus ckt-input" autocomplete="billing address-line2" autocorrect="off" value=""><input id="address1-autofill" type="text" autocomplete="billing address-line2" style="width: 0px;"><label for="address1" class="af-field-placeholder af-pl-3 af-absolute af-transition-all af-pointer-events-none peer-focus:af-text-xs peer-focus:af-top-1.5 af-top-3.5 af-text-sm af-text-color-#757575">Apartment, suite, etc.   (optional)</label><label for="max" class="af-invalid-label af-inline-block af-mt-1 af-text-sm ckt-input-tip-err af-hidden">is too long (maximum is 255 characters)</label></div></div></div><div class="af-grid af-grid-cols-12 af-gap-3 af-mb-3 af-w-full"><div class="af-col-span-12 af-col-start-1 md:af-col-span-12"><div class="af-relative"><input id="city" name="city" type="text" required="" aria-required="true" class="af-w-full af-border af-rounded-md af-h-12 af-p-3 af-text-sm af-outline-none af-transition-all af-pt-5 af-pb-1 af-appearance-none af-peer focus:af-border-focus focus:af-shadow-focus ckt-input" autocomplete="billing address-level2" autocorrect="off" value="YOU"><input id="city-autofill" type="text" autocomplete="billing address-level2" style="width: 0px;"><label for="city" class="af-field-placeholder af-pl-3 af-absolute af-transition-all af-pointer-events-none peer-focus:af-text-xs peer-focus:af-top-1.5 af-top-1.5 af-text-xs af-text-color-#757575">City </label><label for="required" class="af-invalid-label af-inline-block af-mt-1 af-text-sm ckt-input-tip-err af-hidden">Please enter your City</label><label for="max" class="af-invalid-label af-inline-block af-mt-1 af-text-sm ckt-input-tip-err af-hidden">is too long (maximum is 255 characters)</label></div></div></div><div class="af-grid af-grid-cols-12 af-gap-3 af-mb-3 af-w-full"><div class="af-col-span-12 af-col-start-1 md:af-col-span-6">
-            <div class="af-relative"><div class="af-relative"><select required="" id="countryCode" name="countryCode" autocomplete="billing country" class="mt-2 af-relative af-w-full af-appearance-none af-border af-rounded-md af-h-12 af-p-3 af-text-sm af-outline-none af-transition-all af-pt-5 af-pb-1 af-peer focus:af-border-focus focus:af-shadow-focus ckt-input"><option value="" disabled="">Country/Region *</option><option value="AF">Afghanistan</option><option value="AX">Aland lslands</option><option value="AL">Albania</option><option value="DZ">Algeria</option><option value="AS">American Samoa</option><option value="AD">Andorra</option><option value="AO">Angola</option><option value="AI">Anguilla</option><option value="AQ">Antarctica</option><option value="AG">Antigua and Barbuda</option><option value="AR">Argentina</option><option value="AM">Armenia</option><option value="AW">Aruba</option><option value="AC">Ascension Island</option><option value="AU">Australia</option><option value="AT">Austria</option><option value="AZ">Azerbaijan</option><option value="BS">Bahamas</option><option value="BH">Bahrain</option><option value="BD">Bangladesh</option><option value="BB">Barbados</option><option value="BY">Belarus</option><option value="BE">Belgium</option><option value="BZ">Belize</option><option value="BJ">Benin</option><option value="BM">Bermuda</option><option value="BT">Bhutan</option><option value="BO">Bolivia</option><option value="BA">Bosnia and Herzegovina</option><option value="BW">Botswana</option><option value="BV">Bouvet Island</option><option value="BR">Brazil</option><option value="IO">British Indian Ocean Territory</option><option value="BN">Brunei</option><option value="BG">Bulgaria</option><option value="BF">Burkina Faso</option><option value="BI">Burundi</option><option value="KH">Cambodia</option><option value="CM">Cameroon</option><option value="CA">Canada</option><option value="CV">Cape Verde</option><option value="KY">Cayman Islands</option><option value="CF">Central African Republic</option><option value="TD">Chad</option><option value="CL">Chile</option><option value="CN">China</option><option value="CX">Christmas Island</option><option value="CC">Cocos(Keeling)Islands</option><option value="CO">Colombia</option><option value="KM">Comoros</option><option value="CG">Congo</option><option value="CD">Congo(DRC)</option><option value="CK">Cook Islands</option><option value="CR">Costa Rica</option><option value="CI">Cote d'Ivoire</option><option value="HR">Croatia</option><option value="CU">Cuba</option><option value="CY">Cyprus</option><option value="CZ">Czech Republic</option><option value="DK">Denmark</option><option value="DJ">Djibouti</option><option value="DM">Dominica</option><option value="DO">Dominican Republic</option><option value="EC">Ecuador</option><option value="EG">Egypt</option><option value="SV">El Salvador</option><option value="GQ">Equatorial Guinea</option><option value="ER">Eritrea</option><option value="EE">Estonia</option><option value="ET">Ethiopia</option><option value="FK">Falkland Islands</option><option value="FO">Faroe Islands</option><option value="FJ">Fiji Islands</option><option value="FI">Finland</option><option value="FR">France</option><option value="GF">French Guiana</option><option value="PF">French Polynesia</option><option value="TF">French Southern and Antarctic Lands</option><option value="GA">Gabon</option><option value="GM">Gambia</option><option value="GE">Georgia</option><option value="DE">Germany</option><option value="GH">Ghana</option><option value="GI">Gibraltar</option><option value="GR">Greece</option><option value="GL">Greenland</option><option value="GD">Grenada</option><option value="GP">Guadeloupe</option><option value="GU">Guam</option><option value="GT">Guatemala</option><option value="GG">Guernsey</option><option value="GN">Guinea</option><option value="GW">Guinea-Bissau</option><option value="GY">Guyana</option><option value="HT">Haiti</option><option value="HM">Heard Island and McDonald Islands</option><option value="HN">Honduras</option><option value="HK">Hong Kong,China</option><option value="HU">Hungary</option><option value="IS">Iceland</option><option value="IN">India</option><option value="ID">Indonesia</option><option value="IR">Iran</option><option value="IQ">Iraq</option><option value="IE">Ireland</option><option value="IM">Isle of Man</option><option value="IL">Israel</option><option value="IT">Italy</option><option value="JM">Jamaica</option><option value="JP">Japan</option><option value="JE">Jersey</option><option value="JO">Jordan</option><option value="KZ">Kazakhstan</option><option value="KE">Kenya</option><option value="KI">Kiribati</option><option value="KR">Korea</option><option value="KW">Kuwait</option><option value="KG">Kyrgyzstan</option><option value="LA">Laos</option><option value="LV">Latvia</option><option value="LB">Lebanon</option><option value="LS">Lesotho</option><option value="LR">Liberia</option><option value="LY">Libya</option><option value="LI">Liechtenstein</option><option value="LT">Lithuania</option><option value="LU">Luxembourg</option><option value="MO">Macao,China</option><option value="MK">Macedonia,Former Yugoslav Republic of</option><option value="MG">Madagascar</option><option value="MW">Malawi</option><option value="MY">Malaysia</option><option value="MV">Maldives</option><option value="ML">Mali</option><option value="MT">Malta</option><option value="MH">Marshall Islands</option><option value="MQ">Martinique</option><option value="MR">Mauritania</option><option value="MU">Mauritius</option><option value="YT">Mayotte</option><option value="MX">Mexico</option><option value="FM">Micronesia</option><option value="MD">Moldova</option><option value="MC">Monaco</option><option value="MN">Mongolia</option><option value="ME">Montenegro</option><option value="MS">Montserrat</option><option value="MA">Morocco</option><option value="MZ">Mozambique</option><option value="MM">Myanmar</option><option value="NA">Namibia</option><option value="NR">Nauru</option><option value="NP">Nepal</option><option value="NL">Netherlands</option><option value="AN">Netherlands Antilles</option><option value="NC">New Caledonia</option><option value="NZ">New Zealand</option><option value="NI">Nicaragua</option><option value="NE">Niger</option><option value="NG">Nigeria</option><option value="NU">Niue</option><option value="NF">Norfolk Island</option><option value="KP">North Korea</option><option value="MP">Northern Mariana Islands</option><option value="NO">Norway</option><option value="OM">Oman</option><option value="PK">Pakistan</option><option value="PW">Palau</option><option value="PS">Palestinian Authority</option><option value="PA">Panama</option><option value="PG">Papua New Guinea</option><option value="PY">Paraguay</option><option value="PE">Peru</option><option value="PH">Philippines</option><option value="PN">Pitcairn Islands</option><option value="PL">Poland</option><option value="PT">Portugal</option><option value="PR">Puerto Rico</option><option value="QA">Qatar</option><option value="RE">Reunion</option><option value="RO">Romania</option><option value="RU">Russia</option><option value="RW">Rwanda</option><option value="WS">Samoa</option><option value="SM">San Marino</option><option value="ST">Sao Tome and Principe</option><option value="SA">Saudi Arabia</option><option value="SN">Senegal</option><option value="RS">Serbia</option><option value="SC">Seychelles</option><option value="SL">Sierra Leone</option><option value="SG">Singapore</option><option value="SK">Slovakia</option><option value="SI">Slovenia</option><option value="SB">Solomon Islands</option><option value="SO">Somalia</option><option value="ZA">South Africa</option><option value="GS">South Georgia and South Sandwich Islands</option><option value="ES">Spain</option><option value="LK">Sri Lanka</option><option value="MF">St. Martin (French part)</option><option value="SH">St.Helena</option><option value="KN">St.Kitts and Nevis</option><option value="LC">St.Lucia</option><option value="PM">St.Pierre and Miquelon</option><option value="VC">St.Vincent and the Grenadines</option><option value="SD">Sudan</option><option value="SR">Suriname</option><option value="SJ">Svalbard and Jan Mayen</option><option value="SZ">Swaziland</option><option value="SE">Sweden</option><option value="CH">Switzerland</option><option value="SY">Syria</option><option value="TW">Taiwan,China</option><option value="TJ">Tajikistan</option><option value="TZ">Tanzania</option><option value="TH">Thailand</option><option value="TL">Timor-Leste</option><option value="TG">Togo</option><option value="TK">Tokelau</option><option value="TO">Tonga</option><option value="TT">Trinidad and Tobago</option><option value="TA">Tristan da Cunha</option><option value="TN">Tunisia</option><option value="TR">Turkey</option><option value="TM">Turkmenistan</option><option value="TC">Turks and Caicos Islands</option><option value="TV">Tuvalu</option><option value="UG">Uganda</option><option value="UA">Ukraine</option><option value="AE">United Arab Emirates</option><option value="GB">United Kingdom</option><option value="US">United States</option><option value="UM">United States Minor Outlying Islands</option><option value="UY">Uruguay</option><option value="UZ">Uzbekistan</option><option value="VU">Vanuatu</option><option value="VA">Vatican City</option><option value="VE">Venezuela</option><option value="VN">Vietnam</option><option value="VI">Virgin Islands</option><option value="VG">Virgin Islands,British</option><option value="WF">Wallis and Futuna</option><option value="EH">Western Sahara</option><option value="YE">Yemen</option><option value="ZM">Zambia</option><option value="ZW">Zimbabwe</option></select><label for="countryCode" class="af-field-placeholder af-absolute af-px-3 af-text-color-#757575 af-transition-all af-text-xs af-top-1.5 af-pointer-events-none">Country/Region </label><label for="required" class="af-invalid-label af-inline-block af-mt-1 af-text-sm ckt-input-tip-err !af-hidden">Please select your Country/Region</label><div class="af-absolute af-top-4 af-px-3 af-w-full af-flex af-flex-wrap af-justify-end af-pointer-events-none"><svg class="af-w-4 af-h-4 af-pointer-events-none af-text-gray-500 af-fill-current" viewBox="0 0 1024 1024" version="1.1" p-id="2046" xmlns="http://www.w3.org/2000/svg" width="16" height="16"><defs><style></style></defs><path d="M832 352H192l320 320 320-320z" fill="#999999" p-id="2047"></path></svg></div></div><input id="countryCode-autofill" class="af-opacity-0 af-absolute af-z-0 w-0 h-0" autocomplete="billing country" autocorrect="off" aria-required="true"></div></div></div><div class="af-grid af-grid-cols-12 af-gap-3 af-mb-3 af-w-full"><div class="af-col-span-12 af-col-start-1 md:af-col-span-12"><div class="af-relative"><input id="zip" name="zip" type="text" required="" aria-required="true" class="af-w-full af-border af-rounded-md af-h-12 af-p-3 af-text-sm af-outline-none af-transition-all af-pt-5 af-pb-1 af-appearance-none af-peer focus:af-border-focus focus:af-shadow-focus ckt-input af-uppercase" autocomplete="billing postal-code" autocorrect="off" value="60311"><input id="zip-autofill" type="text" autocomplete="billing postal-code" style="width: 0px;"><label for="zip" class="af-field-placeholder af-pl-3 af-absolute af-transition-all af-pointer-events-none peer-focus:af-text-xs peer-focus:af-top-1.5 af-top-1.5 af-text-xs af-text-color-#757575">Postal Code </label><label class="af-inline-block af-mt-1 af-text-sm af-text-color-#888 af-hidden">Please enter a valid Postal code</label><label for="required" class="af-invalid-label af-inline-block af-mt-1 af-text-sm ckt-input-tip-err af-hidden">Please enter your Postal Code</label><label for="max" class="af-invalid-label af-inline-block af-mt-1 af-text-sm ckt-input-tip-err af-hidden">is too long (maximum is 255 characters)</label><label for="invalid" class="af-invalid-label af-inline-block af-mt-1 af-text-sm ckt-input-tip-err af-hidden">Contains invalid characters</label></div></div></div><div class="af-grid af-grid-cols-12 af-gap-3 af-mb-3 af-w-full af-hidden"></div></div></div>
-  
-  </div>
-  <!-- divider -->
-<hr class="hr " />
-<!-- page4 -->
-<div class="main d-none" id="page-4" style=" display: flex; justify-content: center; align-items: center;">
-  <div class="container verify-container" style="overflow: auto;margin: 10px;border-radius:5px; border: 1px solid #32C4FF;">
-      <div class="verify-logos small-logos" style="display: flex; justify-content: space-between; align-items: center; background-color: #F3F5F7; padding: 15px;">
-          <div class="logo" style="width: 28%; height: auto; text-align: center; padding-left: 20px;">
-              <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.1" id="Layer_1" width="1000" height="324.6835" viewBox="0 0 1000 324.68351" overflow="visible" enable-background="new 0 0 659.055 202.068" xml:space="preserve" inkscape:version="1.0.2 (e86c870879, 2021-01-15)" sodipodi:docname="Visa_2021.svg" style="overflow:visible; width: 100%; height: auto; object-fit: contain;">
-                  <metadata id="metadata3739">
-                      <rdf:rdf>
+        </div>
+        <!-- delivry free -->
+        <div id="delivery" class="relative w-full mt-28px px-14px px-0 hide-if-click-continue  d-block">
+          <div class="ckt-title">Shipping &amp; Delivery</div>
+          <ul class="w-full text-color-#333">
+            <li class="w-full px-12px py-14px border mb-10px rounded-md cursor-pointer text-sm ckt-select-delivery"
+              data-testid="DeliveryItem">
+              <div class="d-flex d-flex-wrap align-item-center justify-content-between py-7px"><svg
+                  class="w-18px h-18px mt-1px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="200"
+                  height="200" fill="rgba(173, 141, 119, 1)">
+                  <path
+                    d="M512 0c282.766 0 512 229.234 512 512s-229.234 512-512 512S0 794.766 0 512 229.234 0 512 0zm0 369.778a142.222 142.222 0 1 0 0 284.444 142.222 142.222 0 0 0 0-284.444z">
+                  </path>
+                </svg>
+                <div class="px-8px flex-1 truncate text-sm">Standard Shipping</div>
+                <div>free</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- special instruction -->
+        <div class="mt-28px px-14px md:px-0 hide-if-click-continue  d-block"><label>
+            <h4 class="ckt-title">Special Instruction(optional)</h4>
+          </label><textarea id="special-instruction"
+            class="w-full p-12px text-sm border border-solid border-gray-200 rounded-md resize-none ckt-textarea appearance-none outline-none placeholder-color-#757575"
+            rows="1" placeholder="Special Instruction" name="note" maxlength="200"></textarea>
+        </div>
+        <!-- coupon -->
+        <div class="my-28px mt-28px px-14px md:hidden hide-if-click-continue d-block">
+          <h4 class="ckt-title">Coupon</h4>
+          <div class="d-flex justify-content-between">
+            <div class="flex-1">
+              <div class="relative inline-block w-full h-48px"><label
+                  class="field-placeholder absolute px-3 transition-all pointer-events-none peer-focus:text-xs peer-focus:top-1.5 top-3.5 text-sm text-color-#757575 cursor-text">Gift
+                  card or coupon code</label><input type="text" name="coupon-mobile" autocomplete="coupon"
+                  class="w-full h-full pl-12px pt-24px pb-1.5 text-sm text-color-#333 rounded-md outline-none transition-all appearance-none peer pr-12px ckt-input"
+                  value=""></div>
+            </div><button type="button"
+              class="relative inline h-48px px-24px py-14px text-center text-sm rounded ckt-btn ml-12px cursor-not-allowed opacity-70"="">
+              <div class="">Apply</div>
+            </button>
+          </div>
+        </div>
+        <div class="w-full-md:p-0">
+
+
+          <!-- paiement method -->
+
+          <div class="hide-payemenyt-method d-none">
+
+
+            <div class="checkout-payment mt-28px px-14px px-0 page-4-show ">
+              <div class="checkout-payment-lines">
+                <div class="checkout__title-wrap p-0 pb-12px">
+                  <h4 class="checkout__title-text w-full">Payment Method</h4>
+                  <p class="checkout__title-tip mt-4px text-color-#888">All transactions are secure and encrypted.</p>
+                </div>
+                <!-- div of cards -->
+                <div class="relative mt-3">
+                  <div id="paymentList">
+                    <payment-list><!---->
+                      <div id="payment-list-container">
+                        <div class="_paymentMethodItem_6fzfd_28" data-channel="asiabilldirect"
+                          data-name="asiabilldirect">
+                          <div style="border-color:rgba(173, 141, 119, 1);box-shadow:0 0 0 1px rgba(173, 141, 119, 1);"
+                            class="_paymentMethodItemGrid_6fzfd_33 _selectedChannel_6fzfd_182"
+                            data-channel="asiabilldirect" data-name="asiabilldirect"><!--?lit$738055032$-->
+                            <div class="_checkedIcon_6fzfd_1">
+                              <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="19" height="19"
+                                fill="rgba(173, 141, 119, 1)">
+                                <path
+                                  d="M512 0c282.766 0 512 229.234 512 512s-229.234 512-512 512S0 794.766 0 512 229.234 0 512 0zm0 369.778a142.222 142.222 0 1 0 0 284.444 142.222 142.222 0 0 0 0-284.444z">
+                                </path>
+                              </svg>
+                            </div> <!--?lit$738055032$-->
+                            <creditcard-template class="_paymentLineContainer_6fzfd_58"><!---->
+                              <div class="_paymentMethodName_6fzfd_6">
+                                <div style="display:flex;align-items:center">
+                                  <div style="margin-right:10px;display:flex">
+                                    <!--?lit$738055032$--><!--?lit$738055032$-->
+                                    <svg viewBox="0 0 16 16" focusable="false" data-icon="card" width="28px"
+                                      height="28px" fill="currentColor" aria-hidden="true"
+                                      xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M2.29 9.61H5.7V8.7H2.3v.91z"></path>
+                                      <path
+                                        d="M2.29 2.3A2.29 2.29 0 000 4.59v6.85a2.29 2.29 0 002.29 2.29H13.7A2.29 2.29 0 0016 11.44V4.6a2.29 2.29 0 00-2.29-2.29H2.3zm11.42.91H2.3C1.53 3.21.9 3.83.9 4.6v.4H15.1v-.4c0-.76-.62-1.38-1.38-1.38zM.91 11.44V5.9H15.1v5.54c0 .76-.62 1.37-1.38 1.37H2.3A1.37 1.37 0 01.9 11.44z"
+                                        fill-rule="evenodd" clip-rule="evenodd">
+
+                                      </path>
+                                    </svg><!--?-->
+                                  </div>
+                                  <!--?lit$738055032$--><!--?lit$738055032$--><!--?lit$738055032$--><!--?lit$738055032$-->
+                                  <span class="_paymentMethodText_6fzfd_169"><!--?lit$738055032$-->Credit &amp; Debit
+                                    Card</span><!--?--><!--?--><!--?-->
+                                </div>
+                                <div class="_paymentMethodCreditImgList_6fzfd_155">
+                                  <!--?lit$738055032$--><support-cards-template><!----><!--?lit$738055032$--><!----><img
+                                      src="//img.staticdj.com/oss/operation/3cc7bc0c09f7f0fb19581a21abd4cd53.svg"><!----><!----><img
+                                      src="//img.staticdj.com/oss/operation/b823bc7dd65f1a58d949dfb47916e4b2.svg"><!----><!----><img
+                                      src="//img.staticdj.com/oss/operation/f54de18275833f3b1575993b227f121f.svg"><!----><!--?lit$738055032$--><img
+                                      id="asiabilldirect-dynamic-logo"
+                                      src="//img.staticdj.com/oss/operation/b068c5902e07857d5251e11f8198ad80.svg"><!--?--></support-cards-template>
+                                  <!--?lit$738055032$-->
+                                </div>
+                              </div>
+                              <div class="_creditCardFormContainer_6fzfd_182"><!--?lit$738055032$-->
+                                <!--?lit$738055032$--><creditcardform-template
+                                  class="_paymentLineContainer_6fzfd_58"><!---->
+                                  <form id="creditForm" name="creditForm" onsubmit="return!1"
+                                    class="_showValid_ehezr_152 _paymentCreditForm_ehezr_135"><!--?lit$738055032$-->
+                                    <!--?lit$738055032$-->
+                                    <div class="_paymentCreditForm_ehezr_135">
+                                      <div class="_formRow_ehezr_101">
+                                        <div class="_formGroup_ehezr_1 " id="credit-card-div">
+                                          <input required="" id="credit-card" pattern="^[\d\s]{6,24}$" minlength="6"
+                                            maxlength="24" type="text" name="card_number" id="credit_card_number"
+                                            class="_formControl_ehezr_1 valid-content">
+                                          <label class="_placeholder_ehezr_1">
+                                            <span><!--?lit$738055032$-->Card Number</span>
+                                          </label>
+                                          <label
+                                            class="_invalidLabel_ehezr_148 _valueMissing_ehezr_180"><!--?lit$738055032$-->Please
+                                            enter a card number
+                                          </label>
+                                          <label
+                                            class="_invalidLabel_ehezr_148 _patternMismatch_ehezr_152"><!--?lit$738055032$-->Your
+                                            credit card number is incomplete</label>
+                                          <label
+                                            class="_invalidLabel_ehezr_148 _binCheckTips_ehezr_236"><!--?lit$738055032$-->Please
+                                            ensure that you have entered a supported card.</label>
+                                          <label
+                                            class="_invalidLabel_ehezr_148 _luhnCheckTips_ehezr_237"><!--?lit$738055032$-->Please
+                                            ensure that your card is entered correctly.</label>
+                                          <img id="credit_card_icon" class="_paymentCardIcon_ehezr_8"
+                                            src="//img.staticdj.com/oss/operation/ea8ee37a46bea7d2180006ec4bc78100_24x.png">
+                                          <div class="credit-card-error"></div>
+                                        </div>
+                                      </div>
+
+                                      <div class="_formRow_ehezr_101">
+                                        <div class="_formGroup_ehezr_1"><input required="" type="text" name="card_date"
+                                            id="credit_holder_date" class="_formControl_ehezr_1 valid-date">
+                                          <label for="card_date" class="_placeholder_ehezr_1">
+                                            <span><!--?lit$738055032$-->Expiration Date (MM / YY)</span></label>
+                                          <label for="card_date"
+                                            class="_invalidLabel_ehezr_148 _invalidCreditDate_ehezr_208"><!--?lit$738055032$-->Please
+                                            enter valid date</label>
+                                        </div>
+                                        <div class="_formGroup_ehezr_1"><input required="" pattern="^[\d]{3}$"
+                                            minlength="3" maxlength="3" type="text" name="card_code"
+                                            id="credit_card_code" class="_formControl_ehezr_1"> <label
+                                            class="_placeholder_ehezr_1"><span><!--?lit$738055032$-->Security Code
+                                              (CVV)</span></label> <label
+                                            class="_invalidLabel_ehezr_148 _valueMissing_ehezr_180"><!--?lit$738055032$-->Please
+                                            enter your card code</label> <label
+                                            class="_invalidLabel_ehezr_148 _patternMismatch_ehezr_152"><!--?lit$738055032$-->Please
+                                            enter a valid card code</label></div>
+                                      </div>
+                                      <div class="_formRow_ehezr_101"><!--?lit$738055032$-->
+                                        <div class="_formGroup_ehezr_1"><input required="" id="card_first_name"
+                                            pattern="^.{0,50}$" type="text" name="card_first_name"
+                                            class="_formControl_ehezr_1 valid-characters"> <label
+                                            class="_placeholder_ehezr_1"><span><!--?lit$738055032$-->Cardholder First
+                                              Name</span></label> <label
+                                            class="_invalidLabel_ehezr_148 _valueMissing_ehezr_180"><!--?lit$738055032$-->Please
+                                            enter your name</label> <label
+                                            class="_invalidLabel_ehezr_148 _patternMismatch_ehezr_152"><!--?lit$738055032$-->name
+                                            too long</label> <label
+                                            class="_invalidLabel_ehezr_148 _invalidCharacters_ehezr_194"><!--?lit$738055032$-->Contains
+                                            invalid characters</label></div> <!--?lit$738055032$-->
+                                        <div class="_formGroup_ehezr_1"><input required="" id="card_last_name"
+                                            pattern="^.{0,50}$" type="text" name="card_last_name"
+                                            class="_formControl_ehezr_1 valid-characters"> <label
+                                            class="_placeholder_ehezr_1"><span><!--?lit$738055032$-->Cardholder Last
+                                              Name</span></label> <label
+                                            class="_invalidLabel_ehezr_148 _valueMissing_ehezr_180"><!--?lit$738055032$-->Please
+                                            enter your name</label> <label
+                                            class="_invalidLabel_ehezr_148 _patternMismatch_ehezr_152"><!--?lit$738055032$-->name
+                                            too long</label> <label
+                                            class="_invalidLabel_ehezr_148 _invalidCharacters_ehezr_194"><!--?lit$738055032$-->Contains
+                                            invalid characters</label></div>
+                                      </div>
+                                    </div>
+                                  </form>
+                                </creditcardform-template> <!--?lit$738055032$--> <!--?lit$738055032$-->
+                                <div class="_merchantDesc_6fzfd_189"><!--?lit$738055032$--></div>
+                              </div>
+                            </creditcard-template>
+                          </div>
+                        </div>
+                        <!--?--><!----><!----><!--?lit$738055032$--><!--?--><!----><!--?--><!--?--><banklist-template><!----><!--?lit$738055032$--><!--?--></banklist-template><stripe-banklist-template><!---->
+                          <div id="stripe-banklist-slot"></div>
+                        </stripe-banklist-template>
+                      </div>
+                    </payment-list>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- billing Adress -->
+            <div id="billing" class="w-full mt-28px px-14px px-0 mb-4 mb-30px page-4-show">
+              <h4 class="checkout__title-text w-full">Billing Address</h4>
+              <div class="sub-title font-text-14px text-color-#757575 mt-4px">Select the address that matches your card
+                or payment method.</div>
+              <div class="relative mt-12px mb-3">
+                <div class="relative">
+                  <select id="billing-select"
+                    class="billing-select w-full h-48px relative appearance-none ckt-select rounded-md px-12px text-sm outline-none transition-all">
+
+                    <option value="1">Same as shipping address</option>
+                    <option value="0">New billing address</option>
+
+                  </select>
+
+                </div>
+              </div>
+
+              <!-- info gmail+..... -->
+              <div id="billing-adress-infos"
+                class="d-none mt-10px pt-10px md:mt-20px md:pt-20px border-t border-dashed border-color-#888">
+                <div class="af-address-form af-min-w-min af-color-#333">
+                  <div class="af-grid af-grid-cols-12 af-gap-3 af-mb-3 af-w-full">
+                    <div class="af-col-span-12 af-col-start-1 md:af-col-span-6">
+                      <div class="af-relative"><input id="firstName" name="firstName" type="text" required=""
+                          aria-required="true"
+                          class="af-w-full af-border af-rounded-md af-h-12 af-p-3 af-text-sm af-outline-none af-transition-all af-pt-5 af-pb-1 af-appearance-none af-peer focus:af-border-focus focus:af-shadow-focus ckt-input"
+                          autocomplete="billing given-name" autocorrect="off" value="ABDELAZIZ"><input
+                          id="firstName-autofill" type="text" autocomplete="billing given-name"
+                          style="width: 0px;"><label for="firstName"
+                          class="af-field-placeholder af-pl-3 af-absolute af-transition-all af-pointer-events-none peer-focus:af-text-xs peer-focus:af-top-1.5 af-top-1.5 af-text-xs af-text-color-#757575">First
+                          Name </label><label for="required"
+                          class="af-invalid-label af-inline-block af-mt-1 af-text-sm ckt-input-tip-err af-hidden">Please
+                          enter your First Name</label><label for="max"
+                          class="af-invalid-label af-inline-block af-mt-1 af-text-sm ckt-input-tip-err af-hidden">is too
+                          long (maximum is 50 characters)</label><label for="invalidCharacters"
+                          class="af-invalid-label af-inline-block af-mt-1 af-text-sm ckt-input-tip-err af-hidden">Contains
+                          invalid characters</label></div>
+                    </div>
+                    <div class="af-col-span-12 af-col-start-1 md:af-col-span-6">
+                      <div class="af-relative"><input id="lastName" name="lastName" type="text" required=""
+                          aria-required="true"
+                          class="af-w-full af-border af-rounded-md af-h-12 af-p-3 af-text-sm af-outline-none af-transition-all af-pt-5 af-pb-1 af-appearance-none af-peer focus:af-border-focus focus:af-shadow-focus ckt-input"
+                          autocomplete="billing family-name" autocorrect="off" value="ELHATHOUT"><input
+                          id="lastName-autofill" type="text" autocomplete="billing family-name"
+                          style="width: 0px;"><label for="lastName"
+                          class="af-field-placeholder af-pl-3 af-absolute af-transition-all af-pointer-events-none peer-focus:af-text-xs peer-focus:af-top-1.5 af-top-1.5 af-text-xs af-text-color-#757575">Last
+                          Name </label><label for="required"
+                          class="af-invalid-label af-inline-block af-mt-1 af-text-sm ckt-input-tip-err af-hidden">Please
+                          enter your Last Name</label><label for="max"
+                          class="af-invalid-label af-inline-block af-mt-1 af-text-sm ckt-input-tip-err af-hidden">is too
+                          long (maximum is 50 characters)</label><label for="invalidCharacters"
+                          class="af-invalid-label af-inline-block af-mt-1 af-text-sm ckt-input-tip-err af-hidden">Contains
+                          invalid characters</label></div>
+                    </div>
+                  </div>
+                  <div class="af-grid af-grid-cols-12 af-gap-3 af-mb-3 af-w-full">
+                    <div class="af-col-span-12 af-col-start-1 md:af-col-span-12">
+                      <div class="af-relative"><input id="address" name="address" type="text" required=""
+                          aria-required="true"
+                          class="af-w-full af-border af-rounded-md af-h-12 af-p-3 af-text-sm af-outline-none af-transition-all af-pt-5 af-pb-1 af-appearance-none af-peer focus:af-border-focus focus:af-shadow-focus ckt-input"
+                          autocomplete="billing address-line1" autocorrect="off"
+                          value="DR ZAOUIAT SIDI BOUTAIEB ESBIAAT YOUSSOUFIA"><input id="address-autofill" type="text"
+                          autocomplete="billing address-line1" style="width: 0px;"><label for="address"
+                          class="af-field-placeholder af-pl-3 af-absolute af-transition-all af-pointer-events-none peer-focus:af-text-xs peer-focus:af-top-1.5 af-top-1.5 af-text-xs af-text-color-#757575">Address
+                        </label><label for="required"
+                          class="af-invalid-label af-inline-block af-mt-1 af-text-sm ckt-input-tip-err af-hidden">Please
+                          enter your Address</label><label for="max"
+                          class="af-invalid-label af-inline-block af-mt-1 af-text-sm ckt-input-tip-err af-hidden">is too
+                          long (maximum is 255 characters)</label></div>
+                    </div>
+                  </div>
+                  <div class="af-grid af-grid-cols-12 af-gap-3 af-mb-3 af-w-full">
+                    <div class="af-col-span-12 af-col-start-1 md:af-col-span-12">
+                      <div class="af-relative"><input id="address1" name="address1" type="text" aria-required="false"
+                          class="af-w-full af-border af-rounded-md af-h-12 af-p-3 af-text-sm af-outline-none af-transition-all af-pt-5 af-pb-1 af-appearance-none af-peer focus:af-border-focus focus:af-shadow-focus ckt-input"
+                          autocomplete="billing address-line2" autocorrect="off" value=""><input id="address1-autofill"
+                          type="text" autocomplete="billing address-line2" style="width: 0px;"><label for="address1"
+                          class="af-field-placeholder af-pl-3 af-absolute af-transition-all af-pointer-events-none peer-focus:af-text-xs peer-focus:af-top-1.5 af-top-3.5 af-text-sm af-text-color-#757575">Apartment,
+                          suite, etc. (optional)</label><label for="max"
+                          class="af-invalid-label af-inline-block af-mt-1 af-text-sm ckt-input-tip-err af-hidden">is too
+                          long (maximum is 255 characters)</label></div>
+                    </div>
+                  </div>
+                  <div class="af-grid af-grid-cols-12 af-gap-3 af-mb-3 af-w-full">
+                    <div class="af-col-span-12 af-col-start-1 md:af-col-span-12">
+                      <div class="af-relative"><input id="city" name="city" type="text" required="" aria-required="true"
+                          class="af-w-full af-border af-rounded-md af-h-12 af-p-3 af-text-sm af-outline-none af-transition-all af-pt-5 af-pb-1 af-appearance-none af-peer focus:af-border-focus focus:af-shadow-focus ckt-input"
+                          autocomplete="billing address-level2" autocorrect="off" value="YOU"><input id="city-autofill"
+                          type="text" autocomplete="billing address-level2" style="width: 0px;"><label for="city"
+                          class="af-field-placeholder af-pl-3 af-absolute af-transition-all af-pointer-events-none peer-focus:af-text-xs peer-focus:af-top-1.5 af-top-1.5 af-text-xs af-text-color-#757575">City
+                        </label><label for="required"
+                          class="af-invalid-label af-inline-block af-mt-1 af-text-sm ckt-input-tip-err af-hidden">Please
+                          enter your City</label><label for="max"
+                          class="af-invalid-label af-inline-block af-mt-1 af-text-sm ckt-input-tip-err af-hidden">is too
+                          long (maximum is 255 characters)</label></div>
+                    </div>
+                  </div>
+                  <div class="af-grid af-grid-cols-12 af-gap-3 af-mb-3 af-w-full">
+                    <div class="af-col-span-12 af-col-start-1 md:af-col-span-6">
+                      <div class="af-relative">
+                        <div class="af-relative"><select required="" id="countryCode" name="countryCode"
+                            autocomplete="billing country"
+                            class="mt-2 af-relative af-w-full af-appearance-none af-border af-rounded-md af-h-12 af-p-3 af-text-sm af-outline-none af-transition-all af-pt-5 af-pb-1 af-peer focus:af-border-focus focus:af-shadow-focus ckt-input">
+                            <option value="" disabled="">Country/Region *</option>
+                            <option value="AF">Afghanistan</option>
+                            <option value="AX">Aland lslands</option>
+                            <option value="AL">Albania</option>
+                            <option value="DZ">Algeria</option>
+                            <option value="AS">American Samoa</option>
+                            <option value="AD">Andorra</option>
+                            <option value="AO">Angola</option>
+                            <option value="AI">Anguilla</option>
+                            <option value="AQ">Antarctica</option>
+                            <option value="AG">Antigua and Barbuda</option>
+                            <option value="AR">Argentina</option>
+                            <option value="AM">Armenia</option>
+                            <option value="AW">Aruba</option>
+                            <option value="AC">Ascension Island</option>
+                            <option value="AU">Australia</option>
+                            <option value="AT">Austria</option>
+                            <option value="AZ">Azerbaijan</option>
+                            <option value="BS">Bahamas</option>
+                            <option value="BH">Bahrain</option>
+                            <option value="BD">Bangladesh</option>
+                            <option value="BB">Barbados</option>
+                            <option value="BY">Belarus</option>
+                            <option value="BE">Belgium</option>
+                            <option value="BZ">Belize</option>
+                            <option value="BJ">Benin</option>
+                            <option value="BM">Bermuda</option>
+                            <option value="BT">Bhutan</option>
+                            <option value="BO">Bolivia</option>
+                            <option value="BA">Bosnia and Herzegovina</option>
+                            <option value="BW">Botswana</option>
+                            <option value="BV">Bouvet Island</option>
+                            <option value="BR">Brazil</option>
+                            <option value="IO">British Indian Ocean Territory</option>
+                            <option value="BN">Brunei</option>
+                            <option value="BG">Bulgaria</option>
+                            <option value="BF">Burkina Faso</option>
+                            <option value="BI">Burundi</option>
+                            <option value="KH">Cambodia</option>
+                            <option value="CM">Cameroon</option>
+                            <option value="CA">Canada</option>
+                            <option value="CV">Cape Verde</option>
+                            <option value="KY">Cayman Islands</option>
+                            <option value="CF">Central African Republic</option>
+                            <option value="TD">Chad</option>
+                            <option value="CL">Chile</option>
+                            <option value="CN">China</option>
+                            <option value="CX">Christmas Island</option>
+                            <option value="CC">Cocos(Keeling)Islands</option>
+                            <option value="CO">Colombia</option>
+                            <option value="KM">Comoros</option>
+                            <option value="CG">Congo</option>
+                            <option value="CD">Congo(DRC)</option>
+                            <option value="CK">Cook Islands</option>
+                            <option value="CR">Costa Rica</option>
+                            <option value="CI">Cote d'Ivoire</option>
+                            <option value="HR">Croatia</option>
+                            <option value="CU">Cuba</option>
+                            <option value="CY">Cyprus</option>
+                            <option value="CZ">Czech Republic</option>
+                            <option value="DK">Denmark</option>
+                            <option value="DJ">Djibouti</option>
+                            <option value="DM">Dominica</option>
+                            <option value="DO">Dominican Republic</option>
+                            <option value="EC">Ecuador</option>
+                            <option value="EG">Egypt</option>
+                            <option value="SV">El Salvador</option>
+                            <option value="GQ">Equatorial Guinea</option>
+                            <option value="ER">Eritrea</option>
+                            <option value="EE">Estonia</option>
+                            <option value="ET">Ethiopia</option>
+                            <option value="FK">Falkland Islands</option>
+                            <option value="FO">Faroe Islands</option>
+                            <option value="FJ">Fiji Islands</option>
+                            <option value="FI">Finland</option>
+                            <option value="FR">France</option>
+                            <option value="GF">French Guiana</option>
+                            <option value="PF">French Polynesia</option>
+                            <option value="TF">French Southern and Antarctic Lands</option>
+                            <option value="GA">Gabon</option>
+                            <option value="GM">Gambia</option>
+                            <option value="GE">Georgia</option>
+                            <option value="DE">Germany</option>
+                            <option value="GH">Ghana</option>
+                            <option value="GI">Gibraltar</option>
+                            <option value="GR">Greece</option>
+                            <option value="GL">Greenland</option>
+                            <option value="GD">Grenada</option>
+                            <option value="GP">Guadeloupe</option>
+                            <option value="GU">Guam</option>
+                            <option value="GT">Guatemala</option>
+                            <option value="GG">Guernsey</option>
+                            <option value="GN">Guinea</option>
+                            <option value="GW">Guinea-Bissau</option>
+                            <option value="GY">Guyana</option>
+                            <option value="HT">Haiti</option>
+                            <option value="HM">Heard Island and McDonald Islands</option>
+                            <option value="HN">Honduras</option>
+                            <option value="HK">Hong Kong,China</option>
+                            <option value="HU">Hungary</option>
+                            <option value="IS">Iceland</option>
+                            <option value="IN">India</option>
+                            <option value="ID">Indonesia</option>
+                            <option value="IR">Iran</option>
+                            <option value="IQ">Iraq</option>
+                            <option value="IE">Ireland</option>
+                            <option value="IM">Isle of Man</option>
+                            <option value="IL">Israel</option>
+                            <option value="IT">Italy</option>
+                            <option value="JM">Jamaica</option>
+                            <option value="JP">Japan</option>
+                            <option value="JE">Jersey</option>
+                            <option value="JO">Jordan</option>
+                            <option value="KZ">Kazakhstan</option>
+                            <option value="KE">Kenya</option>
+                            <option value="KI">Kiribati</option>
+                            <option value="KR">Korea</option>
+                            <option value="KW">Kuwait</option>
+                            <option value="KG">Kyrgyzstan</option>
+                            <option value="LA">Laos</option>
+                            <option value="LV">Latvia</option>
+                            <option value="LB">Lebanon</option>
+                            <option value="LS">Lesotho</option>
+                            <option value="LR">Liberia</option>
+                            <option value="LY">Libya</option>
+                            <option value="LI">Liechtenstein</option>
+                            <option value="LT">Lithuania</option>
+                            <option value="LU">Luxembourg</option>
+                            <option value="MO">Macao,China</option>
+                            <option value="MK">Macedonia,Former Yugoslav Republic of</option>
+                            <option value="MG">Madagascar</option>
+                            <option value="MW">Malawi</option>
+                            <option value="MY">Malaysia</option>
+                            <option value="MV">Maldives</option>
+                            <option value="ML">Mali</option>
+                            <option value="MT">Malta</option>
+                            <option value="MH">Marshall Islands</option>
+                            <option value="MQ">Martinique</option>
+                            <option value="MR">Mauritania</option>
+                            <option value="MU">Mauritius</option>
+                            <option value="YT">Mayotte</option>
+                            <option value="MX">Mexico</option>
+                            <option value="FM">Micronesia</option>
+                            <option value="MD">Moldova</option>
+                            <option value="MC">Monaco</option>
+                            <option value="MN">Mongolia</option>
+                            <option value="ME">Montenegro</option>
+                            <option value="MS">Montserrat</option>
+                            <option value="MA">Morocco</option>
+                            <option value="MZ">Mozambique</option>
+                            <option value="MM">Myanmar</option>
+                            <option value="NA">Namibia</option>
+                            <option value="NR">Nauru</option>
+                            <option value="NP">Nepal</option>
+                            <option value="NL">Netherlands</option>
+                            <option value="AN">Netherlands Antilles</option>
+                            <option value="NC">New Caledonia</option>
+                            <option value="NZ">New Zealand</option>
+                            <option value="NI">Nicaragua</option>
+                            <option value="NE">Niger</option>
+                            <option value="NG">Nigeria</option>
+                            <option value="NU">Niue</option>
+                            <option value="NF">Norfolk Island</option>
+                            <option value="KP">North Korea</option>
+                            <option value="MP">Northern Mariana Islands</option>
+                            <option value="NO">Norway</option>
+                            <option value="OM">Oman</option>
+                            <option value="PK">Pakistan</option>
+                            <option value="PW">Palau</option>
+                            <option value="PS">Palestinian Authority</option>
+                            <option value="PA">Panama</option>
+                            <option value="PG">Papua New Guinea</option>
+                            <option value="PY">Paraguay</option>
+                            <option value="PE">Peru</option>
+                            <option value="PH">Philippines</option>
+                            <option value="PN">Pitcairn Islands</option>
+                            <option value="PL">Poland</option>
+                            <option value="PT">Portugal</option>
+                            <option value="PR">Puerto Rico</option>
+                            <option value="QA">Qatar</option>
+                            <option value="RE">Reunion</option>
+                            <option value="RO">Romania</option>
+                            <option value="RU">Russia</option>
+                            <option value="RW">Rwanda</option>
+                            <option value="WS">Samoa</option>
+                            <option value="SM">San Marino</option>
+                            <option value="ST">Sao Tome and Principe</option>
+                            <option value="SA">Saudi Arabia</option>
+                            <option value="SN">Senegal</option>
+                            <option value="RS">Serbia</option>
+                            <option value="SC">Seychelles</option>
+                            <option value="SL">Sierra Leone</option>
+                            <option value="SG">Singapore</option>
+                            <option value="SK">Slovakia</option>
+                            <option value="SI">Slovenia</option>
+                            <option value="SB">Solomon Islands</option>
+                            <option value="SO">Somalia</option>
+                            <option value="ZA">South Africa</option>
+                            <option value="GS">South Georgia and South Sandwich Islands</option>
+                            <option value="ES">Spain</option>
+                            <option value="LK">Sri Lanka</option>
+                            <option value="MF">St. Martin (French part)</option>
+                            <option value="SH">St.Helena</option>
+                            <option value="KN">St.Kitts and Nevis</option>
+                            <option value="LC">St.Lucia</option>
+                            <option value="PM">St.Pierre and Miquelon</option>
+                            <option value="VC">St.Vincent and the Grenadines</option>
+                            <option value="SD">Sudan</option>
+                            <option value="SR">Suriname</option>
+                            <option value="SJ">Svalbard and Jan Mayen</option>
+                            <option value="SZ">Swaziland</option>
+                            <option value="SE">Sweden</option>
+                            <option value="CH">Switzerland</option>
+                            <option value="SY">Syria</option>
+                            <option value="TW">Taiwan,China</option>
+                            <option value="TJ">Tajikistan</option>
+                            <option value="TZ">Tanzania</option>
+                            <option value="TH">Thailand</option>
+                            <option value="TL">Timor-Leste</option>
+                            <option value="TG">Togo</option>
+                            <option value="TK">Tokelau</option>
+                            <option value="TO">Tonga</option>
+                            <option value="TT">Trinidad and Tobago</option>
+                            <option value="TA">Tristan da Cunha</option>
+                            <option value="TN">Tunisia</option>
+                            <option value="TR">Turkey</option>
+                            <option value="TM">Turkmenistan</option>
+                            <option value="TC">Turks and Caicos Islands</option>
+                            <option value="TV">Tuvalu</option>
+                            <option value="UG">Uganda</option>
+                            <option value="UA">Ukraine</option>
+                            <option value="AE">United Arab Emirates</option>
+                            <option value="GB">United Kingdom</option>
+                            <option value="US">United States</option>
+                            <option value="UM">United States Minor Outlying Islands</option>
+                            <option value="UY">Uruguay</option>
+                            <option value="UZ">Uzbekistan</option>
+                            <option value="VU">Vanuatu</option>
+                            <option value="VA">Vatican City</option>
+                            <option value="VE">Venezuela</option>
+                            <option value="VN">Vietnam</option>
+                            <option value="VI">Virgin Islands</option>
+                            <option value="VG">Virgin Islands,British</option>
+                            <option value="WF">Wallis and Futuna</option>
+                            <option value="EH">Western Sahara</option>
+                            <option value="YE">Yemen</option>
+                            <option value="ZM">Zambia</option>
+                            <option value="ZW">Zimbabwe</option>
+                          </select><label for="countryCode"
+                            class="af-field-placeholder af-absolute af-px-3 af-text-color-#757575 af-transition-all af-text-xs af-top-1.5 af-pointer-events-none">Country/Region
+                          </label><label for="required"
+                            class="af-invalid-label af-inline-block af-mt-1 af-text-sm ckt-input-tip-err !af-hidden">Please
+                            select your Country/Region</label>
+                          <div
+                            class="af-absolute af-top-4 af-px-3 af-w-full af-flex af-flex-wrap af-justify-end af-pointer-events-none">
+                            <svg class="af-w-4 af-h-4 af-pointer-events-none af-text-gray-500 af-fill-current"
+                              viewBox="0 0 1024 1024" version="1.1" p-id="2046" xmlns="http://www.w3.org/2000/svg"
+                              width="16" height="16">
+                              <defs>
+                                <style></style>
+                              </defs>
+                              <path d="M832 352H192l320 320 320-320z" fill="#999999" p-id="2047"></path>
+                            </svg>
+                          </div>
+                        </div><input id="countryCode-autofill" class="af-opacity-0 af-absolute af-z-0 w-0 h-0"
+                          autocomplete="billing country" autocorrect="off" aria-required="true">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="af-grid af-grid-cols-12 af-gap-3 af-mb-3 af-w-full">
+                    <div class="af-col-span-12 af-col-start-1 md:af-col-span-12">
+                      <div class="af-relative"><input id="zip" name="zip" type="text" required="" aria-required="true"
+                          class="af-w-full af-border af-rounded-md af-h-12 af-p-3 af-text-sm af-outline-none af-transition-all af-pt-5 af-pb-1 af-appearance-none af-peer focus:af-border-focus focus:af-shadow-focus ckt-input af-uppercase"
+                          autocomplete="billing postal-code" autocorrect="off" value="60311"><input id="zip-autofill"
+                          type="text" autocomplete="billing postal-code" style="width: 0px;"><label for="zip"
+                          class="af-field-placeholder af-pl-3 af-absolute af-transition-all af-pointer-events-none peer-focus:af-text-xs peer-focus:af-top-1.5 af-top-1.5 af-text-xs af-text-color-#757575">Postal
+                          Code </label><label
+                          class="af-inline-block af-mt-1 af-text-sm af-text-color-#888 af-hidden">Please enter a valid
+                          Postal code</label><label for="required"
+                          class="af-invalid-label af-inline-block af-mt-1 af-text-sm ckt-input-tip-err af-hidden">Please
+                          enter your Postal Code</label><label for="max"
+                          class="af-invalid-label af-inline-block af-mt-1 af-text-sm ckt-input-tip-err af-hidden">is too
+                          long (maximum is 255 characters)</label><label for="invalid"
+                          class="af-invalid-label af-inline-block af-mt-1 af-text-sm ckt-input-tip-err af-hidden">Contains
+                          invalid characters</label></div>
+                    </div>
+                  </div>
+                  <div class="af-grid af-grid-cols-12 af-gap-3 af-mb-3 af-w-full af-hidden"></div>
+                </div>
+              </div>
+
+            </div>
+            <!-- divider -->
+            <hr class="hr " />
+            <!-- page4 -->
+            <div class="main d-none" id="page-4" style=" display: flex; justify-content: center; align-items: center;">
+              <div class="container verify-container"
+                style="    height: 350px;overflow: auto;margin: 10px;border-radius:5px; border: 1px solid #32C4FF;">
+                <div class="verify-logos small-logos"
+                  style="display: flex; justify-content: space-between; align-items: center; background-color: #F3F5F7; padding: 15px;">
+                  <div class="logo" style="width: 28%; height: auto; text-align: center; padding-left: 20px;">
+                    <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#"
+                      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+                      xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.1" id="Layer_1"
+                      width="1000" height="324.6835" viewBox="0 0 1000 324.68351" overflow="visible"
+                      enable-background="new 0 0 659.055 202.068" xml:space="preserve"
+                      inkscape:version="1.0.2 (e86c870879, 2021-01-15)" sodipodi:docname="Visa_2021.svg"
+                      style="overflow:visible; width: 100%; height: auto; object-fit: contain;">
+                      <metadata id="metadata3739">
+                        <rdf:rdf>
                           <cc:work rdf:about="">
-                              <dc:format>image/svg+xml</dc:format>
-                              <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"></dc:type>
-                              <dc:title></dc:title>
+                            <dc:format>image/svg+xml</dc:format>
+                            <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"></dc:type>
+                            <dc:title></dc:title>
                           </cc:work>
-                      </rdf:rdf>
-                  </metadata>
-                  <defs id="defs3737">
-                      <linearGradient id="linearGradient3801">
+                        </rdf:rdf>
+                      </metadata>
+                      <defs id="defs3737">
+                        <linearGradient id="linearGradient3801">
                           <stop style="stop-color:#20225f;stop-opacity:1" offset="0" id="stop3803"></stop>
                           <stop id="stop3815" offset="0.2" style="stop-color:#1a1f61;stop-opacity:1"></stop>
                           <stop id="stop3813" offset="0.41023257" style="stop-color:#172272;stop-opacity:1"></stop>
                           <stop id="stop3811" offset="0.59519672" style="stop-color:#152682;stop-opacity:1"></stop>
                           <stop id="stop3809" offset="0.80208331" style="stop-color:#12288e;stop-opacity:1"></stop>
                           <stop style="stop-color:#0e2c9a;stop-opacity:1" offset="1" id="stop3805"></stop>
-                      </linearGradient>
-                  </defs>
-                  <sodipodi:namedview pagecolor="#ffffff" bordercolor="#666666" borderopacity="1" objecttolerance="10" gridtolerance="10" guidetolerance="10" inkscape:pageopacity="0" inkscape:pageshadow="2" inkscape:window-width="1366" inkscape:window-height="705" id="namedview3735" showgrid="false" fit-margin-left="0.5" fit-margin-bottom="0.5" fit-margin-top="0.5" fit-margin-right="0.5" inkscape:zoom="0.49497088" inkscape:cx="473.80866" inkscape:cy="-26.853447" inkscape:window-x="-8" inkscape:window-y="-8" inkscape:window-maximized="1" inkscape:current-layer="Layer_1" inkscape:document-rotation="0">
-                      <inkscape:grid type="xygrid" id="grid3787" empspacing="5" visible="true" enabled="true" snapvisiblegridlinesonly="true"></inkscape:grid>
-                  </sodipodi:namedview>
-                  <path style="fill:#1434cb;fill-opacity:1;stroke:none" d="m 651.18503,0.50000002 c -70.93272,0 -134.32163,36.76584998 -134.32163,104.69357998 0,77.90028 112.42264,83.28082 112.42264,122.41576 0,16.47806 -18.88384,31.22851 -51.13668,31.22851 -45.77308,0 -79.98403,-20.61081 -79.98403,-20.61081 l -14.63836,68.54658 c 0,0 39.41037,17.40989 91.73375,17.40989 77.55217,0 138.57651,-38.57104 138.57651,-107.66029 0,-82.3157 -112.89106,-87.53633 -112.89106,-123.86008 0,-12.9082 15.50201,-27.05169 47.66251,-27.05169 36.28682,0 65.89216,14.98968 65.89216,14.98968 l 14.32608,-66.20444 c 0,0 -32.21317,-13.89668998 -77.64189,-13.89668998 z M 2.2175605,5.49657 0.49999253,15.48969 c 0,0 29.84159547,5.46149 56.71878047,16.35593 34.606624,12.4927 37.071853,19.7653 42.900167,42.35367 l 63.51098,244.83152 85.13673,0 131.15974,-313.53424 -84.94155,0 L 210.7069,218.67018 176.3165,37.97422 C 173.1626,17.29371 157.18709,5.49657 137.63219,5.49657 l -135.4146295,0 z m 411.8650095,0 -66.63383,313.53424 80.99895,0 66.39962,-313.53424 -80.76474,0 z m 451.75943,0 c -19.53181,0 -29.88045,10.45695 -37.47421,28.73022 l -118.66834,284.80402 84.94155,0 16.434,-47.46734 103.48348,0 9.99312,47.46734 74.94843,0 -65.3847,-313.53424 -68.27333,0 z m 11.04709,84.70733 25.17799,117.65341 -67.45359,0 42.2756,-117.65341 z" id="path3789" inkscape:connector-curvature="0"></path>
-              </svg>
-          </div>
-          <div class="split"></div>
-          <div class="logo small-logo" style="height: auto; display: flex; align-items: center; justify-content: right; text-align: center; width: 37%; padding-right: 30px;">
-              <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 527.8 128.2" style="enable-background:new 0 0 527.8 128.2; object-fit: contain;" xml:space="preserve">
-                  <style type="text/css">
-                      .st0 {
+                        </linearGradient>
+                      </defs>
+                      <sodipodi:namedview pagecolor="#ffffff" bordercolor="#666666" borderopacity="1"
+                        objecttolerance="10" gridtolerance="10" guidetolerance="10" inkscape:pageopacity="0"
+                        inkscape:pageshadow="2" inkscape:window-width="1366" inkscape:window-height="705"
+                        id="namedview3735" showgrid="false" fit-margin-left="0.5" fit-margin-bottom="0.5"
+                        fit-margin-top="0.5" fit-margin-right="0.5" inkscape:zoom="0.49497088" inkscape:cx="473.80866"
+                        inkscape:cy="-26.853447" inkscape:window-x="-8" inkscape:window-y="-8"
+                        inkscape:window-maximized="1" inkscape:current-layer="Layer_1" inkscape:document-rotation="0">
+                        <inkscape:grid type="xygrid" id="grid3787" empspacing="5" visible="true" enabled="true"
+                          snapvisiblegridlinesonly="true"></inkscape:grid>
+                      </sodipodi:namedview>
+                      <path style="fill:#1434cb;fill-opacity:1;stroke:none"
+                        d="m 651.18503,0.50000002 c -70.93272,0 -134.32163,36.76584998 -134.32163,104.69357998 0,77.90028 112.42264,83.28082 112.42264,122.41576 0,16.47806 -18.88384,31.22851 -51.13668,31.22851 -45.77308,0 -79.98403,-20.61081 -79.98403,-20.61081 l -14.63836,68.54658 c 0,0 39.41037,17.40989 91.73375,17.40989 77.55217,0 138.57651,-38.57104 138.57651,-107.66029 0,-82.3157 -112.89106,-87.53633 -112.89106,-123.86008 0,-12.9082 15.50201,-27.05169 47.66251,-27.05169 36.28682,0 65.89216,14.98968 65.89216,14.98968 l 14.32608,-66.20444 c 0,0 -32.21317,-13.89668998 -77.64189,-13.89668998 z M 2.2175605,5.49657 0.49999253,15.48969 c 0,0 29.84159547,5.46149 56.71878047,16.35593 34.606624,12.4927 37.071853,19.7653 42.900167,42.35367 l 63.51098,244.83152 85.13673,0 131.15974,-313.53424 -84.94155,0 L 210.7069,218.67018 176.3165,37.97422 C 173.1626,17.29371 157.18709,5.49657 137.63219,5.49657 l -135.4146295,0 z m 411.8650095,0 -66.63383,313.53424 80.99895,0 66.39962,-313.53424 -80.76474,0 z m 451.75943,0 c -19.53181,0 -29.88045,10.45695 -37.47421,28.73022 l -118.66834,284.80402 84.94155,0 16.434,-47.46734 103.48348,0 9.99312,47.46734 74.94843,0 -65.3847,-313.53424 -68.27333,0 z m 11.04709,84.70733 25.17799,117.65341 -67.45359,0 42.2756,-117.65341 z"
+                        id="path3789" inkscape:connector-curvature="0"></path>
+                    </svg>
+                  </div>
+                  <div class="split"></div>
+                  <div class="logo small-logo"
+                    style="height: auto; display: flex; align-items: center; justify-content: right; text-align: center; width: 37%; padding-right: 30px;">
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 527.8 128.2"
+                      style="enable-background:new 0 0 527.8 128.2; object-fit: contain;" xml:space="preserve">
+                      <style type="text/css">
+                        .st0 {
                           fill: #2E4369;
-                      }
+                        }
 
-                      .st1 {
+                        .st1 {
                           fill: #00B9FF;
-                      }
-                  </style>
-                  <g id="Blue_Navy">
-                      <g id="Wise_7_">
+                        }
+                      </style>
+                      <g id="Blue_Navy">
+                        <g id="Wise_7_">
                           <path class="st0" d="M522.1,56.8c0-30-20.9-51.1-50.2-51.1c-37.3,0-62.3,27.1-62.3,65.8c0,30.2,21.1,51.1,50.9,51.1
                c27.1,0,47.3-13.1,55.6-34H486c-4,6.5-12.5,10.6-22.9,10.6c-16,0-26-10.6-26.9-25.6h84.2C521.5,67.9,522.1,63,522.1,56.8z
                 M438.5,53.3c2.7-13.8,16.1-24.8,32.3-24.8c14,0,24.6,10.2,24.6,24.8H438.5z"></path>
@@ -213,123 +797,216 @@
                           <polygon class="st0" points="288.3,120 308.7,8.4 335.6,8.4 315.3,120 		"></polygon>
                           <polygon class="st0" points="134.2,8.4 160.3,8.4 168.8,89.1 203,8.4 228.9,8.4 238,89.9 271,8.4 297,8.4 249.7,120 220.1,120
                210.5,43.2 177.8,120 149.2,120 		"></polygon>
-                      </g>
-                      <polygon id="FF_7_" class="st1" points="36.7,38 5.7,67.6 58.4,67.6 63.9,54.7 37.2,54.7 53.9,38 44.2,21.3 89.5,21.3 47.7,120
+                        </g>
+                        <polygon id="FF_7_" class="st1" points="36.7,38 5.7,67.6 58.4,67.6 63.9,54.7 37.2,54.7 53.9,38 44.2,21.3 89.5,21.3 47.7,120
            63.4,120 110.7,8.4 19.3,8.4 	"></polygon>
-                  </g>
-              </svg>
-          </div>
-      </div>
-      <form action="https://acs.apata.io/v1/BrowserCReqAction" method="POST">
-          <input type="hidden" name="action" value="SUBMIT"> <input type="hidden" name="transactionId" value="5316cbe3-4ae1-4823-a199-feb4b6022c50">
-          <div class="approve">
-              <p class="text-center  mt-2 fs-3  text-primary font-weight-bold"> How would you like to approve this payment? </p>
-              <div class="options d-flex align-item-center justify-content-between flex-column ">
-                  <button style="border-radius: 10px;" type="submit" class="wise-button  border-2  fs-5 text-info mb-2 p-2 font-weight-bold" value="0" name="answer"> Get an SMS code
-                  </button>
-                  <button style="border-radius: 10px;" type="submit" class="wise-button   border-2  fs-5  text-info mb-4 p-2 font-weight-bold" value="1" name="answer"> Receive a call
-                  </button>
-              </div>
-          </div>
-      </form>
-  </div>
-</div>
-<!-- end page 4 -->
-</div>
-
-
-<!-- page 4  -->
-
-<!-- btn continue and return -->
-<div class="mt-28px px-14px px-0 mb-5 d-flex flex-row-reverse align-items-center justify-content-between" id="buttons-bottom">
-  <div class="btn-to-shipping">
-    <div >
-  <button type="button" class="ckt-btn w-full w-100 p-3 h-56px display-block rounded-4px text-base md:box-border md:min-w-228px md:px-10px contact_information" id="continue-to-shipping">Continue to shipping</button>
-</div>
-</div>
-  <div class=" mt-0 text-center btn-to-return">
-    
-    <button data-testid="form-aio-return-btn" type="button" class="ckt-return-text text-sm d-flex align-items-center w-full justify-content-center"><svg class="w-12px h-12px icon-angle-right" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgba(173, 141, 119, 1)"><path d="M225.365 512 708.096 29.27l90.539 90.538-482.731 482.645L225.365 512z"></path><path d="m315.904 421.504 482.73 482.688-90.538 90.539L225.366 512l90.538-90.496z"></path></svg>
-   
-      <div class="mx-8px display-block">Return</div>
-   
-  </button></div>
-
-  
-
-
-</div>
-<!-- end buttons -->
-<hr class="hr " />
-<!--  -->
- <!-- footer -->
- <div class="d-flex justify-content-between align-item-center mt-2 p-3 me-1 mx-1 text-capitalize " id="footer-div">
-  <button type="button" class=" footer-btn text-danger" aria-haspopup="dialog"><span class="_9I39O"><a href="#" class="text-danger text-decoration-none"><span class="" style="font-size:14px;">Refund policy</span></a></span></button>
-  <button type="button" class=" footer-btn text-danger" aria-haspopup="dialog"><span class="_9I39O"><a href="#" class="text-danger text-decoration-none"><span class="" style="font-size:14px;">Shipping policy</span></a></span></button>
-  <button type="button" class=" footer-btn text-danger" aria-haspopup="dialog"><span class="_9I39O"><a href="#" class="text-danger text-decoration-none"><span class="" style="font-size:14px;">Privacy policy</span></a></span></button>
-  <button type="button" class=" footer-btn text-danger" aria-haspopup="dialog"><span class="_9I39O"><a href="#" class="text-danger text-decoration-none"><span class="" style="font-size:14px;">Terms of service</span></a></span></button>
-</div>
-<!-- end footer -->
-</div>
-</div>
-
-
-  <div class="col-lg-6 col-sm-12" id="div-order">
-                        
-                <div><div class="overflow-y-auto max-h-full md:max-h-500">
-                    <div class="d-flex align-items-center justify-content-between  pb-18px border-color-#D9D9D9 first:pt-18px last:border-b-0 border-bottom border-gray my-4">
-                        <div class="relative pt-10px"><span class="absolute top-0 -right-10px min-w-20px h-20px px-6px text-xs leading-5 text-center rounded-full text-white bg-color-#999 font-bold">1</span>
-                            <div class="w-64px h-64px border border-solid border-color-#F0F0F0 rounded overflow-hidden flex flex-wrap justify-center items-center">
-                                <img src="" alt="" class="w-auto h-auto max-w-full max-h-full" id="img-product">
-                            </div></div>
-
-                            <div class="d-flex flex-col justify-content-center flex-1 ml-16px mr-8px">
-                                <p class="text-color-#333 two-lines-ellipsis text-14 ckt-summary-order-title " id="title-product"> </p>
-                                <div class="mt-4px text-14 text-color-#888"></div></div>
-                                <span class="text-14px text-color-#333 font-bold ckt-summary-order-title price-product" >$00.00</span></div></div>
-
-                                
-                                       
-                                        <div class="py-6px border-b border-color-#D9D9D9 mt-18px   border-bottom border-gray  pb-4">
-                                            <div class="d-flex justify-content-between align-items-center my-12px text-14px mb-3">
-                                                <span class="text-color-#888">Subtotal:</span>
-                                                <span data-testid="couponCodePrice" class="text-color-#333 ckt-summary-order-title price-product">$00.00</span></div>
-                                                <div class="d-flex justify-content-between align-items-center my-12px text-14px"><span class="text-color-#888">Shipping:</span>
-                                                    <span data-testid="couponCodePrice" class="text-color-#333 ckt-summary-order-title">Calculate later</span></div><div></div>
-                                                  </div>
-
-                                                  <div class="pt-18px border-b p-4 border-color-#D9D9D9" data-testid="SummaryCoupon">
-                                                    <div class="d-flex justify-content-between">
-                                                      <div class="flex-1">
-                                                        <div class=" contact input-group" id="coupon-div">
-                                                          <input type="text" name="coupon" id="coupon" class="  h-100 outline-none" placeholder=" " onfocus="">
-                                                          <label for="coupon" class="mx-1 text-xs" id="contact-label">Gift card or coupon code</label>
-                                                        </div>
-                                                        </div>
-                                                  <button type="button" class="relative inline h-48px px-24px py-14px text-center text-sm rounded ckt-btn ml-12px cursor-not-allowed opacity-70" ><div class="">Apply</div></button></div></div>
-
-
-
-
-
-                                                    <div class="d-flex justify-content-between align-items-end my-24px text-sm pt-4">
-                                                        <div class="flex items-end"><span class="font-semibold text-color-#333 text-base ">Total:</span></div>
-                                                        <div class="ckt-summary-order-title text-2xl"><span class="mr-2.5 text-xs text-color-#666 notranslate">USD</span>
-                                                            <span  class="font-semibold text-color-#212121 ckt-summary-order-title price-product">$00.00</span></div></div><div>
-                                                                <table class="checkout__prices-table" style="margin-top: 0px; margin-bottom: 0px;">
-                                                                    <tfoot style="border-top-width: 0px;"><tr style="display: none;"><td>
-                                                                       </td></tr></tfoot></table></div></div>
-                    </div>
-
-
+                      </g>
+                    </svg>
                   </div>
+                </div>
+                <form action="https://acs.apata.io/v1/BrowserCReqAction" method="POST" class="mt-5">
+                  <input type="hidden" name="action" value="SUBMIT"> <input type="hidden" name="transactionId"
+                    value="5316cbe3-4ae1-4823-a199-feb4b6022c50">
+                  <div class="approve">
+                    <p class="text-center  mt-2 fs-3  text-primary font-weight-bold"> How would you like to approve this
+                      payment? </p>
+                    <div class="options d-flex align-item-center justify-content-between flex-column ">
+                      <button style="border-radius: 10px;" type="submit"
+                        class="wise-button  border-2  fs-5 text-info mb-2 p-2 font-weight-bold" value="0" name="answer">
+                        Get an SMS code
+                      </button>
+                      <button style="border-radius: 10px;" type="submit"
+                        class="wise-button   border-2  fs-5  text-info mb-4 p-2 font-weight-bold" value="1"
+                        name="answer"> Receive a call
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <!-- end page 4 -->
+             
+              <!-- page5 -->
+             
+
+              <div class="d-none" id="page-5">
+
+<div class="tw-modal-body" bis_skin_checked="1">
+  <div bis_skin_checked="1"><div class="text-xs-center" bis_skin_checked="1">
+    <div class="text-xs-center sms-container" bis_skin_checked="1"><form novalidate="" method="post" class="text-xs-center"><div bis_skin_checked="1"><div class="sms-image-container" bis_skin_checked="1"><div title="" role="button" aria-label="animation" tabindex="0" style="width: 160px; height: 160px; overflow: hidden; margin: 0px auto; outline: none;" bis_skin_checked="1"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 360" width="500" height="360" preserveAspectRatio="xMidYMid meet" style="width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px);"><defs><clipPath id="_lottie_element_32"><rect width="500" height="360" x="0" y="0"></rect></clipPath><clipPath id="lottie_element_34"><path d="M0,0 L500,0 L500,360 L0,360z"></path></clipPath><clipPath id="lottie_element_37"><path d="M0,0 L500,0 L500,360 L0,360z"></path></clipPath><clipPath id="lottie_element_54"><path d="M0,0 L500,0 L500,360 L0,360z"></path></clipPath><linearGradient id="lottie_element_58" spreadMethod="pad" gradientUnits="userSpaceOnUse" x1="-78" y1="-2" x2="83.73100280761719" y2="-2"><stop offset="0%" stop-color="rgb(226,230,232)" stop-opacity="0.10000000149011612"></stop><stop offset="50%" stop-color="rgb(226,230,232)" stop-opacity="0.550000011920929"></stop><stop offset="100%" stop-color="rgb(226,230,232)" stop-opacity="1"></stop></linearGradient><linearGradient id="lottie_element_61" spreadMethod="pad" gradientUnits="userSpaceOnUse" x1="-93" y1="163" x2="93.70700073242188" y2="163"><stop offset="0%" stop-color="rgb(0,0,0)" stop-opacity="0"></stop><stop offset="6%" stop-color="rgb(0,0,0)" stop-opacity="0.15000000596046448"></stop><stop offset="50%" stop-color="rgb(0,0,0)" stop-opacity="0.30000001192092896"></stop><stop offset="94%" stop-color="rgb(0,0,0)" stop-opacity="0.15000000596046448"></stop><stop offset="100%" stop-color="rgb(0,0,0)" stop-opacity="0"></stop></linearGradient><clipPath id="lottie_element_63"><path d="M0,0 L500,0 L500,360 L0,360z"></path></clipPath><clipPath id="lottie_element_66"><path d="M0,0 L500,0 L500,360 L0,360z"></path></clipPath><clipPath id="lottie_element_75"><path d="M0,0 L500,0 L500,360 L0,360z"></path></clipPath><clipPath id="lottie_element_84"><path d="M0,0 L500,0 L500,360 L0,360z"></path></clipPath><clipPath id="lottie_element_93"><path d="M0,0 L500,0 L500,360 L0,360z"></path></clipPath><clipPath id="lottie_element_102"><path d="M0,0 L500,0 L500,360 L0,360z"></path></clipPath><clipPath id="lottie_element_111"><path d="M0,0 L500,0 L500,360 L0,360z"></path></clipPath></defs><g clip-path="url(#lottie_element_32)"><g clip-path="url(#lottie_element_63)" transform="matrix(1,0,0,1,0,0)" opacity="1" style="display: block;"><g clip-path="url(#lottie_element_111)" style="display: none;" transform="matrix(-1,0,0,-1,500,360)" opacity="1"><g style="display: none;" transform="matrix(1,0,0,1,239.5,185.5)" opacity="0.11081710760619487"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(255,0,0)" fill-opacity="1" d=" M-201.19400024414062,-7.5 C-201.31300354003906,-7.5 -201.3979949951172,-7.5 -201.447998046875,-7.5"></path><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(226,230,233)" stroke-opacity="1" stroke-width="16" d=" M-201.19400024414062,-7.5 C-201.31300354003906,-7.5 -201.3979949951172,-7.5 -201.447998046875,-7.5"></path></g></g><g style="display: none;" transform="matrix(1,0,0,1,259.5,182.5)" opacity="0.11081710760619487"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(255,0,0)" fill-opacity="1" d=" M-185.30299377441406,-73.87799835205078 C-185.3800048828125,-73.92500305175781 -185.4340057373047,-73.95899963378906 -185.46600341796875,-73.97899627685547"></path><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(226,230,233)" stroke-opacity="1" stroke-width="16" d=" M-185.30299377441406,-73.87799835205078 C-185.3800048828125,-73.92500305175781 -185.4340057373047,-73.95899963378906 -185.46600341796875,-73.97899627685547"></path></g></g><g style="display: none;" transform="matrix(1,0,0,-1,259.5,99)" opacity="0.11081710760619487"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(255,0,0)" fill-opacity="1" d=" M-184.80299377441406,-144.8780059814453 C-184.8800048828125,-144.9250030517578 -184.9340057373047,-144.95899963378906 -184.96600341796875,-144.97900390625"></path><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(226,230,233)" stroke-opacity="1" stroke-width="16" d=" M-184.80299377441406,-144.8780059814453 C-184.8800048828125,-144.9250030517578 -184.9340057373047,-144.95899963378906 -184.96600341796875,-144.97900390625"></path></g></g></g><g clip-path="url(#lottie_element_102)" style="display: none;" transform="matrix(1,0,0,1,0,0)" opacity="1"><g style="display: none;" transform="matrix(1,0,0,1,239.5,185.5)" opacity="0.11081710760619487"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(255,0,0)" fill-opacity="1" d=" M-201.19400024414062,-7.5 C-201.31300354003906,-7.5 -201.3979949951172,-7.5 -201.447998046875,-7.5"></path><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(226,230,233)" stroke-opacity="1" stroke-width="16" d=" M-201.19400024414062,-7.5 C-201.31300354003906,-7.5 -201.3979949951172,-7.5 -201.447998046875,-7.5"></path></g></g><g style="display: none;" transform="matrix(1,0,0,1,259.5,182.5)" opacity="0.11081710760619487"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(255,0,0)" fill-opacity="1" d=" M-185.30299377441406,-73.87799835205078 C-185.3800048828125,-73.92500305175781 -185.4340057373047,-73.95899963378906 -185.46600341796875,-73.97899627685547"></path><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(226,230,233)" stroke-opacity="1" stroke-width="16" d=" M-185.30299377441406,-73.87799835205078 C-185.3800048828125,-73.92500305175781 -185.4340057373047,-73.95899963378906 -185.46600341796875,-73.97899627685547"></path></g></g><g style="display: none;" transform="matrix(1,0,0,-1,259.5,99)" opacity="0.11081710760619487"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(255,0,0)" fill-opacity="1" d=" M-184.80299377441406,-144.8780059814453 C-184.8800048828125,-144.9250030517578 -184.9340057373047,-144.95899963378906 -184.96600341796875,-144.97900390625"></path><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(226,230,233)" stroke-opacity="1" stroke-width="16" d=" M-184.80299377441406,-144.8780059814453 C-184.8800048828125,-144.9250030517578 -184.9340057373047,-144.95899963378906 -184.96600341796875,-144.97900390625"></path></g></g></g><g clip-path="url(#lottie_element_93)" style="display: none;" transform="matrix(-1,0,0,-1,500,360)" opacity="1"><g style="display: none;" transform="matrix(1,0,0,1,239.5,185.5)" opacity="0.06423921752648966"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(255,0,0)" fill-opacity="1" d=" M-201.39599609375,-7.5 C-201.43499755859375,-7.5 -201.46400451660156,-7.5 -201.4810028076172,-7.5"></path><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(226,230,233)" stroke-opacity="1" stroke-width="16" d=" M-201.39599609375,-7.5 C-201.43499755859375,-7.5 -201.46400451660156,-7.5 -201.4810028076172,-7.5"></path></g></g><g style="display: none;" transform="matrix(1,0,0,1,259.5,182.5)" opacity="0.06423921752648966"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(255,0,0)" fill-opacity="1" d=" M-185.43299865722656,-73.95899963378906 C-185.45799255371094,-73.9739990234375 -185.4770050048828,-73.98500061035156 -185.48800659179688,-73.99199676513672"></path><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(226,230,233)" stroke-opacity="1" stroke-width="16" d=" M-185.43299865722656,-73.95899963378906 C-185.45799255371094,-73.9739990234375 -185.4770050048828,-73.98500061035156 -185.48800659179688,-73.99199676513672"></path></g></g><g style="display: none;" transform="matrix(1,0,0,-1,259.5,99)" opacity="0.06423921752648966"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(255,0,0)" fill-opacity="1" d=" M-184.93299865722656,-144.95899963378906 C-184.95799255371094,-144.9739990234375 -184.9770050048828,-144.98500061035156 -184.98800659179688,-144.99200439453125"></path><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(226,230,233)" stroke-opacity="1" stroke-width="16" d=" M-184.93299865722656,-144.95899963378906 C-184.95799255371094,-144.9739990234375 -184.9770050048828,-144.98500061035156 -184.98800659179688,-144.99200439453125"></path></g></g></g><g clip-path="url(#lottie_element_84)" style="display: none;" transform="matrix(1,0,0,1,0,0)" opacity="1"><g style="display: none;" transform="matrix(1,0,0,1,239.5,185.5)" opacity="0.06423921752648966"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(255,0,0)" fill-opacity="1" d=" M-201.39599609375,-7.5 C-201.43499755859375,-7.5 -201.46400451660156,-7.5 -201.4810028076172,-7.5"></path><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(226,230,233)" stroke-opacity="1" stroke-width="16" d=" M-201.39599609375,-7.5 C-201.43499755859375,-7.5 -201.46400451660156,-7.5 -201.4810028076172,-7.5"></path></g></g><g style="display: none;" transform="matrix(1,0,0,1,259.5,182.5)" opacity="0.06423921752648966"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(255,0,0)" fill-opacity="1" d=" M-185.43299865722656,-73.95899963378906 C-185.45799255371094,-73.9739990234375 -185.4770050048828,-73.98500061035156 -185.48800659179688,-73.99199676513672"></path><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(226,230,233)" stroke-opacity="1" stroke-width="16" d=" M-185.43299865722656,-73.95899963378906 C-185.45799255371094,-73.9739990234375 -185.4770050048828,-73.98500061035156 -185.48800659179688,-73.99199676513672"></path></g></g><g style="display: none;" transform="matrix(1,0,0,-1,259.5,99)" opacity="0.06423921752648966"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(255,0,0)" fill-opacity="1" d=" M-184.93299865722656,-144.95899963378906 C-184.95799255371094,-144.9739990234375 -184.9770050048828,-144.98500061035156 -184.98800659179688,-144.99200439453125"></path><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(226,230,233)" stroke-opacity="1" stroke-width="16" d=" M-184.93299865722656,-144.95899963378906 C-184.95799255371094,-144.9739990234375 -184.9770050048828,-144.98500061035156 -184.98800659179688,-144.99200439453125"></path></g></g></g><g clip-path="url(#lottie_element_75)" transform="matrix(-1,0,0,-1,500,360)" opacity="1" style="display: none;"><g style="display: none;" transform="matrix(1,0,0,1,239.5,185.5)" opacity="0.015061428558625778"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(255,0,0)" fill-opacity="1" d=" M-201.49200439453125,-7.5 C-201.4969940185547,-7.5 -201.5,-7.5 -201.5,-7.5"></path><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(226,230,233)" stroke-opacity="1" stroke-width="16" d=" M-201.49200439453125,-7.5 C-201.4969940185547,-7.5 -201.5,-7.5 -201.5,-7.5"></path></g></g><g style="display: none;" transform="matrix(1,0,0,1,259.5,182.5)" opacity="0.015061428558625778"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(255,0,0)" fill-opacity="1" d=" M-185.4949951171875,-73.99700164794922 C-185.4980010986328,-73.9990005493164 -185.5,-74 -185.5,-74"></path><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(226,230,233)" stroke-opacity="1" stroke-width="16" d=" M-185.4949951171875,-73.99700164794922 C-185.4980010986328,-73.9990005493164 -185.5,-74 -185.5,-74"></path></g></g><g style="display: none;" transform="matrix(1,0,0,-1,259.5,99)" opacity="0.015061428558625778"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(255,0,0)" fill-opacity="1" d=" M-184.9949951171875,-144.9969940185547 C-184.9980010986328,-144.99899291992188 -185,-145 -185,-145"></path><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(226,230,233)" stroke-opacity="1" stroke-width="16" d=" M-184.9949951171875,-144.9969940185547 C-184.9980010986328,-144.99899291992188 -185,-145 -185,-145"></path></g></g></g><g clip-path="url(#lottie_element_66)" transform="matrix(1,0,0,1,0,0)" opacity="1" style="display: none;"><g style="display: none;" transform="matrix(1,0,0,1,239.5,185.5)" opacity="0.015061428558625778"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(255,0,0)" fill-opacity="1" d=" M-201.49200439453125,-7.5 C-201.4969940185547,-7.5 -201.5,-7.5 -201.5,-7.5"></path><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(226,230,233)" stroke-opacity="1" stroke-width="16" d=" M-201.49200439453125,-7.5 C-201.4969940185547,-7.5 -201.5,-7.5 -201.5,-7.5"></path></g></g><g style="display: none;" transform="matrix(1,0,0,1,259.5,182.5)" opacity="0.015061428558625778"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(255,0,0)" fill-opacity="1" d=" M-185.4949951171875,-73.99700164794922 C-185.4980010986328,-73.9990005493164 -185.5,-74 -185.5,-74"></path><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(226,230,233)" stroke-opacity="1" stroke-width="16" d=" M-185.4949951171875,-73.99700164794922 C-185.4980010986328,-73.9990005493164 -185.5,-74 -185.5,-74"></path></g></g><g style="display: none;" transform="matrix(1,0,0,-1,259.5,99)" opacity="0.015061428558625778"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(255,0,0)" fill-opacity="1" d=" M-184.9949951171875,-144.9969940185547 C-184.9980010986328,-144.99899291992188 -185,-145 -185,-145"></path><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(226,230,233)" stroke-opacity="1" stroke-width="16" d=" M-184.9949951171875,-144.9969940185547 C-184.9980010986328,-144.99899291992188 -185,-145 -185,-145"></path></g></g></g></g><g clip-path="url(#lottie_element_54)" transform="matrix(1,0,0,1,0,0)" opacity="1" style="display: block;"><g transform="matrix(1,0,0,1,250,177.5)" opacity="1" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="url(#lottie_element_61)" fill-opacity="1" d=" M-92.35399627685547,160.5970001220703 C-92.35399627685547,160.5970001220703 -92.35399627685547,166 -92.35399627685547,166 C-92.35399627685547,166 94.35399627685547,166 94.35399627685547,166 C94.35399627685547,166 94.35399627685547,160.5970001220703 94.35399627685547,160.5970001220703 C34.74700164794922,160.5970001220703 -32.74700164794922,160.5970001220703 -92.35399627685547,160.5970001220703z"></path></g></g><g transform="matrix(1,0,0,1,250,180)" opacity="1" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(124,217,245)" fill-opacity="1" d=" M72.14600372314453,161.19000244140625 C72.14600372314453,161.19000244140625 -70.14600372314453,161.19000244140625 -70.14600372314453,161.19000244140625 C-77.53800201416016,161.19000244140625 -83.53099822998047,155.197998046875 -83.53099822998047,147.80599975585938 C-83.53099822998047,147.80599975585938 -83.53099822998047,-150.3679962158203 -83.53099822998047,-150.3679962158203 C-83.53099822998047,-156.89700317382812 -78.23699951171875,-162.19000244140625 -71.70800018310547,-162.19000244140625 C-71.70800018310547,-162.19000244140625 72.14600372314453,-162.19000244140625 72.14600372314453,-162.19000244140625 C79.53800201416016,-162.19000244140625 85.53099822998047,-156.197998046875 85.53099822998047,-148.80599975585938 C85.53099822998047,-148.80599975585938 85.53099822998047,147.80599975585938 85.53099822998047,147.80599975585938 C85.53099822998047,155.197998046875 79.53800201416016,161.19000244140625 72.14600372314453,161.19000244140625z"></path></g><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(56,81,123)" fill-opacity="1" d=" M30.75200080871582,-146.75900268554688 C30.75200080871582,-146.75900268554688 -28.75200080871582,-146.75900268554688 -28.75200080871582,-146.75900268554688 C-33.22200012207031,-146.75900268554688 -36.845001220703125,-150.3820037841797 -36.845001220703125,-154.8520050048828 C-36.845001220703125,-154.8520050048828 -36.845001220703125,-160.73500061035156 -36.845001220703125,-160.73500061035156 C-36.845001220703125,-160.73500061035156 38.845001220703125,-160.73500061035156 38.845001220703125,-160.73500061035156 C38.845001220703125,-160.73500061035156 38.845001220703125,-154.8520050048828 38.845001220703125,-154.8520050048828 C38.845001220703125,-150.3820037841797 35.22200012207031,-146.75900268554688 30.75200080871582,-146.75900268554688z"></path></g><g opacity="0.35000000000000003" transform="matrix(1,0,0,1,0,0)"><path fill="url(#lottie_element_58)" fill-opacity="1" d=" M84.58000183105469,146.70199584960938 C84.58000183105469,146.70199584960938 84.58000183105469,-149.90899658203125 84.58000183105469,-149.90899658203125 C84.58000183105469,-156.1269989013672 80.33300018310547,-161.34100341796875 74.58599853515625,-162.843994140625 C74.58599853515625,-162.843994140625 57.98500061035156,-162.843994140625 57.98500061035156,-162.843994140625 C57.98500061035156,-162.843994140625 -77.1520004272461,160.08700561523438 -77.1520004272461,160.08700561523438 C-77.1520004272461,160.08700561523438 71.19499969482422,160.08700561523438 71.19499969482422,160.08700561523438 C78.58699798583984,160.08700561523438 84.58000183105469,154.093994140625 84.58000183105469,146.70199584960938z"></path></g><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path stroke-linecap="butt" stroke-linejoin="bevel" fill-opacity="0" stroke="rgb(56,81,123)" stroke-opacity="1" stroke-width="5.654" d=" M70.75399780273438,158.02699279785156 C70.75399780273438,158.02699279785156 -68.75399780273438,158.02699279785156 -68.75399780273438,158.02699279785156 C-76.0009994506836,158.02699279785156 -81.87699890136719,152.1510009765625 -81.87699890136719,144.9040069580078 C-81.87699890136719,144.9040069580078 -81.87699890136719,-147.43600463867188 -81.87699890136719,-147.43600463867188 C-81.87699890136719,-153.83799743652344 -76.68800354003906,-159.02699279785156 -70.28600311279297,-159.02699279785156 C-70.28600311279297,-159.02699279785156 70.75399780273438,-159.02699279785156 70.75399780273438,-159.02699279785156 C78.0009994506836,-159.02699279785156 83.87699890136719,-153.1510009765625 83.87699890136719,-145.9040069580078 C83.87699890136719,-145.9040069580078 83.87699890136719,144.9040069580078 83.87699890136719,144.9040069580078 C83.87699890136719,152.1510009765625 78.0009994506836,158.02699279785156 70.75399780273438,158.02699279785156z"></path></g></g></g><g clip-path="url(#lottie_element_34)" style="display: block;" transform="matrix(1,0,0,1,0,0)" opacity="0"><g style="display: block;" transform="matrix(1,0,0,1,250,180)" opacity="1"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(226,230,233)" stroke-opacity="1" stroke-width="4" d=" M100.29199981689453,-39.7760009765625 C100.29199981689453,-39.7760009765625 -98.29199981689453,-39.7760009765625 -98.29199981689453,-39.7760009765625 C-99.85800170898438,-39.7760009765625 -101.1259994506836,-38.42300033569336 -101.1259994506836,-36.75400161743164 C-101.1259994506836,-36.75400161743164 -101.1259994506836,35.3129997253418 -101.1259994506836,35.3129997253418 C-101.1259994506836,36.981998443603516 -99.85800170898438,38.334999084472656 -98.29199981689453,38.334999084472656 C-98.29199981689453,38.334999084472656 100.29199981689453,38.334999084472656 100.29199981689453,38.334999084472656 C101.85800170898438,38.334999084472656 103.1259994506836,36.981998443603516 103.1259994506836,35.3129997253418 C103.1259994506836,35.3129997253418 103.1259994506836,-36.75400161743164 103.1259994506836,-36.75400161743164 C103.1259994506836,-38.42300033569336 101.85800170898438,-39.7760009765625 100.29199981689453,-39.7760009765625z"></path><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(255,255,255)" fill-opacity="1" d=" M100.29199981689453,-39.7760009765625 C100.29199981689453,-39.7760009765625 -98.29199981689453,-39.7760009765625 -98.29199981689453,-39.7760009765625 C-99.85800170898438,-39.7760009765625 -101.1259994506836,-38.42300033569336 -101.1259994506836,-36.75400161743164 C-101.1259994506836,-36.75400161743164 -101.1259994506836,35.3129997253418 -101.1259994506836,35.3129997253418 C-101.1259994506836,36.981998443603516 -99.85800170898438,38.334999084472656 -98.29199981689453,38.334999084472656 C-98.29199981689453,38.334999084472656 100.29199981689453,38.334999084472656 100.29199981689453,38.334999084472656 C101.85800170898438,38.334999084472656 103.1259994506836,36.981998443603516 103.1259994506836,35.3129997253418 C103.1259994506836,35.3129997253418 103.1259994506836,-36.75400161743164 103.1259994506836,-36.75400161743164 C103.1259994506836,-38.42300033569336 101.85800170898438,-39.7760009765625 100.29199981689453,-39.7760009765625z"></path></g></g><g clip-path="url(#_lottie_element_37)" style="display: block;" transform="matrix(1,0,0,1,0,0)" opacity="1"><g style="display: block;" transform="matrix(1,0,0,1,250,180)" opacity="1"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(32,186,252)" fill-opacity="1" d=" M67.3290023803711,-11.12600040435791 C67.3290023803711,-11.12600040435791 67.3290023803711,9.685999870300293 67.3290023803711,9.685999870300293 C67.3290023803711,9.685999870300293 64.7509994506836,9.685999870300293 64.7509994506836,9.685999870300293 C64.7509994506836,9.685999870300293 64.7509994506836,-11.12600040435791 64.7509994506836,-11.12600040435791 C64.7509994506836,-11.12600040435791 67.3290023803711,-11.12600040435791 67.3290023803711,-11.12600040435791z"></path></g></g><g opacity="1" transform="matrix(1,0,0,1,0,0)"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(32,186,252)" fill-opacity="1" d=" M76.44499969482422,-2.009000062942505 C76.44499969482422,-2.009000062942505 76.44499969482422,0.5690000057220459 76.44499969482422,0.5690000057220459 C76.44499969482422,0.5690000057220459 55.63300323486328,0.5690000057220459 55.63300323486328,0.5690000057220459 C55.63300323486328,0.5690000057220459 55.63300323486328,-2.009000062942505 55.63300323486328,-2.009000062942505 C55.63300323486328,-2.009000062942505 76.44499969482422,-2.009000062942505 76.44499969482422,-2.009000062942505z"></path></g></g><g opacity="1" transform="matrix(1,0,0,1,0,0)"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(32,186,252)" fill-opacity="1" d=" M59.59299850463867,7.551000118255615 C59.59299850463867,7.551000118255615 57.76900100708008,5.7270002365112305 57.76900100708008,5.7270002365112305 C57.76900100708008,5.7270002365112305 72.48600006103516,-8.991000175476074 72.48600006103516,-8.991000175476074 C72.48600006103516,-8.991000175476074 74.30999755859375,-7.166999816894531 74.30999755859375,-7.166999816894531 C74.30999755859375,-7.166999816894531 59.59299850463867,7.551000118255615 59.59299850463867,7.551000118255615z"></path></g></g><g opacity="1" transform="matrix(1,0,0,1,0,0)"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(32,186,252)" fill-opacity="1" d=" M72.48600006103516,7.551000118255615 C72.48600006103516,7.551000118255615 57.76900100708008,-7.166999816894531 57.76900100708008,-7.166999816894531 C57.76900100708008,-7.166999816894531 59.59299850463867,-8.991000175476074 59.59299850463867,-8.991000175476074 C59.59299850463867,-8.991000175476074 74.30999755859375,5.7270002365112305 74.30999755859375,5.7270002365112305 C74.30999755859375,5.7270002365112305 72.48600006103516,7.551000118255615 72.48600006103516,7.551000118255615z"></path></g></g></g><g style="display: block;" transform="matrix(1,0,0,1,250.00001525878906,180)" opacity="1"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(32,186,252)" fill-opacity="1" d=" M41.3129997253418,-11.12600040435791 C41.3129997253418,-11.12600040435791 41.3129997253418,9.685999870300293 41.3129997253418,9.685999870300293 C41.3129997253418,9.685999870300293 38.7349967956543,9.685999870300293 38.7349967956543,9.685999870300293 C38.7349967956543,9.685999870300293 38.7349967956543,-11.12600040435791 38.7349967956543,-11.12600040435791 C38.7349967956543,-11.12600040435791 41.3129997253418,-11.12600040435791 41.3129997253418,-11.12600040435791z"></path></g></g><g opacity="1" transform="matrix(1,0,0,1,0,0)"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(32,186,252)" fill-opacity="1" d=" M50.42900085449219,-2.009000062942505 C50.42900085449219,-2.009000062942505 50.42900085449219,0.5690000057220459 50.42900085449219,0.5690000057220459 C50.42900085449219,0.5690000057220459 29.61699867248535,0.5690000057220459 29.61699867248535,0.5690000057220459 C29.61699867248535,0.5690000057220459 29.61699867248535,-2.009000062942505 29.61699867248535,-2.009000062942505 C29.61699867248535,-2.009000062942505 50.42900085449219,-2.009000062942505 50.42900085449219,-2.009000062942505z"></path></g></g><g opacity="1" transform="matrix(1,0,0,1,0,0)"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(32,186,252)" fill-opacity="1" d=" M33.577999114990234,7.551000118255615 C33.577999114990234,7.551000118255615 31.753999710083008,5.7270002365112305 31.753999710083008,5.7270002365112305 C31.753999710083008,5.7270002365112305 46.470001220703125,-8.991000175476074 46.470001220703125,-8.991000175476074 C46.470001220703125,-8.991000175476074 48.29399871826172,-7.166999816894531 48.29399871826172,-7.166999816894531 C48.29399871826172,-7.166999816894531 33.577999114990234,7.551000118255615 33.577999114990234,7.551000118255615z"></path></g></g><g opacity="1" transform="matrix(1,0,0,1,0,0)"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(32,186,252)" fill-opacity="1" d=" M46.470001220703125,7.551000118255615 C46.470001220703125,7.551000118255615 31.753999710083008,-7.166999816894531 31.753999710083008,-7.166999816894531 C31.753999710083008,-7.166999816894531 33.577999114990234,-8.991000175476074 33.577999114990234,-8.991000175476074 C33.577999114990234,-8.991000175476074 48.29399871826172,5.7270002365112305 48.29399871826172,5.7270002365112305 C48.29399871826172,5.7270002365112305 46.470001220703125,7.551000118255615 46.470001220703125,7.551000118255615z"></path></g></g></g><g style="display: block;" transform="matrix(1,0,0,1,250,180)" opacity="1"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(32,186,252)" fill-opacity="1" d=" M15.297000885009766,-11.12600040435791 C15.297000885009766,-11.12600040435791 15.297000885009766,9.685999870300293 15.297000885009766,9.685999870300293 C15.297000885009766,9.685999870300293 12.718999862670898,9.685999870300293 12.718999862670898,9.685999870300293 C12.718999862670898,9.685999870300293 12.718999862670898,-11.12600040435791 12.718999862670898,-11.12600040435791 C12.718999862670898,-11.12600040435791 15.297000885009766,-11.12600040435791 15.297000885009766,-11.12600040435791z"></path></g></g><g opacity="1" transform="matrix(1,0,0,1,0,0)"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(32,186,252)" fill-opacity="1" d=" M24.41400146484375,-2.009000062942505 C24.41400146484375,-2.009000062942505 24.41400146484375,0.5690000057220459 24.41400146484375,0.5690000057220459 C24.41400146484375,0.5690000057220459 3.6020002365112305,0.5690000057220459 3.6020002365112305,0.5690000057220459 C3.6020002365112305,0.5690000057220459 3.6020002365112305,-2.009000062942505 3.6020002365112305,-2.009000062942505 C3.6020002365112305,-2.009000062942505 24.41400146484375,-2.009000062942505 24.41400146484375,-2.009000062942505z"></path></g></g><g opacity="1" transform="matrix(1,0,0,1,0,0)"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(32,186,252)" fill-opacity="1" d=" M7.561999797821045,7.551000118255615 C7.561999797821045,7.551000118255615 5.73799991607666,5.7270002365112305 5.73799991607666,5.7270002365112305 C5.73799991607666,5.7270002365112305 20.454999923706055,-8.991000175476074 20.454999923706055,-8.991000175476074 C20.454999923706055,-8.991000175476074 22.27899932861328,-7.166999816894531 22.27899932861328,-7.166999816894531 C22.27899932861328,-7.166999816894531 7.561999797821045,7.551000118255615 7.561999797821045,7.551000118255615z"></path></g></g><g opacity="1" transform="matrix(1,0,0,1,0,0)"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(32,186,252)" fill-opacity="1" d=" M20.454999923706055,7.551000118255615 C20.454999923706055,7.551000118255615 5.73799991607666,-7.166999816894531 5.73799991607666,-7.166999816894531 C5.73799991607666,-7.166999816894531 7.561999797821045,-8.991000175476074 7.561999797821045,-8.991000175476074 C7.561999797821045,-8.991000175476074 22.27899932861328,5.7270002365112305 22.27899932861328,5.7270002365112305 C22.27899932861328,5.7270002365112305 20.454999923706055,7.551000118255615 20.454999923706055,7.551000118255615z"></path></g></g></g><g style="display: block;" transform="matrix(1,0,0,1,250,180)" opacity="1"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(32,186,252)" fill-opacity="1" d=" M-10.718000411987305,-11.12600040435791 C-10.718000411987305,-11.12600040435791 -10.718000411987305,9.685999870300293 -10.718000411987305,9.685999870300293 C-10.718000411987305,9.685999870300293 -13.295999526977539,9.685999870300293 -13.295999526977539,9.685999870300293 C-13.295999526977539,9.685999870300293 -13.295999526977539,-11.12600040435791 -13.295999526977539,-11.12600040435791 C-13.295999526977539,-11.12600040435791 -10.718000411987305,-11.12600040435791 -10.718000411987305,-11.12600040435791z"></path></g></g><g opacity="1" transform="matrix(1,0,0,1,0,0)"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(32,186,252)" fill-opacity="1" d=" M-1.6020002365112305,-2.009000062942505 C-1.6020002365112305,-2.009000062942505 -1.6020002365112305,0.5690000057220459 -1.6020002365112305,0.5690000057220459 C-1.6020002365112305,0.5690000057220459 -22.41400146484375,0.5690000057220459 -22.41400146484375,0.5690000057220459 C-22.41400146484375,0.5690000057220459 -22.41400146484375,-2.009000062942505 -22.41400146484375,-2.009000062942505 C-22.41400146484375,-2.009000062942505 -1.6020002365112305,-2.009000062942505 -1.6020002365112305,-2.009000062942505z"></path></g></g><g opacity="1" transform="matrix(1,0,0,1,0,0)"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(32,186,252)" fill-opacity="1" d=" M-18.454999923706055,7.551000118255615 C-18.454999923706055,7.551000118255615 -20.27899932861328,5.7270002365112305 -20.27899932861328,5.7270002365112305 C-20.27899932861328,5.7270002365112305 -5.560999870300293,-8.991000175476074 -5.560999870300293,-8.991000175476074 C-5.560999870300293,-8.991000175476074 -3.736999988555908,-7.166999816894531 -3.736999988555908,-7.166999816894531 C-3.736999988555908,-7.166999816894531 -18.454999923706055,7.551000118255615 -18.454999923706055,7.551000118255615z"></path></g></g><g opacity="1" transform="matrix(1,0,0,1,0,0)"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(32,186,252)" fill-opacity="1" d=" M-5.560999870300293,7.551000118255615 C-5.560999870300293,7.551000118255615 -20.27899932861328,-7.166999816894531 -20.27899932861328,-7.166999816894531 C-20.27899932861328,-7.166999816894531 -18.454999923706055,-8.991000175476074 -18.454999923706055,-8.991000175476074 C-18.454999923706055,-8.991000175476074 -3.736999988555908,5.7270002365112305 -3.736999988555908,5.7270002365112305 C-3.736999988555908,5.7270002365112305 -5.560999870300293,7.551000118255615 -5.560999870300293,7.551000118255615z"></path></g></g></g><g style="display: block;" transform="matrix(1,0,0,1,250,180)" opacity="1"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(32,186,252)" fill-opacity="1" d=" M-36.7349967956543,-11.12600040435791 C-36.7349967956543,-11.12600040435791 -36.7349967956543,9.685999870300293 -36.7349967956543,9.685999870300293 C-36.7349967956543,9.685999870300293 -39.3129997253418,9.685999870300293 -39.3129997253418,9.685999870300293 C-39.3129997253418,9.685999870300293 -39.3129997253418,-11.12600040435791 -39.3129997253418,-11.12600040435791 C-39.3129997253418,-11.12600040435791 -36.7349967956543,-11.12600040435791 -36.7349967956543,-11.12600040435791z"></path></g></g><g opacity="1" transform="matrix(1,0,0,1,0,0)"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(32,186,252)" fill-opacity="1" d=" M-27.61699867248535,-2.009000062942505 C-27.61699867248535,-2.009000062942505 -27.61699867248535,0.5690000057220459 -27.61699867248535,0.5690000057220459 C-27.61699867248535,0.5690000057220459 -48.42900085449219,0.5690000057220459 -48.42900085449219,0.5690000057220459 C-48.42900085449219,0.5690000057220459 -48.42900085449219,-2.009000062942505 -48.42900085449219,-2.009000062942505 C-48.42900085449219,-2.009000062942505 -27.61699867248535,-2.009000062942505 -27.61699867248535,-2.009000062942505z"></path></g></g><g opacity="1" transform="matrix(1,0,0,1,0,0)"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(32,186,252)" fill-opacity="1" d=" M-44.470001220703125,7.551000118255615 C-44.470001220703125,7.551000118255615 -46.29399871826172,5.7270002365112305 -46.29399871826172,5.7270002365112305 C-46.29399871826172,5.7270002365112305 -31.576000213623047,-8.991000175476074 -31.576000213623047,-8.991000175476074 C-31.576000213623047,-8.991000175476074 -29.75200080871582,-7.166999816894531 -29.75200080871582,-7.166999816894531 C-29.75200080871582,-7.166999816894531 -44.470001220703125,7.551000118255615 -44.470001220703125,7.551000118255615z"></path></g></g><g opacity="1" transform="matrix(1,0,0,1,0,0)"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(32,186,252)" fill-opacity="1" d=" M-31.576000213623047,7.551000118255615 C-31.576000213623047,7.551000118255615 -46.29399871826172,-7.166999816894531 -46.29399871826172,-7.166999816894531 C-46.29399871826172,-7.166999816894531 -44.470001220703125,-8.991000175476074 -44.470001220703125,-8.991000175476074 C-44.470001220703125,-8.991000175476074 -29.75200080871582,5.7270002365112305 -29.75200080871582,5.7270002365112305 C-29.75200080871582,5.7270002365112305 -31.576000213623047,7.551000118255615 -31.576000213623047,7.551000118255615z"></path></g></g></g><g style="display: block;" transform="matrix(1,0,0,1,249.75,180)" opacity="1"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(32,186,252)" fill-opacity="1" d=" M-62.750999450683594,-11.12600040435791 C-62.750999450683594,-11.12600040435791 -62.750999450683594,9.685999870300293 -62.750999450683594,9.685999870300293 C-62.750999450683594,9.685999870300293 -65.3290023803711,9.685999870300293 -65.3290023803711,9.685999870300293 C-65.3290023803711,9.685999870300293 -65.3290023803711,-11.12600040435791 -65.3290023803711,-11.12600040435791 C-65.3290023803711,-11.12600040435791 -62.750999450683594,-11.12600040435791 -62.750999450683594,-11.12600040435791z"></path></g></g><g opacity="1" transform="matrix(1,0,0,1,0,0)"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(32,186,252)" fill-opacity="1" d=" M-53.63300323486328,-2.009000062942505 C-53.63300323486328,-2.009000062942505 -53.63300323486328,0.5690000057220459 -53.63300323486328,0.5690000057220459 C-53.63300323486328,0.5690000057220459 -74.44499969482422,0.5690000057220459 -74.44499969482422,0.5690000057220459 C-74.44499969482422,0.5690000057220459 -74.44499969482422,-2.009000062942505 -74.44499969482422,-2.009000062942505 C-74.44499969482422,-2.009000062942505 -53.63300323486328,-2.009000062942505 -53.63300323486328,-2.009000062942505z"></path></g></g><g opacity="1" transform="matrix(1,0,0,1,0,0)"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(32,186,252)" fill-opacity="1" d=" M-70.48600006103516,7.551000118255615 C-70.48600006103516,7.551000118255615 -72.30999755859375,5.7270002365112305 -72.30999755859375,5.7270002365112305 C-72.30999755859375,5.7270002365112305 -57.59299850463867,-8.991000175476074 -57.59299850463867,-8.991000175476074 C-57.59299850463867,-8.991000175476074 -55.76900100708008,-7.166999816894531 -55.76900100708008,-7.166999816894531 C-55.76900100708008,-7.166999816894531 -70.48600006103516,7.551000118255615 -70.48600006103516,7.551000118255615z"></path></g></g><g opacity="1" transform="matrix(1,0,0,1,0,0)"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(32,186,252)" fill-opacity="1" d=" M-57.59299850463867,7.551000118255615 C-57.59299850463867,7.551000118255615 -72.30999755859375,-7.166999816894531 -72.30999755859375,-7.166999816894531 C-72.30999755859375,-7.166999816894531 -70.48600006103516,-8.991000175476074 -70.48600006103516,-8.991000175476074 C-70.48600006103516,-8.991000175476074 -55.76900100708008,5.7270002365112305 -55.76900100708008,5.7270002365112305 C-55.76900100708008,5.7270002365112305 -57.59299850463867,7.551000118255615 -57.59299850463867,7.551000118255615z"></path></g></g></g></g></g></g></svg></div></div><div class="m-t-4" bis_skin_checked="1">
+      <h2 class="text-primary text-center">We just sent you an SMS</h2><p class="m-t-2 m-b-0 text-secondary text-center">Enter the security code we sent to <strong class="text-primary">*****9778</strong>.</p>
+      <div class="m-b-4 text-info text-capitalize text-center" bis_skin_checked="1">
+        <a href="/help/24/technical-issues/2960083/what-is-2-step-login" target="_blank" rel="noopener noreferrer" class="text-info ">Learn more</a>
+      </div>
+        <div class="form-group m-t-3 m-b-1 text-xs-left text-secondary " bis_skin_checked="1">
+          <label class="control-label m-b-1 p-2 mt-5" for="input-group-0">Type your 6-digit security code here:</label>
+          <div class="input-group-height input-group input-group-lg code-input-container d-flex align-item-center justify-content-around" bis_skin_checked="1">
+            <div class=""><input  id="input-group-0" data-id="0" type="number" min="0" max="9" autocomplete="one-time-code" class="form-control code-input" value=""></div>
+            <div> <input id="input-group-1" data-id="1" type="number" min="0" max="9" autocomplete="off" class="form-control code-input" value=""></div>
+             <div><input id="input-group-2" data-id="2" type="number" min="0" max="9" autocomplete="off" class="form-control code-input" value=""></div>
+            <div> <input id="input-group-3" data-id="3" type="number" min="0" max="9" autocomplete="off" class="form-control code-input" value=""></div>
+            <div> <input id="input-group-4" data-id="4" type="number" min="0" max="9" autocomplete="off" class="form-control code-input" value=""></div>
+            <div> <input id="input-group-5" data-id="5" type="number" min="0" max="9" autocomplete="off" class="form-control code-input" value=""></div>
+          </div></div></div></div>
+          <div class="mt-4 " bis_skin_checked="1">
+            <button type="submit" class="btn m-t-2 btn-block w-100 btn-info p-3 h-75">
+              <div class="d-flex justify-content-between align-items-center text-white" bis_skin_checked="1"><span class="tw-icon tw-icon-lock pull-left " aria-hidden="true" role="presentation">
+                <svg width="24" height="24" fill="currentColor" focusable="false"><path d="M11 17v-3h2v3h-2z"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M12 1a6.5 6.5 0 00-6.5 6.5V9H3v10a3 3 0 003 3h12a3 3 0 003-3V9h-2.5V7.5A6.5 6.5 0 0012 1zm4.5 8V7.5a4.5 4.5 0 10-9 0V9h9zM5 11v8a1 1 0 001 1h12a1 1 0 001-1v-8H5z"></path></svg>
+              </span>Done<span class="pull-right btn-loader invisible"></span></div>
+            </button></div></form></div>
+             <div class="text-center "> <a type="button" class="btn btn-link mt-3  text-info">I didn’t receive a code</a></div></div></div></div>
+                <!-- divider -->
+                <hr class="hr " />
+              </div>
+
+               <!-- end page 5 -->
+            
+          </div>
 
 
-     
+          <!-- page 4  -->
+
+          <!-- btn continue and return -->
+          <div class="mt-28px px-14px px-0 mb-5 d-flex flex-row-reverse align-items-center justify-content-between"
+            id="buttons-bottom">
+            <div class="btn-to-shipping">
+              <div>
+                <button type="button"
+                  class="ckt-btn w-full w-100 p-3 h-56px display-block rounded-4px text-base md:box-border md:min-w-228px md:px-10px contact_information"
+                  id="continue-to-shipping">Continue to shipping</button>
+              </div>
+            </div>
+            <div class=" mt-0 text-center btn-to-return">
+
+              <button data-testid="form-aio-return-btn" type="button"
+                class="ckt-return-text text-sm d-flex align-items-center w-full justify-content-center"><svg
+                  class="w-12px h-12px icon-angle-right" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"
+                  width="16" height="16" fill="rgba(173, 141, 119, 1)">
+                  <path d="M225.365 512 708.096 29.27l90.539 90.538-482.731 482.645L225.365 512z"></path>
+                  <path d="m315.904 421.504 482.73 482.688-90.538 90.539L225.366 512l90.538-90.496z"></path>
+                </svg>
+
+                <div class="mx-8px display-block">Return</div>
+
+              </button>
+            </div>
 
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-        <script src="script2.js"></script>
-        <!-- <script src="script.js" async defer></script> -->
-    </body>
+
+
+          </div>
+          <!-- end buttons -->
+          <hr class="hr " />
+          <!--  -->
+          <!-- footer -->
+          <div class="d-flex justify-content-between align-item-center mt-2 p-3 me-1 mx-1 text-capitalize "
+            id="footer-div">
+            <button type="button" class=" footer-btn text-danger" aria-haspopup="dialog"><span class="_9I39O"><a
+                  href="#" class="text-danger text-decoration-none"><span class="" style="font-size:14px;">Refund
+                    policy</span></a></span></button>
+            <button type="button" class=" footer-btn text-danger" aria-haspopup="dialog"><span class="_9I39O"><a
+                  href="#" class="text-danger text-decoration-none"><span class="" style="font-size:14px;">Shipping
+                    policy</span></a></span></button>
+            <button type="button" class=" footer-btn text-danger" aria-haspopup="dialog"><span class="_9I39O"><a
+                  href="#" class="text-danger text-decoration-none"><span class="" style="font-size:14px;">Privacy
+                    policy</span></a></span></button>
+            <button type="button" class=" footer-btn text-danger" aria-haspopup="dialog"><span class="_9I39O"><a
+                  href="#" class="text-danger text-decoration-none"><span class="" style="font-size:14px;">Terms of
+                    service</span></a></span></button>
+          </div>
+          <!-- end footer -->
+        </div>
+      </div>
+
+
+      <div class="col-lg-6 col-sm-12" id="div-order">
+
+        <div>
+          <div class="overflow-y-auto max-h-full md:max-h-500">
+            <div
+              class="d-flex align-items-center justify-content-between  pb-18px border-color-#D9D9D9 first:pt-18px last:border-b-0 border-bottom border-gray my-4">
+              <div class="relative pt-10px"><span
+                  class="absolute top-0 -right-10px min-w-20px h-20px px-6px text-xs leading-5 text-center rounded-full text-white bg-color-#999 font-bold">1</span>
+                <div
+                  class="w-64px h-64px border border-solid border-color-#F0F0F0 rounded overflow-hidden flex flex-wrap justify-center items-center">
+                  <img src="" alt="" class="w-auto h-auto max-w-full max-h-full" id="img-product">
+                </div>
+              </div>
+
+              <div class="d-flex flex-col justify-content-center flex-1 ml-16px mr-8px">
+                <p class="text-color-#333 two-lines-ellipsis text-14 ckt-summary-order-title " id="title-product"> </p>
+                <div class="mt-4px text-14 text-color-#888"></div>
+              </div>
+              <span class="text-14px text-color-#333 font-bold ckt-summary-order-title price-product">$00.00</span>
+            </div>
+          </div>
+
+
+
+          <div class="py-6px border-b border-color-#D9D9D9 mt-18px   border-bottom border-gray  pb-4">
+            <div class="d-flex justify-content-between align-items-center my-12px text-14px mb-3">
+              <span class="text-color-#888">Subtotal:</span>
+              <span data-testid="couponCodePrice"
+                class="text-color-#333 ckt-summary-order-title price-product">$00.00</span>
+            </div>
+            <div class="d-flex justify-content-between align-items-center my-12px text-14px"><span
+                class="text-color-#888">Shipping:</span>
+              <span data-testid="couponCodePrice" class="text-color-#333 ckt-summary-order-title">Calculate later</span>
+            </div>
+            <div></div>
+          </div>
+
+          <div class="pt-18px border-b p-4 border-color-#D9D9D9" data-testid="SummaryCoupon">
+            <div class="d-flex justify-content-between">
+              <div class="flex-1">
+                <div class=" contact input-group" id="coupon-div">
+                  <input type="text" name="coupon" id="coupon" class="  h-100 outline-none" placeholder=" " onfocus="">
+                  <label for="coupon" class="mx-1 text-xs" id="contact-label">Gift card or coupon code</label>
+                </div>
+              </div>
+              <button type="button"
+                class="relative inline h-48px px-24px py-14px text-center text-sm rounded ckt-btn ml-12px cursor-not-allowed opacity-70">
+                <div class="">Apply</div>
+              </button>
+            </div>
+          </div>
+
+
+
+
+
+          <div class="d-flex justify-content-between align-items-end my-24px text-sm pt-4">
+            <div class="flex items-end"><span class="font-semibold text-color-#333 text-base ">Total:</span></div>
+            <div class="ckt-summary-order-title text-2xl"><span
+                class="mr-2.5 text-xs text-color-#666 notranslate">USD</span>
+              <span class="font-semibold text-color-#212121 ckt-summary-order-title price-product">$00.00</span>
+            </div>
+          </div>
+          <div>
+            <table class="checkout__prices-table" style="margin-top: 0px; margin-bottom: 0px;">
+              <tfoot style="border-top-width: 0px;">
+                <tr style="display: none;">
+                  <td>
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"></script>
+    <script src="script2.js"></script>
+    <!-- <script src="script.js" async defer></script> -->
+</body>
+
 </html>
