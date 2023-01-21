@@ -218,7 +218,7 @@ mediaQuery.addEventListener("change", (e) => {
 PaymentAddressContact.innerHTML=localStorage.getItem("email");
 
 let PaymentAddressShipToContent =document.getElementById('PaymentAddressShipToContent');
-PaymentAddressShipToContent.innerHTML=localStorage.getItem("adress")+' ,'+localStorage.getItem("postal")+','+'zip code'+','+'United States';
+PaymentAddressShipToContent.innerHTML=localStorage.getItem("adress")+' ,'+localStorage.getItem("postal")+','+localStorage.getItem("region")+','+'United States';
 
 
 // let PaymentAddressInfo =document.getElementById('PaymentAddressInfo');
