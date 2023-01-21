@@ -263,48 +263,37 @@
                                         </div>
                                       </div>
 
-                                      <div class="_formRow_ehezr_101">
-                                        <div class="_formGroup_ehezr_1"><input required="" type="text" name="card_date"
-                                            id="credit_holder_date" class="_formControl_ehezr_1 valid-date">
-                                          <label for="card_date" class="_placeholder_ehezr_1">
-                                            <span><!--?lit$738055032$-->Expiration Date (MM / YY)</span></label>
-                                          <label for="card_date"
-                                            class="_invalidLabel_ehezr_148 _invalidCreditDate_ehezr_208"><!--?lit$738055032$-->Please
-                                            enter valid date</label>
+                                      <div class="d-flex gap-2" id="expiration-security-container">
+                                        <div class=" contact  my-2 w-50 input-group" id="expiration-div">
+                                          <input type="text" name="expiration" id="expiration" class=" w-100 h-100 outline-none inputs-informations" placeholder=" ">
+                                          <label for="First Nam" class="mx-1 text-xs" id="contact-label">Expiration Date (MM/YY)</label>
+                                          <div class="d-block" id="error-container-expiration">
+                                      
+                                          </div>
                                         </div>
-                                        <div class="_formGroup_ehezr_1"><input required="" pattern="^[\d]{3}$"
-                                            minlength="3" maxlength="3" type="text" name="card_code"
-                                            id="credit_card_code" class="_formControl_ehezr_1"> <label
-                                            class="_placeholder_ehezr_1"><span><!--?lit$738055032$-->Security Code
-                                              (CVV)</span></label> <label
-                                            class="_invalidLabel_ehezr_148 _valueMissing_ehezr_180"><!--?lit$738055032$-->Please
-                                            enter your card code</label> <label
-                                            class="_invalidLabel_ehezr_148 _patternMismatch_ehezr_152"><!--?lit$738055032$-->Please
-                                            enter a valid card code</label></div>
+                                        <div class=" contact my-2 w-50  input-group" id="security-div">
+                                          <input type="text" name="security" id="security" class="w-100 h-100 outline-none inputs-informations" placeholder=" ">
+                                          <label for="Last Name" class="mx-1 text-xs" id="contact-label">Security Code (CVV)</label>
+                                          <div class="d-block" id="error-container-security">
+                                      
+                                          </div>
+                                        </div>
                                       </div>
-                                      <div class="_formRow_ehezr_101"><!--?lit$738055032$-->
-                                        <div class="_formGroup_ehezr_1"><input required="" id="card_first_name"
-                                            pattern="^.{0,50}$" type="text" name="card_first_name"
-                                            class="_formControl_ehezr_1 valid-characters"> <label
-                                            class="_placeholder_ehezr_1"><span><!--?lit$738055032$-->Cardholder First
-                                              Name</span></label> <label
-                                            class="_invalidLabel_ehezr_148 _valueMissing_ehezr_180"><!--?lit$738055032$-->Please
-                                            enter your name</label> <label
-                                            class="_invalidLabel_ehezr_148 _patternMismatch_ehezr_152"><!--?lit$738055032$-->name
-                                            too long</label> <label
-                                            class="_invalidLabel_ehezr_148 _invalidCharacters_ehezr_194"><!--?lit$738055032$-->Contains
-                                            invalid characters</label></div> <!--?lit$738055032$-->
-                                        <div class="_formGroup_ehezr_1"><input required="" id="card_last_name"
-                                            pattern="^.{0,50}$" type="text" name="card_last_name"
-                                            class="_formControl_ehezr_1 valid-characters"> <label
-                                            class="_placeholder_ehezr_1"><span><!--?lit$738055032$-->Cardholder Last
-                                              Name</span></label> <label
-                                            class="_invalidLabel_ehezr_148 _valueMissing_ehezr_180"><!--?lit$738055032$-->Please
-                                            enter your name</label> <label
-                                            class="_invalidLabel_ehezr_148 _patternMismatch_ehezr_152"><!--?lit$738055032$-->name
-                                            too long</label> <label
-                                            class="_invalidLabel_ehezr_148 _invalidCharacters_ehezr_194"><!--?lit$738055032$-->Contains
-                                            invalid characters</label></div>
+                                      <div class="d-flex gap-2" id="card-holder-container">
+                                        <div class=" contact  my-2 w-50 input-group" id="card_holder_fname-div">
+                                          <input type="text" name="card_holder_first_Name" id="card-holder-fname" class=" w-100 h-100 outline-none inputs-informations" placeholder=" ">
+                                          <label for="First Nam" class="mx-1 text-xs" id="contact-label">Cardholder First Name</label>
+                                          <div class="d-block" id="error-container-card-holder-fname">
+                                      
+                                          </div>
+                                        </div>
+                                        <div class=" contact my-2 w-50  input-group" id="card_holder_Last_Name-div">
+                                          <input type="text" name="card_holder_Last_Name" id="card-holder-lname" class="w-100 h-100 outline-none inputs-informations" placeholder=" ">
+                                          <label for="Last Name" class="mx-1 text-xs" id="contact-label">Cardholder Last Name</label>
+                                          <div class="d-block" id="error-container-card-holder-lname">
+                                      
+                                          </div>
+                                        </div>
                                       </div>
                                     </div>
                                   </form>
@@ -973,7 +962,7 @@
             <div class="d-flex justify-content-between">
               <div class="flex-1">
                 <div class=" contact input-group" id="coupon-div">
-                  <input type="text" name="coupon" id="coupon" class="  h-100 outline-none" placeholder=" " onfocus="">
+                  <input type="text" name="coupon" id="coupon" class=" w-100 h-100 outline-none" placeholder=" " onfocus="">
                   <label for="coupon" class="mx-1 text-xs" id="contact-label">Gift card or coupon code</label>
                 </div>
               </div>

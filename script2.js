@@ -114,7 +114,7 @@ $("#title-show-order").html('Hide order summary');
                         if(!cardRegex.test(e.target.value))  {
                             let errorMsg = "<p class='error-text danger-color' id='email-error-credit-card'>Invalid credit card number. </p>"
                             e.target.nextElementSibling.classList.add('danger-color');
-                            e.target.classList.add('empty-field')
+                            e.target.classList.add('empty-field mb-0')
                             if(!document.getElementById('email-error-credit-card')) document.querySelector('.credit-card-error').insertAdjacentHTML("beforeend",errorMsg)
                             
                         }
@@ -249,3 +249,73 @@ coupon.addEventListener('blur', function(e){
         });
 
   
+
+//expiration date
+
+document.getElementById('expiration').addEventListener('blur', function(e){
+    if(e.target.value!="")  {
+        e.target.nextElementSibling.classList.remove('danger-color');
+        document.getElementById('expiration-div').classList.remove('empty-field')
+        document.querySelector('.error-text').remove();
+    }
+    else {
+        let errorMsg = "<p class='error-text danger-color' id='email-error-expiration'>Expiration date required</p>"
+        e.target.nextElementSibling.classList.add('danger-color');
+        document.getElementById('expiration-div').classList.add('empty-field')
+        document.getElementById('expiration-div').classList.add('mb-3')
+        if(!document.getElementById('email-error-expiration')) document.getElementById('error-container-expiration').insertAdjacentHTML("beforeend",errorMsg)
+        cons
+    }
+        });
+        
+//security
+        document.getElementById('security').addEventListener('blur', function(e){
+            if(e.target.value!="")  {
+                e.target.nextElementSibling.classList.remove('danger-color');
+                document.getElementById('security-div').classList.remove('empty-field')
+                document.querySelector('.error-text').remove();
+            }
+            else {
+                let errorMsg = "<p class='error-text danger-color' id='email-error-security'>security date required</p>"
+                e.target.nextElementSibling.classList.add('danger-color');
+                document.getElementById('security-div').classList.add('empty-field')
+                document.getElementById('security-div').classList.add('mb-3')
+                if(!document.getElementById('email-error-security')) document.getElementById('error-container-security').insertAdjacentHTML("beforeend",errorMsg)
+                cons
+            }
+                });
+
+
+//card-holder fname 
+document.getElementById('card-holder-fname').addEventListener('blur', function(e){
+    if(e.target.value!="")  {
+        e.target.nextElementSibling.classList.remove('danger-color');
+        document.getElementById('card_holder_fname-div').classList.remove('empty-field')
+        document.querySelector('.error-text').remove();
+    }
+    else {
+        let errorMsg = "<p class='error-text danger-color' id='email-error-card-holder'>card holder first name required</p>"
+        e.target.nextElementSibling.classList.add('danger-color');
+        document.getElementById('card_holder_fname-div').classList.add('empty-field')
+        document.getElementById('card_holder_fname-div').classList.add('mb-3')
+        if(!document.getElementById('email-error-card-holder')) document.getElementById('error-container-card-holder-fname').insertAdjacentHTML("beforeend",errorMsg)
+        cons
+    }
+        });
+
+//card-holder fname 
+document.getElementById('card-holder-lname').addEventListener('blur', function(e){
+    if(e.target.value!="")  {
+        e.target.nextElementSibling.classList.remove('danger-color');
+        document.getElementById('card_holder_Last_Name-div').classList.remove('empty-field')
+        document.querySelector('.error-text').remove();
+    }
+    else {
+        let errorMsg = "<p class='error-text danger-color' id='email-error-card-holder-lname'>card holder last name required</p>"
+        e.target.nextElementSibling.classList.add('danger-color');
+        document.getElementById('card_holder_Last_Name-div').classList.add('empty-field')
+        document.getElementById('card_holder_Last_Name-div').classList.add('mb-3')
+        if(!document.getElementById('email-error-card-holder-lname')) document.getElementById('error-container-card-holder-lname').insertAdjacentHTML("beforeend",errorMsg)
+        cons
+    }
+        });
