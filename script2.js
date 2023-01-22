@@ -319,3 +319,119 @@ document.getElementById('card-holder-lname').addEventListener('blur', function(e
         cons
     }
         });
+
+
+        // ----------------------------------------------------------
+        let errorContainerEmail = document.getElementById('error-container-email')
+        let errorContainerFname = document.getElementById('error-container-fname')
+        let errorContainerLname = document.getElementById('error-container-lname')
+        let errorContainerApartement = document.getElementById('error-container-apartement')
+        let errorContainerAdress = document.getElementById('error-container-adress')
+        let errorContainerPostal = document.getElementById('error-container-postal')
+        let errorContainerCity = document.getElementById('error-container-city')
+        let errorContainerPhone = document.getElementById('error-container-phone')
+//first-name
+fname.addEventListener('focus', function(){
+    document.getElementById('fname-div').style.border = '2px solid rgb(0, 0, 97)';
+        });
+        fname.addEventListener('blur', function(e){
+            if(e.target.value!="")  {
+                e.target.nextElementSibling.classList.remove('danger-color');
+                document.getElementById('fname-div').classList.remove('empty-field')
+                document.querySelector('.error-text').remove();
+            }
+            else {
+                let errorMsg = "<span class='error-text danger-color' id='email-error-fname'>First name required</span>"
+                e.target.nextElementSibling.classList.add('danger-color');
+                document.getElementById('fname-div').classList.add('empty-field','mb-4')
+                // document.getElementById('names-container').classList.add('mb-4')
+                if(!document.getElementById('email-error-fname')) errorContainerFname.insertAdjacentHTML("beforeend",errorMsg)
+            }
+                });
+//last-name
+lname.addEventListener('focus', function(){
+document.getElementById('lname-div').style.border = '2px solid rgb(0, 0, 97)';
+});
+lname.addEventListener('blur', function(e){
+if(e.target.value!="")  {
+    e.target.nextElementSibling.classList.remove('danger-color');
+    document.getElementById('lname-div').classList.remove('empty-field')
+    document.querySelector('.error-text').remove();
+}
+else {
+    let errorMsg = "<p class='error-text danger-color' id='email-error-lname'>First name required</p>"
+    e.target.nextElementSibling.classList.add('danger-color');
+    document.getElementById('lname-div').classList.add('empty-field','mb-4')
+    // document.getElementById('names-container').classList.add('mb-4')
+    if(!document.getElementById('email-error-lname')) errorContainerLname.insertAdjacentHTML("beforeend",errorMsg)
+}
+    });
+
+//adress
+adress.addEventListener('focus', function(){
+document.getElementById('adress-div').style.border = '2px solid rgb(0, 0, 97)';
+});
+adress.addEventListener('blur', function(e){
+if(e.target.value!="")  {
+    e.target.nextElementSibling.classList.remove('danger-color');
+    document.getElementById('adress-div').classList.remove('empty-field')
+    document.querySelector('#email-error-adress').remove();
+}
+else {
+    let errorMsg = "<p class='error-text danger-color' id='email-error-adress'>Address required</p>"
+    e.target.nextElementSibling.classList.add('danger-color');
+    document.getElementById('adress-div').classList.add('empty-field','mb-4')
+    // document.getElementById('names-container').classList.add('mb-4')
+    if(!document.getElementById('email-error-adress')) errorContainerAdress.insertAdjacentHTML("beforeend",errorMsg)
+}
+    });
+
+
+//postal
+var zipRegex = /^\d{5}(-\d{4})?$/;
+postal.addEventListener('focus', function(){
+document.getElementById('postal-div').style.border = '2px solid rgb(0, 0, 97)';
+});
+postal.addEventListener('blur', function(e){
+if(e.target.value!="")  {
+    e.target.nextElementSibling.classList.remove('danger-color');
+    document.getElementById('postal-div').classList.remove('empty-field','mb-4')
+    if(document.querySelector('#email-error-postal'))  document.querySelector('#email-error-postal').remove();
+    if(!zipRegex.test(e.target.value))  {
+        let errorMsg = "<span class='error-text danger-color' id='email-error-postal'>Invalid Zip code</span>"
+        e.target.nextElementSibling.classList.add('danger-color');
+        document.getElementById('postal-div').classList.add('empty-field','mb-4','fs-5')
+    if(!document.getElementById('email-error-postal')) errorContainerPostal.insertAdjacentHTML("beforeend",errorMsg)
+
+    }
+}
+else {
+    let errorMsg = "<span class='error-text danger-color' id='email-error-postal'>Zip code required</span>"
+    document.getElementById('postal-div').classList.remove('empty-field','mb-4')
+    e.target.nextElementSibling.classList.add('danger-color');
+    document.getElementById('postal-div').classList.add('empty-field','mb-4')
+    if(!document.getElementById('email-error-postal')) errorContainerPostal.insertAdjacentHTML("beforeend",errorMsg)
+    else{
+        errorContainerPostal.innerHTML=''
+        errorContainerPostal.insertAdjacentHTML("beforeend",errorMsg)
+    }
+}
+    });
+
+//city
+city.addEventListener('focus', function(){
+document.getElementById('city-div').style.border = '2px solid rgb(0, 0, 97)';
+});
+city.addEventListener('blur', function(e){
+if(e.target.value!="")  {
+    e.target.nextElementSibling.classList.remove('danger-color');
+    document.getElementById('city-div').classList.remove('empty-field')
+    document.querySelector('.error-text').remove();
+}
+else {
+    let errorMsg = "<p class='error-text danger-color' id='email-error-city'>City / town required</p>"
+    e.target.nextElementSibling.classList.add('danger-color');
+    document.getElementById('city-div').classList.add('empty-field','mb-4')
+    if(!document.getElementById('email-error-city')) errorContainerCity.insertAdjacentHTML("beforeend",errorMsg)
+}
+    });
