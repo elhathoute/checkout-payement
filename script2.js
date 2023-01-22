@@ -234,7 +234,7 @@ let priceDom= document.getElementsByClassName("price-product");
 
 
 
-titleDom.innerHTML +=localStorage.getItem("title");
+titleDom.innerHTML =localStorage.getItem("title");
 
 
     for(let i=0;i<priceDom.length;i++){
