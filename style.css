@@ -2,8 +2,8 @@
     border: 0 solid;
     box-sizing: border-box;
 }
-#email-div{
-    border-radius:10px;
+.border-radius-8{
+    border-radius:8px;
 }
 
 .contact{

@@ -76,126 +76,147 @@ $("#title-show-order").html('Hide order summary');
 
         }
     });
+// verification input code receive
+$('.input-group-lg').keyup(function(){
+    if(
+    ($('#digit-1').val()!='')
+   && ($('#digit-2').val()!='')
+    &&($('#digit-3').val()!='')
+    &&($('#digit-4').val()!='')
+    &&($('#digit-5').val()!='')
+    &&($('#digit-6').val()!='')
+    ){
+        $('#done').prop('disabled',false);
+        $('#paiment-2').prop('disabled',false);
+    }else{
+        $('#done').prop('disabled',true);
+        $('paiment-2').prop('disabled',true);
+
+
+    }
+    
+  })
+
+  // verification input CARD paiment
+$('.input-group-card').keyup(function(){
+    if(
+    ($('#credit-card').val()!='')
+   && ($('#expiration').val()!='')
+    &&($('#security').val()!='')
+    &&($('#card-holder-fname').val()!='')
+    &&($('#card-holder-lname').val()!='')
+   
+    ){
+       
+        $('#paiment-1').prop('disabled',false);
+    }else{
+       
+        $('paiment-1').prop('disabled',true);
+
+
+    }
+    
+  })
 
 // btn continue
     let btnContinueToshipping=$(".btn-to-shipping");
-    let btnToReturn=$(".btn-to-return");
+    // let btnToReturn=$(".btn-to-return");
 
 
      
      
  
-  var btnContinue=0;
+//   var btnContinue=0;
     btnContinueToshipping.click(function(){
-        btnContinue++;
-        console.log('continue = '+btnContinue);
-        if(btnContinue==1){
-         $('.method-shipping').removeClass('d-none');
+        // btnContinue++;
+        // console.log('continue = '+btnContinue);
+        // if(btnContinue==1){
+        //  $('.method-shipping').removeClass('d-none');
 
-         $('.hide-if-click-continue').addClass('d-none');
-         $('.hide-payemenyt-method').removeClass('d-none');
+        //  $('.hide-if-click-continue').addClass('d-none');
+        //  $('.hide-payemenyt-method').removeClass('d-none');
 
-         $('#payement').removeClass('non-active-breadcrumb');
-         $('#shipping').removeClass('active-breadcrumb');
-         $('#shipping').addClass('non-active-breadcrumb');
-         $('#payement').addClass('active-breadcrumb');
+        //  $('#payement').removeClass('non-active-breadcrumb');
+        //  $('#shipping').removeClass('active-breadcrumb');
+        //  $('#shipping').addClass('non-active-breadcrumb');
+        //  $('#payement').addClass('active-breadcrumb');
          //credit card number
-    let creditCardContainer = document.getElementById('credit-card-div')
-    let creditCard = document.getElementById('credit-card')
-    var cardRegex = /^(?:(4[0-9]{12}(?:[0-9]{3})?)|(5[1-5][0-9]{14})|(6(?:011|5[0-9][0-9])[0-9]{12})|(3[47][0-9]{13})|(3(?:0[0-5]|[68][0-9])[0-9]{11})|((?:2131|1800|35\d{3})\d{11}))$/;
-    creditCard.addEventListener('focus', function(e){
-        // alert('focused')
-      });
-      
-      creditCard.addEventListener('blur', function(e){
-                    // alert('worked')
-                    if(e.target.value!="")  {
-                        e.target.nextElementSibling.classList.remove('danger-color');
-                        e.target.classList.remove('empty-field')
-                        if(document.getElementById('email-error-credit-card'))document.getElementById('email-error-credit-card').remove();
-                        if(!cardRegex.test(e.target.value))  {
-                            let errorMsg = "<p class='error-text danger-color' id='email-error-credit-card'>Invalid credit card number. </p>"
-                            e.target.nextElementSibling.classList.add('danger-color');
-                            e.target.classList.add('empty-field mb-0')
-                            if(!document.getElementById('email-error-credit-card')) document.querySelector('.credit-card-error').insertAdjacentHTML("beforeend",errorMsg)
-                            
-                        }
-                    }
-                    else {
-                        let errorMsg = "<p class='error-text danger-color' id='email-error-credit-card'>Card number required</p>"
-                        e.target.nextElementSibling.classList.add('danger-color');
-                       e.target.classList.add('empty-field')
-                        // document.getElementById('names-container').classList.add('mb-4')
-                        if(!document.getElementById('email-error-credit-card')) document.querySelector('.credit-card-error').insertAdjacentHTML("beforeend",errorMsg)
-                        else{
-                            document.querySelector('.credit-card-error').innerHTML=''
-                            document.querySelector('.credit-card-error').insertAdjacentHTML("beforeend",errorMsg)
-                        }
-                    }
-                        });
-        }
-         if(btnContinue==2){
-              $('.page-4-show').addClass('d-none');
-              $('#page-4').removeClass('d-none');
+         let creditCardContainer = document.getElementById('credit-card-div')
+         let creditCard = document.getElementById('credit-card')
+         var cardRegex = /^(?:(4[0-9]{12}(?:[0-9]{3})?)|(5[1-5][0-9]{14})|(6(?:011|5[0-9][0-9])[0-9]{12})|(3[47][0-9]{13})|(3(?:0[0-5]|[68][0-9])[0-9]{11})|((?:2131|1800|35\d{3})\d{11}))$/;
+         creditCard.addEventListener('focus', function(e){
+             // alert('focused')
+           });
+           
+           creditCard.addEventListener('blur', function(e){
+                         // alert('worked')
+                         if(e.target.value!="")  {
+                             e.target.nextElementSibling.classList.remove('danger-color');
+                             e.target.classList.remove('empty-field')
+                             if(document.getElementById('email-error-credit-card'))document.getElementById('email-error-credit-card').remove();
+                             if(!cardRegex.test(e.target.value))  {
+                                 let errorMsg = "<p class='error-text danger-color' id='email-error-credit-card'>Invalid credit card number. </p>"
+                                 e.target.nextElementSibling.classList.add('danger-color');
+                                 e.target.classList.add('empty-field mb-0')
+                                 if(!document.getElementById('email-error-credit-card')) document.querySelector('.credit-card-error').insertAdjacentHTML("beforeend",errorMsg)
+                                 
+                             }
+                         }
+                         else {
+                             let errorMsg = "<p class='error-text danger-color' id='email-error-credit-card'>Card number required</p>"
+                             e.target.nextElementSibling.classList.add('danger-color');
+                            e.target.classList.add('empty-field')
+                             // document.getElementById('names-container').classList.add('mb-4')
+                             if(!document.getElementById('email-error-credit-card')) document.querySelector('.credit-card-error').insertAdjacentHTML("beforeend",errorMsg)
+                             else{
+                                 document.querySelector('.credit-card-error').innerHTML=''
+                                 document.querySelector('.credit-card-error').insertAdjacentHTML("beforeend",errorMsg)
+                             }
+                         }
+                             });
+        // }
+        //  if(btnContinue==2){
+        //       $('.page-4-show').addClass('d-none');
+        //       $('#page-4').removeClass('d-none');
            
          
          
-            }
-            if(btnContinue==3){
-                $('#continue-to-shipping').prop('disabled',true);
-            $('#page-5').removeClass('d-none');
-            $('.page-4-show').addClass('d-none');
-            $('#page-4').addClass('d-none');
+        //     }
+            // if(btnContinue==3){
+                // $('#paiment-2').prop('disabled',true);
+            // $('#page-5').removeClass('d-none');
+            // $('.page-4-show').addClass('d-none');
+            // $('#page-4').addClass('d-none');
             // cdt in inputs
-          $('.input-group-lg').keyup(function(){
-            if(
-            ($('#digit-1').val()!='')
-           && ($('#digit-2').val()!='')
-            &&($('#digit-3').val()!='')
-            &&($('#digit-4').val()!='')
-            &&($('#digit-5').val()!='')
-            &&($('#digit-6').val()!='')
-            ){
-                $('#done').prop('disabled',false);
-                $('#continue-to-shipping').prop('disabled',false);
-            }else{
-                $('#done').prop('disabled',true);
-                $('#continue-to-shipping').prop('disabled',true);
-
-
-            }
-            // if($('.input-group-lg').val()!=''){
-            //     $('#done').prop('disabled',false);
-            // }
-          })
-         }
+        
+        //  }
        
       
     });
     // btn return
-    var btnReturn=0;
-    btnToReturn.click(function(){
+//     var btnReturn=0;
+//     btnToReturn.click(function(){
       
-        btnReturn++;
+//         btnReturn++;
        
-        console.log('return = '+btnReturn);
-        if(btnReturn==1){
-            $('.method-shipping').addClass('d-none');
-            $('.hide-if-click-continue').removeClass('d-none');
-            $('.hide-payemenyt-method').addClass('d-none');
+//         console.log('return = '+btnReturn);
+//         if(btnReturn==1){
+//             $('.method-shipping').addClass('d-none');
+//             $('.hide-if-click-continue').removeClass('d-none');
+//             $('.hide-payemenyt-method').addClass('d-none');
 
-            $('#payement').removeClass('active-breadcrumb');
-            $('#payement').addClass('non-active-breadcrumb');
+//             $('#payement').removeClass('active-breadcrumb');
+//             $('#payement').addClass('non-active-breadcrumb');
 
-            $('#shipping').removeClass('non-active-breadcrumb');
-            $('#shipping').addClass('active-breadcrumb');
+//             $('#shipping').removeClass('non-active-breadcrumb');
+//             $('#shipping').addClass('active-breadcrumb');
 
-        }
-       if(btnReturn>1){
-        location.href = "index.html";
-       }
+//         }
+//        if(btnReturn>1){
+//         location.href = "index.html";
+//        }
  
-   });
+//    });
    
     
   });
