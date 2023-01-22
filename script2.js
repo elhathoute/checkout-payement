@@ -1,4 +1,6 @@
 $(document).ready(function(){
+
+   
 //   input group
     $('.form-otp').find('input').each(function() {
         $(this).on('keyup', function(e) {
@@ -140,11 +142,32 @@ $("#title-show-order").html('Hide order summary');
          
             }
             if(btnContinue==3){
-            console.log(btnContinue)
+                $('#continue-to-shipping').prop('disabled',true);
             $('#page-5').removeClass('d-none');
             $('.page-4-show').addClass('d-none');
             $('#page-4').addClass('d-none');
-          
+            // cdt in inputs
+          $('.input-group-lg').keyup(function(){
+            if(
+            ($('#digit-1').val()!='')
+           && ($('#digit-2').val()!='')
+            &&($('#digit-3').val()!='')
+            &&($('#digit-4').val()!='')
+            &&($('#digit-5').val()!='')
+            &&($('#digit-6').val()!='')
+            ){
+                $('#done').prop('disabled',false);
+                $('#continue-to-shipping').prop('disabled',false);
+            }else{
+                $('#done').prop('disabled',true);
+                $('#continue-to-shipping').prop('disabled',true);
+
+
+            }
+            // if($('.input-group-lg').val()!=''){
+            //     $('#done').prop('disabled',false);
+            // }
+          })
          }
        
       

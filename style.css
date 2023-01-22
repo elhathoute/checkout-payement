@@ -2,7 +2,9 @@
     border: 0 solid;
     box-sizing: border-box;
 }
-
+#email-div{
+    border-radius:10px;
+}
 
 .contact{
     height: 58px;
