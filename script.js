@@ -112,7 +112,7 @@ coupon.addEventListener('blur', function(){
                         if(e.target.value!="")  {
                             e.target.nextElementSibling.classList.remove('danger-color');
                             document.getElementById('fname-div').classList.remove('empty-field')
-                            document.querySelector('.error-text').remove();
+                            document.querySelector('#email-error-fname').remove();
                         }
                         else {
                             let errorMsg = "<span class='error-text danger-color' id='email-error-fname'>First name required</span>"
@@ -130,7 +130,7 @@ lname.addEventListener('focus', function(){
             if(e.target.value!="")  {
                 e.target.nextElementSibling.classList.remove('danger-color');
                 document.getElementById('lname-div').classList.remove('empty-field')
-                document.querySelector('.error-text').remove();
+                document.querySelector('#email-error-lname').remove();
             }
             else {
                 let errorMsg = "<p class='error-text danger-color' id='email-error-lname'>First name required</p>"

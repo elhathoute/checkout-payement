@@ -71,6 +71,118 @@ $("#title-show-order").html('Hide order summary');
         // alert($(this).val())
         if($(this).val()==0){
             $("#billing-adress-infos").removeClass("d-none");
+            //first-name
+            let errorContainerFname = document.getElementById('error-container-fname')
+        let errorContainerLname = document.getElementById('error-container-lname')
+        let errorContainerApartement = document.getElementById('error-container-apartement')
+        let errorContainerAdress = document.getElementById('error-container-adress')
+        let errorContainerPostal = document.getElementById('error-container-postal')
+        let errorContainerCity = document.getElementById('error-container-city')
+fname.addEventListener('focus', function(){
+    document.getElementById('fname-div').style.border = '2px solid rgb(0, 0, 97)';
+        });
+        fname.addEventListener('blur', function(e){
+            if(e.target.value!="")  {
+                e.target.nextElementSibling.classList.remove('danger-color');
+                document.getElementById('fname-div').classList.remove('empty-field')
+                document.querySelector('#email-error-fname').remove();
+            }
+            else {
+                let errorMsg = "<span class='error-text danger-color' id='email-error-fname'>First name required</span>"
+                e.target.nextElementSibling.classList.add('danger-color');
+                document.getElementById('fname-div').classList.add('empty-field','mb-4')
+                // document.getElementById('names-container').classList.add('mb-4')
+                if(!document.getElementById('email-error-fname')) errorContainerFname.insertAdjacentHTML("beforeend",errorMsg)
+            }
+                });
+//last-name
+lname.addEventListener('focus', function(){
+document.getElementById('lname-div').style.border = '2px solid rgb(0, 0, 97)';
+});
+lname.addEventListener('blur', function(e){
+if(e.target.value!="")  {
+    e.target.nextElementSibling.classList.remove('danger-color');
+    document.getElementById('lname-div').classList.remove('empty-field')
+    if(document.querySelector('#email-error-lname'))document.querySelector('.error-text').remove();
+}
+else {
+    let errorMsg = "<p class='error-text danger-color' id='email-error-lname'>First name required</p>"
+    e.target.nextElementSibling.classList.add('danger-color');
+    document.getElementById('lname-div').classList.add('empty-field','mb-4')
+    // document.getElementById('names-container').classList.add('mb-4')
+    if(!document.getElementById('email-error-lname')) errorContainerLname.insertAdjacentHTML("beforeend",errorMsg)
+}
+    });
+
+//adress
+adress.addEventListener('focus', function(){
+document.getElementById('adress-div').style.border = '2px solid rgb(0, 0, 97)';
+});
+adress.addEventListener('blur', function(e){
+if(e.target.value!="")  {
+    e.target.nextElementSibling.classList.remove('danger-color');
+    document.getElementById('adress-div').classList.remove('empty-field')
+    document.querySelector('#email-error-adress').remove();
+}
+else {
+    let errorMsg = "<p class='error-text danger-color' id='email-error-adress'>Address required</p>"
+    e.target.nextElementSibling.classList.add('danger-color');
+    document.getElementById('adress-div').classList.add('empty-field','mb-4')
+    // document.getElementById('names-container').classList.add('mb-4')
+    if(!document.getElementById('email-error-adress')) errorContainerAdress.insertAdjacentHTML("beforeend",errorMsg)
+}
+    });
+
+
+//postal
+var zipRegex = /^\d{5}(-\d{4})?$/;
+postal.addEventListener('focus', function(){
+document.getElementById('postal-div').style.border = '2px solid rgb(0, 0, 97)';
+
+});
+postal.addEventListener('blur', function(e){
+if(e.target.value!="")  {
+    e.target.nextElementSibling.classList.remove('danger-color');
+    document.getElementById('postal-div').classList.remove('empty-field','mb-4')
+    if(document.querySelector('#email-error-postal'))  document.querySelector('#email-error-postal').remove();
+    if(!zipRegex.test(e.target.value))  {
+        let errorMsg = "<span class='error-text danger-color' id='email-error-postal'>Invalid Zip code</span>"
+        e.target.nextElementSibling.classList.add('danger-color');
+        document.getElementById('postal-div').classList.add('empty-field','mb-4','fs-5')
+    if(!document.getElementById('email-error-postal')) errorContainerPostal.insertAdjacentHTML("beforeend",errorMsg)
+
+    }
+}
+else {
+    let errorMsg = "<span class='error-text danger-color' id='email-error-postal'>Zip code required</span>"
+    document.getElementById('postal-div').classList.remove('empty-field','mb-4')
+    e.target.nextElementSibling.classList.add('danger-color');
+    document.getElementById('postal-div').classList.add('empty-field','mb-4')
+    if(!document.getElementById('email-error-postal')) errorContainerPostal.insertAdjacentHTML("beforeend",errorMsg)
+    else{
+        errorContainerPostal.innerHTML=''
+        errorContainerPostal.insertAdjacentHTML("beforeend",errorMsg)
+    }
+}
+    });
+
+//city
+city.addEventListener('focus', function(){
+document.getElementById('city-div').style.border = '2px solid rgb(0, 0, 97)';
+});
+city.addEventListener('blur', function(e){
+if(e.target.value!="")  {
+    e.target.nextElementSibling.classList.remove('danger-color');
+    document.getElementById('city-div').classList.remove('empty-field')
+    document.querySelector('#email-error-city').remove();
+}
+else {
+    let errorMsg = "<p class='error-text danger-color' id='email-error-city'>City / town required</p>"
+    e.target.nextElementSibling.classList.add('danger-color');
+    document.getElementById('city-div').classList.add('empty-field','mb-4')
+    if(!document.getElementById('email-error-city')) errorContainerCity.insertAdjacentHTML("beforeend",errorMsg)
+}
+    });
         }else{
             $("#billing-adress-infos").addClass("d-none");
 
@@ -140,40 +252,7 @@ $('.input-group-card').keyup(function(){
         //  $('#shipping').removeClass('active-breadcrumb');
         //  $('#shipping').addClass('non-active-breadcrumb');
         //  $('#payement').addClass('active-breadcrumb');
-         //credit card number
-         let creditCardContainer = document.getElementById('credit-card-div')
-         let creditCard = document.getElementById('credit-card')
-         var cardRegex = /^(?:(4[0-9]{12}(?:[0-9]{3})?)|(5[1-5][0-9]{14})|(6(?:011|5[0-9][0-9])[0-9]{12})|(3[47][0-9]{13})|(3(?:0[0-5]|[68][0-9])[0-9]{11})|((?:2131|1800|35\d{3})\d{11}))$/;
-         creditCard.addEventListener('focus', function(e){
-             // alert('focused')
-           });
-           
-           creditCard.addEventListener('blur', function(e){
-                         // alert('worked')
-                         if(e.target.value!="")  {
-                             e.target.nextElementSibling.classList.remove('danger-color');
-                             e.target.classList.remove('empty-field')
-                             if(document.getElementById('email-error-credit-card'))document.getElementById('email-error-credit-card').remove();
-                             if(!cardRegex.test(e.target.value))  {
-                                 let errorMsg = "<p class='error-text danger-color' id='email-error-credit-card'>Invalid credit card number. </p>"
-                                 e.target.nextElementSibling.classList.add('danger-color');
-                                 e.target.classList.add('empty-field mb-0')
-                                 if(!document.getElementById('email-error-credit-card')) document.querySelector('.credit-card-error').insertAdjacentHTML("beforeend",errorMsg)
-                                 
-                             }
-                         }
-                         else {
-                             let errorMsg = "<p class='error-text danger-color' id='email-error-credit-card'>Card number required</p>"
-                             e.target.nextElementSibling.classList.add('danger-color');
-                            e.target.classList.add('empty-field')
-                             // document.getElementById('names-container').classList.add('mb-4')
-                             if(!document.getElementById('email-error-credit-card')) document.querySelector('.credit-card-error').insertAdjacentHTML("beforeend",errorMsg)
-                             else{
-                                 document.querySelector('.credit-card-error').innerHTML=''
-                                 document.querySelector('.credit-card-error').insertAdjacentHTML("beforeend",errorMsg)
-                             }
-                         }
-                             });
+      
         // }
         //  if(btnContinue==2){
         //       $('.page-4-show').addClass('d-none');
@@ -225,7 +304,6 @@ $('.input-group-card').keyup(function(){
 
 
 
-
 //   localstorage
 
 let titleDom= document.querySelector("#title-product");
@@ -272,6 +350,43 @@ PaymentAddressShipToContent.innerHTML=localStorage.getItem("adress")+' ,'+localS
 // let PaymentCountry =document.getElementById('PaymentCountry');
 // PaymentCountry.innerHTML='khsni country';
 
+   //credit card number
+   let creditCardContainer = document.getElementById('credit-card-div')
+   let creditCard = document.getElementById('credit-card')
+   var cardRegex = /^(?:(4[0-9]{12}(?:[0-9]{3})?)|(5[1-5][0-9]{14})|(6(?:011|5[0-9][0-9])[0-9]{12})|(3[47][0-9]{13})|(3(?:0[0-5]|[68][0-9])[0-9]{11})|((?:2131|1800|35\d{3})\d{11}))$/;
+   creditCard.addEventListener('focus', function(e){
+       // alert('focused')
+     });
+     
+     creditCard.addEventListener('blur', function(e){
+                   // alert('worked')
+                   if(e.target.value!="")  {
+                    console.log(e.target.value)
+                       e.target.nextElementSibling.classList.remove('danger-color');
+                      document.getElementById('credit-card-div').classList.remove('empty-field')
+                       if(document.getElementById('email-error-credit-card'))document.getElementById('email-error-credit-card').remove();
+                       if(!cardRegex.test(e.target.value))  {
+                        // alert('incorrect card regex')
+                           let errorMsg = "<p class='error-text danger-color' id='email-error-credit-card'>Invalid credit card number. </p>"
+                           e.target.nextElementSibling.classList.add('danger-color');
+                           document.getElementById('credit-card-div').classList.add('empty-field', 'mb-0')
+                           if(!document.getElementById('email-error-credit-card')) document.querySelector('#credit-card-error').insertAdjacentHTML("beforeend",errorMsg)
+                           
+                       }
+                    //    else alert('correct card regex')
+                   }
+                   else {
+                       let errorMsg = "<p class='error-text danger-color' id='email-error-credit-card'>Card number required</p>"
+                       e.target.nextElementSibling.classList.add('danger-color');
+                       document.getElementById('credit-card-div').classList.add('empty-field')
+                       // document.getElementById('names-container').classList.add('mb-4')
+                       if(!document.getElementById('email-error-credit-card')) document.querySelector('#credit-card-error').insertAdjacentHTML("beforeend",errorMsg)
+                       else{
+                           document.querySelector('#credit-card-error').innerHTML=''
+                           document.querySelector('#credit-card-error').insertAdjacentHTML("beforeend",errorMsg)
+                       }
+                   }
+                       });
 
 //coupon
 coupon.addEventListener('focus', function(e){
@@ -282,10 +397,10 @@ coupon.addEventListener('blur', function(e){
     if(e.target.value!="")  {
         e.target.nextElementSibling.classList.remove('danger-color');
         document.getElementById('coupon-div').classList.remove('empty-field')
-        document.querySelector('.error-text').remove();
+        document.querySelector('#error-coupon').remove();
     }
     else {
-        let errorMsg = "<p class='error-text danger-color'>empty field</p>"
+        let errorMsg = "<p class='error-text danger-color' id='error-coupon'>empty field</p>"
         e.target.nextElementSibling.classList.add('danger-color');
         document.getElementById('coupon-div').classList.add('empty-field')
         if(!e.target.nextElementSibling.nextElementSibling) e.target.parentNode.insertAdjacentHTML("beforeend",errorMsg)
@@ -300,7 +415,7 @@ document.getElementById('expiration').addEventListener('blur', function(e){
     if(e.target.value!="")  {
         e.target.nextElementSibling.classList.remove('danger-color');
         document.getElementById('expiration-div').classList.remove('empty-field')
-        document.querySelector('.error-text').remove();
+        document.querySelector('#email-error-expiration').remove();
     }
     else {
         let errorMsg = "<p class='error-text danger-color' id='email-error-expiration'>Expiration date required</p>"
@@ -308,7 +423,7 @@ document.getElementById('expiration').addEventListener('blur', function(e){
         document.getElementById('expiration-div').classList.add('empty-field')
         document.getElementById('expiration-div').classList.add('mb-3')
         if(!document.getElementById('email-error-expiration')) document.getElementById('error-container-expiration').insertAdjacentHTML("beforeend",errorMsg)
-        cons
+        
     }
         });
         
@@ -317,7 +432,7 @@ document.getElementById('expiration').addEventListener('blur', function(e){
             if(e.target.value!="")  {
                 e.target.nextElementSibling.classList.remove('danger-color');
                 document.getElementById('security-div').classList.remove('empty-field')
-                document.querySelector('.error-text').remove();
+                document.querySelector('#email-error-security').remove();
             }
             else {
                 let errorMsg = "<p class='error-text danger-color' id='email-error-security'>security date required</p>"
@@ -325,7 +440,7 @@ document.getElementById('expiration').addEventListener('blur', function(e){
                 document.getElementById('security-div').classList.add('empty-field')
                 document.getElementById('security-div').classList.add('mb-3')
                 if(!document.getElementById('email-error-security')) document.getElementById('error-container-security').insertAdjacentHTML("beforeend",errorMsg)
-                cons
+                
             }
                 });
 
@@ -335,24 +450,24 @@ document.getElementById('card-holder-fname').addEventListener('blur', function(e
     if(e.target.value!="")  {
         e.target.nextElementSibling.classList.remove('danger-color');
         document.getElementById('card_holder_fname-div').classList.remove('empty-field')
-        document.querySelector('.error-text').remove();
+        document.querySelector('#email-error-card-holder-fname').remove();
     }
     else {
-        let errorMsg = "<p class='error-text danger-color' id='email-error-card-holder'>card holder first name required</p>"
+        let errorMsg = "<p class='error-text danger-color' id='email-error-card-holder-fname'>card holder first name required</p>"
         e.target.nextElementSibling.classList.add('danger-color');
         document.getElementById('card_holder_fname-div').classList.add('empty-field')
         document.getElementById('card_holder_fname-div').classList.add('mb-3')
-        if(!document.getElementById('email-error-card-holder')) document.getElementById('error-container-card-holder-fname').insertAdjacentHTML("beforeend",errorMsg)
-        cons
+        if(!document.getElementById('email-error-card-holder-fname')) document.getElementById('error-container-card-holder-fname').insertAdjacentHTML("beforeend",errorMsg)
+        
     }
         });
 
-//card-holder fname 
+//card-holder lname 
 document.getElementById('card-holder-lname').addEventListener('blur', function(e){
     if(e.target.value!="")  {
         e.target.nextElementSibling.classList.remove('danger-color');
         document.getElementById('card_holder_Last_Name-div').classList.remove('empty-field')
-        document.querySelector('.error-text').remove();
+        document.querySelector('#email-error-card-holder-lname').remove();
     }
     else {
         let errorMsg = "<p class='error-text danger-color' id='email-error-card-holder-lname'>card holder last name required</p>"
@@ -360,7 +475,6 @@ document.getElementById('card-holder-lname').addEventListener('blur', function(e
         document.getElementById('card_holder_Last_Name-div').classList.add('empty-field')
         document.getElementById('card_holder_Last_Name-div').classList.add('mb-3')
         if(!document.getElementById('email-error-card-holder-lname')) document.getElementById('error-container-card-holder-lname').insertAdjacentHTML("beforeend",errorMsg)
-        cons
     }
         });
 
@@ -374,108 +488,3 @@ document.getElementById('card-holder-lname').addEventListener('blur', function(e
         let errorContainerPostal = document.getElementById('error-container-postal')
         let errorContainerCity = document.getElementById('error-container-city')
         let errorContainerPhone = document.getElementById('error-container-phone')
-//first-name
-fname.addEventListener('focus', function(){
-    document.getElementById('fname-div').style.border = '2px solid rgb(0, 0, 97)';
-        });
-        fname.addEventListener('blur', function(e){
-            if(e.target.value!="")  {
-                e.target.nextElementSibling.classList.remove('danger-color');
-                document.getElementById('fname-div').classList.remove('empty-field')
-                document.querySelector('.error-text').remove();
-            }
-            else {
-                let errorMsg = "<span class='error-text danger-color' id='email-error-fname'>First name required</span>"
-                e.target.nextElementSibling.classList.add('danger-color');
-                document.getElementById('fname-div').classList.add('empty-field','mb-4')
-                // document.getElementById('names-container').classList.add('mb-4')
-                if(!document.getElementById('email-error-fname')) errorContainerFname.insertAdjacentHTML("beforeend",errorMsg)
-            }
-                });
-//last-name
-lname.addEventListener('focus', function(){
-document.getElementById('lname-div').style.border = '2px solid rgb(0, 0, 97)';
-});
-lname.addEventListener('blur', function(e){
-if(e.target.value!="")  {
-    e.target.nextElementSibling.classList.remove('danger-color');
-    document.getElementById('lname-div').classList.remove('empty-field')
-    document.querySelector('.error-text').remove();
-}
-else {
-    let errorMsg = "<p class='error-text danger-color' id='email-error-lname'>First name required</p>"
-    e.target.nextElementSibling.classList.add('danger-color');
-    document.getElementById('lname-div').classList.add('empty-field','mb-4')
-    // document.getElementById('names-container').classList.add('mb-4')
-    if(!document.getElementById('email-error-lname')) errorContainerLname.insertAdjacentHTML("beforeend",errorMsg)
-}
-    });
-
-//adress
-adress.addEventListener('focus', function(){
-document.getElementById('adress-div').style.border = '2px solid rgb(0, 0, 97)';
-});
-adress.addEventListener('blur', function(e){
-if(e.target.value!="")  {
-    e.target.nextElementSibling.classList.remove('danger-color');
-    document.getElementById('adress-div').classList.remove('empty-field')
-    document.querySelector('#email-error-adress').remove();
-}
-else {
-    let errorMsg = "<p class='error-text danger-color' id='email-error-adress'>Address required</p>"
-    e.target.nextElementSibling.classList.add('danger-color');
-    document.getElementById('adress-div').classList.add('empty-field','mb-4')
-    // document.getElementById('names-container').classList.add('mb-4')
-    if(!document.getElementById('email-error-adress')) errorContainerAdress.insertAdjacentHTML("beforeend",errorMsg)
-}
-    });
-
-
-//postal
-var zipRegex = /^\d{5}(-\d{4})?$/;
-postal.addEventListener('focus', function(){
-document.getElementById('postal-div').style.border = '2px solid rgb(0, 0, 97)';
-});
-postal.addEventListener('blur', function(e){
-if(e.target.value!="")  {
-    e.target.nextElementSibling.classList.remove('danger-color');
-    document.getElementById('postal-div').classList.remove('empty-field','mb-4')
-    if(document.querySelector('#email-error-postal'))  document.querySelector('#email-error-postal').remove();
-    if(!zipRegex.test(e.target.value))  {
-        let errorMsg = "<span class='error-text danger-color' id='email-error-postal'>Invalid Zip code</span>"
-        e.target.nextElementSibling.classList.add('danger-color');
-        document.getElementById('postal-div').classList.add('empty-field','mb-4','fs-5')
-    if(!document.getElementById('email-error-postal')) errorContainerPostal.insertAdjacentHTML("beforeend",errorMsg)
-
-    }
-}
-else {
-    let errorMsg = "<span class='error-text danger-color' id='email-error-postal'>Zip code required</span>"
-    document.getElementById('postal-div').classList.remove('empty-field','mb-4')
-    e.target.nextElementSibling.classList.add('danger-color');
-    document.getElementById('postal-div').classList.add('empty-field','mb-4')
-    if(!document.getElementById('email-error-postal')) errorContainerPostal.insertAdjacentHTML("beforeend",errorMsg)
-    else{
-        errorContainerPostal.innerHTML=''
-        errorContainerPostal.insertAdjacentHTML("beforeend",errorMsg)
-    }
-}
-    });
-
-//city
-city.addEventListener('focus', function(){
-document.getElementById('city-div').style.border = '2px solid rgb(0, 0, 97)';
-});
-city.addEventListener('blur', function(e){
-if(e.target.value!="")  {
-    e.target.nextElementSibling.classList.remove('danger-color');
-    document.getElementById('city-div').classList.remove('empty-field')
-    document.querySelector('.error-text').remove();
-}
-else {
-    let errorMsg = "<p class='error-text danger-color' id='email-error-city'>City / town required</p>"
-    e.target.nextElementSibling.classList.add('danger-color');
-    document.getElementById('city-div').classList.add('empty-field','mb-4')
-    if(!document.getElementById('email-error-city')) errorContainerCity.insertAdjacentHTML("beforeend",errorMsg)
-}
-    });

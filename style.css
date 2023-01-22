@@ -29,11 +29,16 @@
     left: 2px;
     width: fit-content
 }
+
+.input-group input {
+    margin-top: 12px;
+}
+
 .input-group img {
     position: absolute;
     left: 90%;
     top: 20%;
-    width: 10%;
+    width: 7%;
 }
 
 .input-group label {

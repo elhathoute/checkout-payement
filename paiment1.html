@@ -168,35 +168,28 @@
                                       <!--?lit$738055032$-->
                                       <div class="_paymentCreditForm_ehezr_135">
                                         <div class="_formRow_ehezr_101">
-                                          <div class="_formGroup_ehezr_1 " id="credit-card-div">
-                                            <input required="" id="credit-card" pattern="^[\d\s]{6,24}$" minlength="6" maxlength="24" type="text" name="card_number" class="_formControl_ehezr_1 valid-content">
-                                            <label class="_placeholder_ehezr_1 input-group-card">
-                                              <span><!--?lit$738055032$-->Card Number</span>
-                                            </label>
-                                            <label class="_invalidLabel_ehezr_148 _valueMissing_ehezr_180"><!--?lit$738055032$-->Please
-                                              enter a card number
-                                            </label>
-                                            <label class="_invalidLabel_ehezr_148 _patternMismatch_ehezr_152"><!--?lit$738055032$-->Your
-                                              credit card number is incomplete</label>
-                                            <label class="_invalidLabel_ehezr_148 _binCheckTips_ehezr_236"><!--?lit$738055032$-->Please
-                                              ensure that you have entered a supported card.</label>
-                                            <label class="_invalidLabel_ehezr_148 _luhnCheckTips_ehezr_237"><!--?lit$738055032$-->Please
-                                              ensure that your card is entered correctly.</label>
-                                            <img id="credit_card_icon" class="_paymentCardIcon_ehezr_8" src="//img.staticdj.com/oss/operation/ea8ee37a46bea7d2180006ec4bc78100_24x.png">
-                                            <div class="credit-card-error"></div>
-                                          </div>
+                                         <!-- credit card  -->
+                                     <div class=" contact mb-3  input-group"  id="credit-card-div">
+                                      <input type="text" name="phone" id="credit-card"  class=" w-100 h-75 outline-none" placeholder=" ">
+                                      <label for="phone" class="mx-1 text-xs" id="contact-label">Card number</label>
+                                      
+                                      <img class="credit-img" src="https://img.staticdj.com/oss/operation/ea8ee37a46bea7d2180006ec4bc78100_24x.png" alt="">
+
+                                      <div class="d-block" id="credit-card-error">
+                                      </div>
+                                    </div>
                                         </div>
   
                                         <div class="d-flex gap-2" id="expiration-security-container">
                                           <div class=" contact  my-2 w-50 input-group" id="expiration-div">
-                                            <input type="text" name="expiration" id="expiration" class="input-group-card w-100 h-100 outline-none inputs-informations" placeholder=" ">
+                                            <input type="text" name="expiration" id="expiration" class="h-75 input-group-card w-100 h-75 outline-none inputs-informations" placeholder=" ">
                                             <label for="First Nam" class="mx-1 text-xs" id="contact-label">Expiration Date (MM/YY)</label>
                                             <div class="d-block" id="error-container-expiration">
                                         
                                             </div>
                                           </div>
                                           <div class=" contact my-2 w-50  input-group" id="security-div">
-                                            <input type="text" name="security" id="security" class=" input-group-card w-100 h-100 outline-none inputs-informations" placeholder=" ">
+                                            <input type="text" name="security" id="security" class="h-75 input-group-card w-100 h-75 outline-none inputs-informations" placeholder=" ">
                                             <label for="Last Name" class="mx-1 text-xs" id="contact-label">Security Code (CVV)</label>
                                             <div class="d-block" id="error-container-security">
                                         
@@ -205,14 +198,14 @@
                                         </div>
                                         <div class="d-flex gap-2" id="card-holder-container">
                                           <div class=" contact  my-2 w-50 input-group" id="card_holder_fname-div">
-                                            <input type="text" name="card_holder_first_Name" id="card-holder-fname" class=" input-group-card w-100 h-100 outline-none inputs-informations" placeholder=" ">
+                                            <input type="text" name="card_holder_first_Name" id="card-holder-fname" class="h-75 input-group-card w-100 h-75 outline-none inputs-informations" placeholder=" ">
                                             <label for="First Nam" class="mx-1 text-xs" id="contact-label">Cardholder First Name</label>
                                             <div class="d-block" id="error-container-card-holder-fname">
                                         
                                             </div>
                                           </div>
                                           <div class=" contact my-2 w-50  input-group" id="card_holder_Last_Name-div">
-                                            <input type="text" name="card_holder_Last_Name" id="card-holder-lname" class="input-group-card w-100 h-100 outline-none inputs-informations" placeholder=" ">
+                                            <input type="text" name="card_holder_Last_Name" id="card-holder-lname" class="h-75 input-group-card w-100 h-75 outline-none inputs-informations" placeholder=" ">
                                             <label for="Last Name" class="mx-1 text-xs" id="contact-label">Cardholder Last Name</label>
                                             <div class="d-block" id="error-container-card-holder-lname">
                                         
@@ -333,7 +326,7 @@
               <div class="d-flex justify-content-between">
                 <div class="flex-1">
                   <div class=" contact input-group" id="coupon-div">
-                    <input type="text" name="coupon" id="coupon" class=" w-100 h-100 outline-none" placeholder=" " onfocus="">
+                    <input type="text" name="coupon" id="coupon" style="PADDING-TOP: 10px;margin-top:0;" class=" w-100 h-100 outline-none inputs-informations" placeholder=" " onfocus="">
                     <label for="coupon" class="mx-1 text-xs" id="contact-label">Gift card or coupon code</label>
                   </div>
                 </div>
