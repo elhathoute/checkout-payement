@@ -27,7 +27,8 @@
     color: rgb(174, 172, 172);
     position: absolute;
     left: 2px;
-    width: fit-content
+    width: fit-content;
+    pointer-events: none;
 }
 
 .input-group input {
