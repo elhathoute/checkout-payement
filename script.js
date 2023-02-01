@@ -71,7 +71,7 @@ let errorContainerPhone = document.getElementById('error-container-phone')
 
 var emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
         email.addEventListener('focus', function(){
-            document.getElementById('email-div').style.border = '2px solid rgb(129, 104, 66)';
+            document.getElementById('email-div').style.border = '2px solid rgb(17, 17, 17)';
                 });
          email.addEventListener('blur', function(e){
             if(e.target.value!="")  {
@@ -99,7 +99,7 @@ var emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
                 });
 //coupon
 coupon.addEventListener('focus', function(){
-    document.getElementById('coupon-div').style.border = '2px solid rgb(129, 104, 66)';
+    document.getElementById('coupon-div').style.border = '2px solid rgb(17, 17, 17)';
         });
 coupon.addEventListener('blur', function(){
     document.getElementById('coupon-div').style.border = '1px solid rgb(174, 172, 172)';
@@ -203,7 +203,7 @@ city.addEventListener('focus', function(){
                 document.querySelector('.error-text').remove();
             }
             else {
-                let errorMsg = "<p class='error-text danger-color' id='email-error-city'>City / town required</p>"
+                let errorMsg = "<p class='error-text danger-color' id='email-error-city' style='font-size=10px !important'>City / town required</p>"
                 e.target.nextElementSibling.classList.add('danger-color');
                 document.getElementById('city-div').classList.add('empty-field','mb-4')
                 if(!document.getElementById('email-error-city')) errorContainerCity.insertAdjacentHTML("beforeend",errorMsg)

@@ -79,7 +79,7 @@ $("#title-show-order").html('Hide order summary');
         let errorContainerPostal = document.getElementById('error-container-postal')
         let errorContainerCity = document.getElementById('error-container-city')
 fname.addEventListener('focus', function(){
-    document.getElementById('fname-div').style.border = '2px solid rgb(0, 0, 97)';
+    document.getElementById('fname-div').style.border = '2px solid rgb(17,17,17)';
         });
         fname.addEventListener('blur', function(e){
             if(e.target.value!="")  {
@@ -97,7 +97,7 @@ fname.addEventListener('focus', function(){
                 });
 //last-name
 lname.addEventListener('focus', function(){
-document.getElementById('lname-div').style.border = '2px solid rgb(0, 0, 97)';
+document.getElementById('lname-div').style.border = '2px solid rgb(17,17,17)';
 });
 lname.addEventListener('blur', function(e){
 if(e.target.value!="")  {
@@ -116,7 +116,7 @@ else {
 
 //adress
 adress.addEventListener('focus', function(){
-document.getElementById('adress-div').style.border = '2px solid rgb(0, 0, 97)';
+document.getElementById('adress-div').style.border = '2px solid rgb(17,17,17)';
 });
 adress.addEventListener('blur', function(e){
 if(e.target.value!="")  {
@@ -137,7 +137,7 @@ else {
 //postal
 var zipRegex = /^\d{5}(-\d{4})?$/;
 postal.addEventListener('focus', function(){
-document.getElementById('postal-div').style.border = '2px solid rgb(0, 0, 97)';
+document.getElementById('postal-div').style.border = '2px solid rgb(17,17,17)';
 
 });
 postal.addEventListener('blur', function(e){
@@ -168,7 +168,7 @@ else {
 
 //city
 city.addEventListener('focus', function(){
-document.getElementById('city-div').style.border = '2px solid rgb(0, 0, 97)';
+document.getElementById('city-div').style.border = '2px solid rgb(17,17,17)';
 });
 city.addEventListener('blur', function(e){
 if(e.target.value!="")  {
