@@ -939,12 +939,13 @@ input:not[type="submit"] {
 
 
 .empty-field{
-    border : 2px solid red !important;
+    border : 1px solid rgb(255,109,109) !important;
+    box-shadow: 0 0 0 1px  rgb(255,109,109) ;
     
 }
 
 .danger-color{
-    color: red !important;
+    color: rgb(255,109,109) !important;
 }
 
 .error-text {
