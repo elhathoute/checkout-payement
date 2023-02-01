@@ -97,6 +97,23 @@ var emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
                 }
             }   
                 });
+
+ // focus event inputs informations .contact >input:focus
+
+$('.inputs-informations').focus(function () {
+    // console.log( $(this).parent())
+    $(this).parent().css({
+        'border':'2px solid black'
+      });
+});
+
+
+//  if ($('.inputs-informations').is(':focus')) {
+//     console.log('Input has focus');
+//   } else {
+//     console.log('Input does not have focus');
+//   }
+
 //coupon
 coupon.addEventListener('focus', function(){
     document.getElementById('coupon-div').style.border = '2px solid rgb(17, 17, 17)';
@@ -285,6 +302,7 @@ phone.addEventListener('focus', function(){
         
 
         $(document).ready(function(){
+
         (localStorage.getItem('price')>0)?$('#price').val(localStorage.getItem('price')):$('#price').val('0');
         (localStorage.getItem('postal')!='')? $('#postal').val(localStorage.getItem('postal')):$('#postal').val('');
         (localStorage.getItem('city')!='')? $('#city').val(localStorage.getItem('city')):$('#city').val('');
@@ -341,6 +359,9 @@ phone.addEventListener('focus', function(){
               $("#div-order").toggle(50,"swing");
 
             });
+
+
+
           });
      
 
