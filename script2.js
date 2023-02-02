@@ -402,7 +402,7 @@ document.getElementById('card-holder-fname').addEventListener('blur', function(e
         document.querySelector('#email-error-card-holder-fname').remove();
     }
     else {
-        let errorMsg = "<p class='error-text danger-color' id='email-error-card-holder-fname'>card holder first name required</p>"
+        let errorMsg = "<p class='error-text danger-color' id='email-error-card-holder-fname'>card holder name required</p>"
         e.target.nextElementSibling.classList.add('danger-color');
         document.getElementById('card_holder_fname-div').classList.add('empty-field')
         document.getElementById('card_holder_fname-div').classList.add('mb-3')
@@ -412,20 +412,20 @@ document.getElementById('card-holder-fname').addEventListener('blur', function(e
         });
 
 //card-holder lname 
-document.getElementById('card-holder-lname').addEventListener('blur', function(e){
-    if(e.target.value!="")  {
-        e.target.nextElementSibling.classList.remove('danger-color');
-        document.getElementById('card_holder_Last_Name-div').classList.remove('empty-field')
-        document.querySelector('#email-error-card-holder-lname').remove();
-    }
-    else {
-        let errorMsg = "<p class='error-text danger-color' id='email-error-card-holder-lname'>card holder last name required</p>"
-        e.target.nextElementSibling.classList.add('danger-color');
-        document.getElementById('card_holder_Last_Name-div').classList.add('empty-field')
-        document.getElementById('card_holder_Last_Name-div').classList.add('mb-3')
-        if(!document.getElementById('email-error-card-holder-lname')) document.getElementById('error-container-card-holder-lname').insertAdjacentHTML("beforeend",errorMsg)
-    }
-        });
+// document.getElementById('card-holder-lname').addEventListener('blur', function(e){
+//     if(e.target.value!="")  {
+//         e.target.nextElementSibling.classList.remove('danger-color');
+//         document.getElementById('card_holder_Last_Name-div').classList.remove('empty-field')
+//         document.querySelector('#email-error-card-holder-lname').remove();
+//     }
+//     else {
+//         let errorMsg = "<p class='error-text danger-color' id='email-error-card-holder-lname'>card holder last name required</p>"
+//         e.target.nextElementSibling.classList.add('danger-color');
+//         document.getElementById('card_holder_Last_Name-div').classList.add('empty-field')
+//         document.getElementById('card_holder_Last_Name-div').classList.add('mb-3')
+//         if(!document.getElementById('email-error-card-holder-lname')) document.getElementById('error-container-card-holder-lname').insertAdjacentHTML("beforeend",errorMsg)
+//     }
+//         });
 
 
         // ----------------------------------------------------------
@@ -437,3 +437,37 @@ document.getElementById('card-holder-lname').addEventListener('blur', function(e
         let errorContainerPostal = document.getElementById('error-container-postal')
         let errorContainerCity = document.getElementById('error-container-city')
         let errorContainerPhone = document.getElementById('error-container-phone')
+
+        
+//responsive credit card
+function myFunction(x) {
+    if (x.matches) { 
+        
+      document.getElementById('card-holder-container').classList.add('flex-wrap')
+      document.getElementById('expiration-security-container').classList.add('flex-wrap')
+    
+        document.getElementById('expiration-div').classList.add('w-100')
+      document.getElementById('expiration-div').classList.remove('w-50')
+      document.getElementById('security-div').classList.add('w-100')
+      document.getElementById('security-div').classList.remove('w-50')
+    //   document.getElementById('card_holder_fname-div').classList.add('w-100')
+    //   document.getElementById('card_holder_fname-div').classList.remove('w-50')
+      document.getElementById('card_holder_Last_Name-div').classList.add('w-100')
+      document.getElementById('card_holder_Last_Name-div').classList.remove('w-50')
+    } else {
+        document.getElementById('expiration-div').classList.remove('w-100')
+        document.getElementById('expiration-div').classList.add('w-50')
+        document.getElementById('security-div').classList.remove('w-100')
+      document.getElementById('security-div').classList.add('w-50')
+    //   document.getElementById('card_holder_fname-div').classList.remove('w-100')
+    //   document.getElementById('card_holder_fname-div').classList.add('w-50')
+    //   document.getElementById('card_holder_Last_Name-div').classList.remove('w-100')
+    //   document.getElementById('card_holder_Last_Name-div').classList.add('w-50')
+      document.getElementById('card-holder-container').classList.remove('flex-wrap')
+      document.getElementById('expiration-security-container').classList.remove('flex-wrap')
+    }
+  }
+  
+  var x = window.matchMedia("(max-width: 700px)")
+  myFunction(x) 
+  x.addListener(myFunction)
