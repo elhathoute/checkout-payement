@@ -302,6 +302,21 @@ PaymentAddressShipToContent.innerHTML=localStorage.getItem("adress")+' ,'+localS
    //credit card number
    let creditCardContainer = document.getElementById('credit-card-div')
    let creditCard = document.getElementById('credit-card')
+  
+   document.querySelector("#credit-card").addEventListener("keypress", function (evt) {
+    if (evt.which < 48 || evt.which > 57)
+    {
+        evt.preventDefault();
+    }
+});
+
+document.getElementById('credit-card').addEventListener('input',function(e){
+  e.target.value = e.target.value.replace(/[^\d]/g, "");
+  e.target.value = e.target.value.replace(/(\d{3})/g, "$1 ").trim();
+  
+})
+
+  
    var cardRegex = /^(?:(4[0-9]{12}(?:[0-9]{3})?)|(5[1-5][0-9]{14})|(6(?:011|5[0-9][0-9])[0-9]{12})|(3[47][0-9]{13})|(3(?:0[0-5]|[68][0-9])[0-9]{11})|((?:2131|1800|35\d{3})\d{11}))$/;
    creditCard.addEventListener('focus', function(e){
        // alert('focused')
@@ -309,12 +324,13 @@ PaymentAddressShipToContent.innerHTML=localStorage.getItem("adress")+' ,'+localS
      
      creditCard.addEventListener('blur', function(e){
                    // alert('worked')
-                   if(e.target.value!="")  {
-                    console.log(e.target.value)
+                   const input = e.target.value.split(' ').join('')
+                   if(input!="")  {
+                    console.log(e.target.value.split(' ').join(''))
                        e.target.nextElementSibling.classList.remove('danger-color');
                       document.getElementById('credit-card-div').classList.remove('empty-field')
                        if(document.getElementById('email-error-credit-card'))document.getElementById('email-error-credit-card').remove();
-                       if(!cardRegex.test(e.target.value))  {
+                       if(!cardRegex.test(input))  {
                         // alert('incorrect card regex')
                            let errorMsg = "<p class='error-text danger-color' id='email-error-credit-card'>Invalid credit card number. </p>"
                            e.target.nextElementSibling.classList.add('danger-color');
