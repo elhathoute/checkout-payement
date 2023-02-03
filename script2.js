@@ -261,7 +261,7 @@ let priceDom= document.getElementsByClassName("price-product");
 
 
 
-titleDom.innerHTML =localStorage.getItem("title");
+// titleDom.innerHTML =localStorage.getItem("title");
 
 
     for(let i=0;i<priceDom.length;i++){
@@ -273,9 +273,9 @@ titleDom.innerHTML =localStorage.getItem("title");
 imgDom.setAttribute("src",localStorage.getItem("imgelink"));
 
   const mediaQuery = window.matchMedia("(min-width: 991px)");
-
  
 mediaQuery.addEventListener("change", (e) => {
+
     var div_order = document.getElementById("div-order");
     var styles = window.getComputedStyle(div_order);
     var display = styles.getPropertyValue('display');
@@ -289,15 +289,9 @@ mediaQuery.addEventListener("change", (e) => {
 PaymentAddressContact.innerHTML=localStorage.getItem("email");
 
 let PaymentAddressShipToContent =document.getElementById('PaymentAddressShipToContent');
-PaymentAddressShipToContent.innerHTML=localStorage.getItem("adress")+' ,'+localStorage.getItem("postal")+','+localStorage.getItem("region")+','+'United States';
+PaymentAddressShipToContent.innerHTML=localStorage.getItem("adress")+','+localStorage.getItem("city")+','+localStorage.getItem("postal")+','+localStorage.getItem("region")+','+'United States';
 
 
-// let PaymentAddressInfo =document.getElementById('PaymentAddressInfo');
-// PaymentAddressInfo.innerHTML=localStorage.getItem("adress")+' '+localStorage.getItem("postal")+'United States';
-
-
-// let PaymentCountry =document.getElementById('PaymentCountry');
-// PaymentCountry.innerHTML='khsni country';
 
    //credit card number
    let creditCardContainer = document.getElementById('credit-card-div')
@@ -396,6 +390,16 @@ document.getElementById('expiration').addEventListener('blur', function(e){
         });
         
 //security
+
+document.querySelector("#security").addEventListener("keypress", function (evt) {
+    const input = evt.target.value.split(' ').join('')
+    if (evt.which < 48 || evt.which > 57)
+    {
+        evt.preventDefault();
+    }
+    if(input.length>=4) evt.preventDefault();
+
+});
         document.getElementById('security').addEventListener('blur', function(e){
             if(e.target.value!="")  {
                 e.target.nextElementSibling.classList.remove('danger-color');
@@ -430,21 +434,6 @@ document.getElementById('card-holder-fname').addEventListener('blur', function(e
     }
         });
 
-//card-holder lname 
-// document.getElementById('card-holder-lname').addEventListener('blur', function(e){
-//     if(e.target.value!="")  {
-//         e.target.nextElementSibling.classList.remove('danger-color');
-//         document.getElementById('card_holder_Last_Name-div').classList.remove('empty-field')
-//         document.querySelector('#email-error-card-holder-lname').remove();
-//     }
-//     else {
-//         let errorMsg = "<p class='error-text danger-color' id='email-error-card-holder-lname'>card holder last name required</p>"
-//         e.target.nextElementSibling.classList.add('danger-color');
-//         document.getElementById('card_holder_Last_Name-div').classList.add('empty-field')
-//         document.getElementById('card_holder_Last_Name-div').classList.add('mb-3')
-//         if(!document.getElementById('email-error-card-holder-lname')) document.getElementById('error-container-card-holder-lname').insertAdjacentHTML("beforeend",errorMsg)
-//     }
-//         });
 
 
         // ----------------------------------------------------------
@@ -478,10 +467,7 @@ function myFunction(x) {
         document.getElementById('expiration-div').classList.add('w-50')
         document.getElementById('security-div').classList.remove('w-100')
       document.getElementById('security-div').classList.add('w-50')
-    //   document.getElementById('card_holder_fname-div').classList.remove('w-100')
-    //   document.getElementById('card_holder_fname-div').classList.add('w-50')
-    //   document.getElementById('card_holder_Last_Name-div').classList.remove('w-100')
-    //   document.getElementById('card_holder_Last_Name-div').classList.add('w-50')
+   
       document.getElementById('card-holder-container').classList.remove('flex-wrap')
       document.getElementById('expiration-security-container').classList.remove('flex-wrap')
     }
