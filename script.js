@@ -13,7 +13,7 @@ localStorage.setItem("price",price);
 let titleDom= document.querySelector("#title-product");
 let imgDom= document.querySelector("#img-product");
 let priceDom= document.getElementsByClassName("price-product");
-const regions = ["Tanger-Tetouan-Al Hoceima", "Oriental", "Fes-Meknes", "Rabat-Sale-Kenitra", "Beni Mellal-Khenifra", "Casablanca-Settat", "Marrakech-Safi", "Draa-Tafilalet", "Souss-Massa", "Guelmim-Oued Noun", "Laayoune-Sakia El Hamra", "Dakhla-Oued Ed-Dahab"]
+
 
 
 titleDom.innerHTML +=localStorage.getItem("title");
@@ -98,7 +98,7 @@ var emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
             }   
                 });
 
- // focus event inputs informations .contact >input:focus
+
 
 $('.inputs-informations').focus(function () {
     // console.log( $(this).parent())
@@ -108,11 +108,6 @@ $('.inputs-informations').focus(function () {
 });
 
 
-//  if ($('.inputs-informations').is(':focus')) {
-//     console.log('Input has focus');
-//   } else {
-//     console.log('Input does not have focus');
-//   }
 
 //coupon
 coupon.addEventListener('focus', function(){
@@ -123,7 +118,7 @@ coupon.addEventListener('blur', function(){
         });
 //first-name
         fname.addEventListener('focus', function(){
-                document.getElementById('fname-div').style.border = '2px solid rgb(0, 0, 97)';
+                document.getElementById('fname-div').style.border = '2px solid black';
                     });
                     fname.addEventListener('blur', function(e){
                         if(e.target.value!="")  {
@@ -141,7 +136,7 @@ coupon.addEventListener('blur', function(){
                             });
 //last-name
 lname.addEventListener('focus', function(){
-    document.getElementById('lname-div').style.border = '2px solid rgb(0, 0, 97)';
+    document.getElementById('lname-div').style.border = '2px solid black';
         });
         lname.addEventListener('blur', function(e){
             if(e.target.value!="")  {
@@ -160,7 +155,7 @@ lname.addEventListener('focus', function(){
 
 //adress
 adress.addEventListener('focus', function(){
-    document.getElementById('adress-div').style.border = '2px solid rgb(0, 0, 97)';
+    document.getElementById('adress-div').style.border = '2px solid black';
         });
         adress.addEventListener('blur', function(e){
             if(e.target.value!="")  {
@@ -181,7 +176,7 @@ adress.addEventListener('focus', function(){
 //postal
 var zipRegex = /^\d{5}(-\d{4})?$/;
 postal.addEventListener('focus', function(){
-    document.getElementById('postal-div').style.border = '2px solid rgb(0, 0, 97)';
+    document.getElementById('postal-div').style.border = '2px solid black';
         });
         postal.addEventListener('blur', function(e){
             if(e.target.value!="")  {
@@ -211,7 +206,7 @@ postal.addEventListener('focus', function(){
 
 //city
 city.addEventListener('focus', function(){
-    document.getElementById('city-div').style.border = '2px solid rgb(0, 0, 97)';
+    document.getElementById('city-div').style.border = '2px solid black';
         });
         city.addEventListener('blur', function(e){
             if(e.target.value!="")  {
@@ -231,7 +226,7 @@ city.addEventListener('focus', function(){
 var phoneRegex = /^(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?$/;
 phone.addEventListener('focus', function(){
     
-    document.getElementById('phone-div').style.border = '2px solid rgb(0, 0, 97)';
+    document.getElementById('phone-div').style.border = '2px solid black';
         });
         phone.addEventListener('blur', function(e){
             if(e.target.value!=""  )  {

@@ -953,8 +953,9 @@ input:not[type="submit"] {
 }
 
 .error-text {
+    font-size: 0.8rem!important;
     font-size: 1rem;
-    line-height: 1.75rem;
+    
     /* margin-bottom: 10px; */
 }
 .error-text p {

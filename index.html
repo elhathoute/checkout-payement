@@ -76,7 +76,7 @@
   <label class="form-check-label" id="label-check">Keep me up to date on news and exclusive offers.</label>
   <h2 class=" text-lg font-normal my-2">Shipping Address</h2>
   <div class="contact my-2  input-group" id="country-div">
-    <input type="text" name="country" id="country" class=" border-radius-8 w-100 h-75 outline-none inputs-informations" placeholder=" " value="United States" readonly>
+    <input type="text" name="countryCode" id="country" class=" border-radius-8 w-100 h-75 outline-none inputs-informations" placeholder=" " value="United States" readonly>
     <label for="country" class="mx-1 text-xs" id="contact-label">Country/region</label>
     <div class="d-block" id="error-container-country">
   
@@ -84,14 +84,14 @@
   </div>
   <div class="d-flex gap-2" id="names-container">
     <div class=" contact  my-2 w-50 input-group" id="fname-div">
-      <input type="text" name="Last_Name" id="fname" class=" border-radius-8 w-100 h-75 outline-none inputs-informations" placeholder=" ">
+      <input type="text" name="firstName" id="fname" class=" border-radius-8 w-100 h-75 outline-none inputs-informations" placeholder=" ">
       <label for="First Nam" class="mx-1 text-xs" id="contact-label">First Name</label>
       <div class="d-block" id="error-container-fname">
   
       </div>
     </div>
     <div class=" contact my-2 w-50  input-group" id="lname-div">
-      <input type="text" name="Last_Name" id="lname" class="border-radius-8 w-100 h-75 outline-none inputs-informations" placeholder=" ">
+      <input type="text" name="lastName" id="lname" class="border-radius-8 w-100 h-75 outline-none inputs-informations" placeholder=" ">
       <label for="Last Name" class="mx-1 text-xs" id="contact-label">Last Name</label>
       <div class="d-block" id="error-container-lname">
   
@@ -99,14 +99,14 @@
     </div>
   </div>
   <div class="contact my-3  input-group" id="adress-div">
-    <input type="text" name="Adress" id="adress" class="border-radius-8 w-100 h-75 outline-none inputs-informations" placeholder=" ">
+    <input type="text" name="address1" id="adress" class="border-radius-8 w-100 h-75 outline-none inputs-informations" placeholder=" ">
     <label for="Adress" class="mx-1 text-xs" id="contact-label">Address</label>
     <div class="d-block" id="error-container-adress">
   
     </div>
   </div>
   <div class=" contact my-2  input-group"  id="apartement-div">
-    <input type="text" name="apartment" id="apartement" class="border-radius-8 w-100 h-75 outline-none inputs-informations" placeholder=" ">
+    <input type="text" name="address2" id="apartement" class="border-radius-8 w-100 h-75 outline-none inputs-informations" placeholder=" ">
     <label for="apartment" class="mx-1 text-xs" id="contact-label">Apartement, suite, etc (optional)</label>
     <div class="d-block" id="error-container-apartement">
   
@@ -121,7 +121,7 @@
       </div>
     </div> -->
     <div class=" contact my-2 input-group"  style="width: 40%;" id="city-div">
-      <input type="text" name="Last_Name" id="city" class="border-radius-8 w-100 h-75 outline-none inputs-informations" placeholder=" ">
+      <input type="text" name="city" id="city" class="border-radius-8 w-100 h-75 outline-none inputs-informations" placeholder=" ">
       <label for="Last Name" class="mx-1 text-xs" id="contact-label">City</label>
       <div class="d-block" id="error-container-city">
   
@@ -132,7 +132,7 @@
  
       <label for="region" class="label-region"  style="
       font-size: 12px;">Select a state:</label>
-      <select id="region-select" name="region">
+      <select id="region-select" name="Select1">
         <option value="AL">Alabama</option>
         <option value="AK">Alaska</option>
         <option value="AZ">Arizona</option>
@@ -193,7 +193,7 @@
     
     </div>
     <div class=" contact my-2  input-group" style="width: 40%;" id="postal-div">
-      <input type="text" name="Last_Name" id="postal" class="border-radius-8 w-100 h-75 outline-none inputs-informations" placeholder=" ">
+      <input type="text" name="postalCode" id="postal" class="border-radius-8 w-100 h-75 outline-none inputs-informations" placeholder=" ">
       <label for="Postal code" class="mx-1 text-xs" id="contact-label">Zip code</label>
       <div class="d-block" id="error-container-postal">
   
