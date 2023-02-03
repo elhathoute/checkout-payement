@@ -320,43 +320,53 @@ document.querySelector("#expiration").addEventListener("keypress", function (evt
     {
         evt.preventDefault();
     }
-    if(input.length>=10) evt.preventDefault();
+    if(input.length>=7) evt.preventDefault();
 
 });
 
-var separator = "/";
 
-$("#expiration").keyup(function(e) {
-  var textSoFar = $(this).val();
-  if (e.keyCode != 191) {
-    if (e.keyCode != 8) {
-      if (textSoFar.length == 2 || textSoFar.length == 5) {
-        $(this).val(textSoFar + separator);
-      } else if (e.keyCode == 86 && textSoFar.length == 8) {
-        //to handle copy & paste of 8 digit
-        $(this).val(
-          textSoFar.substr(0, 2) +
-            separator +
-            textSoFar.substr(2, 2) +
-            separator +
-            textSoFar.substr(4, 4)
-        );
-      }
-    } else {
-      //backspace would skip the slashes and just remove the numbers
-      if (textSoFar.length == 5) {
-        $(this).val(textSoFar.substring(0, 4));
-      } else if (textSoFar.length == 2) {
-        $(this).val(textSoFar.substring(0, 1));
-      }
+document.querySelector("#expiration").addEventListener("keypress", function (evt) {
+    let input = evt.target.value
+    if(input.length<1) {
+        evt.target.value = `0${input}`
     }
-  } else {
-    //remove slashes to avoid 12//01/2014
-    $(this).val(textSoFar.substring(0, textSoFar.length - 1));
-  }
+    if(evt.target.value.length==1) evt.target.value +='/'
 
-  // $("#output").text(new Date(textSoFar));
 });
+
+
+
+// $("#expiration").keyup(function(e) {
+//   var textSoFar = $(this).val();
+//   if (e.keyCode != 191) {
+//     if (e.keyCode != 8) {
+//       if (textSoFar.length == 2 || textSoFar.length == 5) {
+//         $(this).val(textSoFar + separator);
+//       } else if (e.keyCode == 86 && textSoFar.length == 8) {
+//         //to handle copy & paste of 8 digit
+//         $(this).val(
+//           textSoFar.substr(0, 2) +
+//             separator +
+//             textSoFar.substr(2, 2) +
+//             separator +
+//             textSoFar.substr(4, 4)
+//         );
+//       }
+//     } else {
+//       //backspace would skip the slashes and just remove the numbers
+//       if (textSoFar.length == 5) {
+//         $(this).val(textSoFar.substring(0, 4));
+//       } else if (textSoFar.length == 2) {
+//         $(this).val(textSoFar.substring(0, 1));
+//       }
+//     }
+//   } else {
+//     //remove slashes to avoid 12//01/2014
+//     $(this).val(textSoFar.substring(0, textSoFar.length - 1));
+//   }
+
+//   // $("#output").text(new Date(textSoFar));
+// });
 
 // document.querySelector("#expiration").addEventListener("input", function (evt) {
 //     let input = Number(evt.target.value)
