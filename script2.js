@@ -304,15 +304,18 @@ PaymentAddressShipToContent.innerHTML=localStorage.getItem("adress")+' ,'+localS
    let creditCard = document.getElementById('credit-card')
   
    document.querySelector("#credit-card").addEventListener("keypress", function (evt) {
+    const input = evt.target.value.split(' ').join('')
     if (evt.which < 48 || evt.which > 57)
     {
         evt.preventDefault();
     }
+    if(input.length>=19) evt.preventDefault();
+
 });
 
 document.getElementById('credit-card').addEventListener('input',function(e){
   e.target.value = e.target.value.replace(/[^\d]/g, "");
-  e.target.value = e.target.value.replace(/(\d{3})/g, "$1 ").trim();
+  e.target.value = e.target.value.replace(/(\d{4})/g, "$1 ").trim();
   
 })
 
@@ -468,8 +471,8 @@ function myFunction(x) {
       document.getElementById('security-div').classList.remove('w-50')
     //   document.getElementById('card_holder_fname-div').classList.add('w-100')
     //   document.getElementById('card_holder_fname-div').classList.remove('w-50')
-      document.getElementById('card_holder_Last_Name-div').classList.add('w-100')
-      document.getElementById('card_holder_Last_Name-div').classList.remove('w-50')
+    //   document.getElementById('card_holder_Last_Name-div').classList.add('w-100')
+    //   document.getElementById('card_holder_Last_Name-div').classList.remove('w-50')
     } else {
         document.getElementById('expiration-div').classList.remove('w-100')
         document.getElementById('expiration-div').classList.add('w-50')
