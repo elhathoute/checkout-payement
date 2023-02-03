@@ -313,6 +313,64 @@ document.getElementById('credit-card').addEventListener('input',function(e){
   
 })
 
+//expiration date
+document.querySelector("#expiration").addEventListener("keypress", function (evt) {
+    let input = evt.target.value
+    if (evt.which < 48 || evt.which > 57)
+    {
+        evt.preventDefault();
+    }
+    if(input.length>=10) evt.preventDefault();
+
+});
+
+var separator = "/";
+
+$("#expiration").keyup(function(e) {
+  var textSoFar = $(this).val();
+  if (e.keyCode != 191) {
+    if (e.keyCode != 8) {
+      if (textSoFar.length == 2 || textSoFar.length == 5) {
+        $(this).val(textSoFar + separator);
+      } else if (e.keyCode == 86 && textSoFar.length == 8) {
+        //to handle copy & paste of 8 digit
+        $(this).val(
+          textSoFar.substr(0, 2) +
+            separator +
+            textSoFar.substr(2, 2) +
+            separator +
+            textSoFar.substr(4, 4)
+        );
+      }
+    } else {
+      //backspace would skip the slashes and just remove the numbers
+      if (textSoFar.length == 5) {
+        $(this).val(textSoFar.substring(0, 4));
+      } else if (textSoFar.length == 2) {
+        $(this).val(textSoFar.substring(0, 1));
+      }
+    }
+  } else {
+    //remove slashes to avoid 12//01/2014
+    $(this).val(textSoFar.substring(0, textSoFar.length - 1));
+  }
+
+  // $("#output").text(new Date(textSoFar));
+});
+
+// document.querySelector("#expiration").addEventListener("input", function (evt) {
+//     let input = Number(evt.target.value)
+//     console.log(typeof input)
+
+//     if(input!=0){
+//         evt.target.value = `0${input}/`
+//     }
+    
+    
+    
+
+// });
+
   
    var cardRegex = /^(?:(4[0-9]{12}(?:[0-9]{3})?)|(5[1-5][0-9]{14})|(6(?:011|5[0-9][0-9])[0-9]{12})|(3[47][0-9]{13})|(3(?:0[0-5]|[68][0-9])[0-9]{11})|((?:2131|1800|35\d{3})\d{11}))$/;
    creditCard.addEventListener('focus', function(e){
