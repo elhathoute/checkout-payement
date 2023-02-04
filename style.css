@@ -448,18 +448,24 @@ button {
  /* #div-order{
     display: block;
   }  */
-@media (min-width: 991px){
+@media screen and (min-width: 991px){
 #show-order-div{
-    display:none;
+    display:none;  
+}
+#div-order{
+    display:block!important;
     
 }
+
+
 #bg-order-complet{
     background: #FAFAFA url(//img.staticdj.com/) no-repeat center center;
     background-size: cover;
 }
 
 }
-@media (max-width: 991px){
+
+@media screen and (max-width: 991px){
     #les-deux-colonnes{
        display: flex;
        flex-direction: column-reverse;
@@ -468,7 +474,11 @@ button {
       #show-order-div{
         display:block;
     }
-
+    #div-order{
+        display:none;
+        
+    }
+  
     .mb-30px {
         margin-bottom: 1.875rem;
     }

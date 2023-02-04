@@ -279,6 +279,7 @@ mediaQuery.addEventListener("change", (e) => {
     var div_order = document.getElementById("div-order");
     var styles = window.getComputedStyle(div_order);
     var display = styles.getPropertyValue('display');
+    console.log(display);
     if(display=='none'){
         document.getElementById("div-order").style.display='block';
     }
