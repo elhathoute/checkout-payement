@@ -475,7 +475,7 @@ button {
         display:block;
     }
     #div-order{
-        display:none;
+        display: none !important;;
         
     }
   
