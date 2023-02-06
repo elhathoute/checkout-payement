@@ -325,31 +325,13 @@ document.querySelector("#expiration").addEventListener("keypress", function (evt
 
 });
 
+document.getElementById('expiration').addEventListener("keyup", function(event) {
+    const value = event.target.value;
+    if (value.length === 2 ) {
+      event.target.value = `${value}/`;
+    }
+  });
 
-// document.querySelector("#expiration").addEventListener("keypress", function (evt) {
-//     let input = evt.target.value
-//     if(input.length<1) {
-//         evt.target.value = `0${input}`
-//     }
-//     if(evt.target.value.length==1) evt.target.value +='/'
-
-// });
-
-
-let separator = '/'
-$("#expiration").keyup(function(e) {
-  var textSoFar = $(this).val();
-  if (e.keyCode != 191) {
-    if (e.keyCode != 8) {
-      if (textSoFar.length == 2 ) {
-        $(this).val(textSoFar + separator);
-      } 
-
-    } 
-    
-  } 
-
-});
 
 
 
