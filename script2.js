@@ -325,13 +325,24 @@ document.querySelector("#expiration").addEventListener("keypress", function (evt
 
 });
 
-document.getElementById('expiration').addEventListener("keyup", function(event) {
-    const value = event.target.value;
+document.getElementById('expiration').addEventListener("keydown", function(event) {
+    
+    setTimeout(()=>{
+        const value = event.target.value;
     if (value.length === 2 ) {
       event.target.value = `${value}/`;
     }
-  });
+    },500)
 
+  });
+  document.getElementById('expiration').addEventListener("keyup", function(event) {
+    
+        const value = event.target.value;
+    if (value.length === 2 ) {
+      event.target.value = `${value}/`;
+    }
+
+  });
 
 
 
