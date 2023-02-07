@@ -36,16 +36,34 @@ $(document).ready(function(){
 
 
 // fin input group
-$("#title-show-order").html('Hide order summary');
     $("#show-order").click(function(){
+        var div_order = document.getElementById("div-order");
+            var styles = window.getComputedStyle(div_order);
+            var display = styles.getPropertyValue('display');
+            console.log(display);
+            if(display=='none'){
+                $("#div-order").css("display", "block");
+                // $("#div-order").addClass('d-block');
+            }
+            if(display=='block'){
+                $("#div-order").css("display", "none");
+                // $("#div-order").addClass('d-block');
+            }
+
+
         let title_show_order=$("#title-show-order");
         
 
         if(title_show_order.html()==='Hide order summary'){
             title_show_order.html('');
             title_show_order.html('Show order summary');
+         $("#div-order").removeClass('d-block');
+         $("#div-order").addClass('d-none');
+
         } 
         else {
+            $("#div-order").removeClass('d-none');
+            $("#div-order").addClass('d-block');
             title_show_order.html('');
             title_show_order.html('Hide order summary');
         }
@@ -62,7 +80,7 @@ $("#title-show-order").html('Hide order summary');
            
         
         
-      $("#div-order").toggle(50,"swing");
+    //   $("#div-order").toggle(50,"swing");
 
     });
 
@@ -261,7 +279,7 @@ let priceDom= document.getElementsByClassName("price-product");
 
 
 
-// titleDom.innerHTML =localStorage.getItem("title");
+titleDom.innerHTML =localStorage.getItem("title");
 
 
     for(let i=0;i<priceDom.length;i++){
@@ -272,18 +290,47 @@ let priceDom= document.getElementsByClassName("price-product");
 
 imgDom.setAttribute("src",localStorage.getItem("imgelink"));
 
-  const mediaQuery = window.matchMedia("(min-width: 991px)");
- 
-mediaQuery.addEventListener("change", (e) => {
+var current_media_query = "";
 
-    var div_order = document.getElementById("div-order");
-    var styles = window.getComputedStyle(div_order);
-    var display = styles.getPropertyValue('display');
-    console.log(display);
-    if(display=='none'){
-        document.getElementById("div-order").style.display='block';
-    }
+getCurrentMediaQuery();
+
+function getCurrentMediaQuery() {
+  if (window.matchMedia("(min-width: 992px)").matches) {
+    current_media_query = "desktop";
+    console.log(current_media_query);
+
+  } else {
+    current_media_query = "mobile";
+    
+   $("#div-order").addClass('d-none');
+$("#title-show-order").html('Show order summary');
+
+    console.log(current_media_query);
+
+  }
+  return current_media_query;
+}
+
+$(window).on("resize", function() {
+  getCurrentMediaQuery();
 });
+
+
+
+
+
+//   const mediaQuery = window.matchMedia("(max-width: 991px)");
+ 
+// mediaQuery.addEventListener("change", (e) => {
+
+//     var div_order = document.getElementById("div-order");
+//     var styles = window.getComputedStyle(div_order);
+//     var display = styles.getPropertyValue('display');
+//     console.log(display);
+//     if(display=='block'){
+//         document.getElementById("div-order").style.display='none';
+//     }
+// });
 
  //get inputs in localstorage
  let PaymentAddressContact =document.getElementById('PaymentAddressContact');

@@ -1,4 +1,5 @@
 const params =window.location.search;
+// console.log(params);
 const paraOfUrl= new URLSearchParams(params);
 let imgelink=paraOfUrl.get('imagelink');
 let title=paraOfUrl.get('title');
